@@ -1,0 +1,155 @@
+.footerl{
+    display: flex;
+    flex-direction: column;
+    background: black;
+    padding-top: 70px ;
+    margin-top: 80px;
+}
+.footertop{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+.footerone{
+    display: flex;
+    flex: 1;
+}
+.bigE{
+    padding: 5px 10px;
+    background: #2BDABA;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+.smallite{
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-weight: lighter;
+}
+.shopy{
+    position: relative;
+}
+.shopy i{
+    position: absolute;
+    color: #2BDABA;
+    top: 82%;
+    right: 34.5%;
+}
+.lorem p{
+    color: #848484;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+.lorem{
+    margin-top: 30px;
+}
+.footericons ul{
+    display: flex;
+    justify-content: space-between;
+}
+.footericons{
+    margin-top: 20px;
+}
+.footericons ul li{
+    list-style-type: none;
+}
+.footertwo p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin-top: -2px;
+    color: white;
+    font-weight:lighter;
+}
+
+.footnav ul{
+    display: flex;
+    flex-direction: column;
+
+}
+.footnav ul li{
+    list-style-type: none;
+    margin-top: 10px;
+
+}
+.footnav ul li a{
+    text-decoration: none;
+    color: #848484;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+.footnav ul li a:hover{
+    color: #2BDABA;
+    transition: 1.5s;
+}
+.storetxt{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin-top: -2px;
+    color: white;
+    font-weight: lighter;
+}
+.flickr{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin-top: -2px;
+    color: white;
+    font-weight: lighter;
+}
+.flickr p{
+    margin-left: 20px;
+}
+.footercontact{
+    display: flex;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+.footercontact i{
+    color: white;
+    font-size: 17px;
+    margin-right: 20px;
+
+}
+.footercontact b{
+    color: white;
+    font-size: 15px;
+}
+.footercontact p{
+    color: #848484;
+    margin-top: 8px;
+
+}
+.examolefoot{
+    color: #2BDABA;
+    font-weight: bolder;
+}
+.flickrimg{
+    display: flex;
+    flex-direction: column;
+}
+.flickrimgdiv{
+    display: flex;
+    margin-top: 20px;
+}
+.flickri1{
+    background: url("./footerimg/t1.jpg") 100% 100% no-repeat;
+    padding: 25px 30px;
+    background-size: 100% 100%;
+    margin-left: 20px;
+}
+.flickri2{
+    background: url("./footerimg/t3.jpg") 100% 100% no-repeat;
+    padding: 25px 30px;
+    background-size: 100% 100%;
+    margin-left: 20px;
+}
+.flickri3{
+     background: url("./footerimg/t4.jpg") 100% 100% no-repeat;
+     padding: 25px 30px;
+     background-size: 100% 100%;
+     margin-left: 20px;
+ }

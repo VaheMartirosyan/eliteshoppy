@@ -1,0 +1,410 @@
+.headupcontainer{
+    width: 80%;
+    margin: 0 auto;
+}
+.headup{
+
+    background: black;
+}
+.headup ul{
+    display:flex;
+    justify-content: space-between;
+}
+.headup li a{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+
+}
+.headup li i{
+    color: #2BDABA;
+    margin-right: 10px;
+    font-size: 12px;
+}
+.headup li{
+    cursor: pointer;
+    list-style-type: none;
+    border-right: 1px solid #464444;
+    flex: 1;
+    text-align: center;
+}
+
+.absolute{
+    position: absolute;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    margin: 0 auto;
+    z-index: 2;
+}
+.inpabsolute{
+    background: white;
+    display: flex;
+    width: 41%;
+    position: absolute;
+    z-index: 1;
+    top:0;
+    left: 32%;
+    padding: 30px;
+    animation: anim .3s;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.inpabsone {
+    flex: 1;
+}
+.inpabstwo {
+    margin-left: 20px;
+}
+@keyframes anim {
+    0%{
+        top:-100%;
+    }
+    10%{
+        top:-90%;
+    }
+    20%{
+        top:-80%;
+    }
+    30%{
+        top:-70%;
+    }
+    40%{
+        top:-60%;
+    }
+    50%{
+        top:-50%;
+    }
+    60%{
+        top:-40%;
+    }
+    70%{
+        top:-30%;
+    }
+
+    80%{
+        top:-20%;
+    }
+    90%{
+        top:-10%;
+    }
+    100%{
+        top:0;
+    }
+}
+.close{
+    position: absolute;
+    top:0;
+    right: 2%;
+}
+.signp{
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom:2em;
+}
+.signp b{
+    font-weight:bolder;
+
+}
+.signname {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .4);
+    padding: 0.5em 1em 0.5em 0;
+    letter-spacing: 1px;
+    color: #848484;
+    width: 100%;
+    outline: none;
+}
+.signinform{
+    position: relative;
+    margin-bottom: 20px;
+}
+.signinform input{
+    z-index: 1;
+}
+.signinform label {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+.signbutton{
+    padding: 7px 35px;
+    font-size: 17px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    background: black;
+    border: none;
+    letter-spacing: 2px;
+}
+.signbutton:hover{
+    background: #2BDABA;
+    transition: 1s;
+}
+.signcontacts{
+    width: 60%;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.signcontacts ul{
+    display: flex;
+
+    justify-content: space-between;
+}
+.signcontacts ul li{
+    list-style-type: none;
+
+}
+.unes{
+    margin-top: 20px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+.firstfb{
+
+    background: #2F4773;
+    width: 30px;
+    text-align: center;
+    padding: 8px 0;
+    color: white;
+}
+.firstfb:hover {
+   animation: j .8s;
+    background: white;
+    color: black;
+}
+@keyframes j {
+    0%{
+        background: #2F4773;
+        color: white;
+    }
+    15%{
+        transform: rotateX(45deg);
+        background: #2F4773;
+        color: white;
+    }
+    30%{
+        transform: rotateX(90deg);
+        background: #2F4773;
+        color: white;
+    }
+    45%{
+        transform: rotateX(135deg);
+        background: white;
+        color: black;
+    }
+    65%{
+        transform: rotateX(180deg);
+        background: white;
+        color: black;
+    }
+    75%{
+        transform: rotateX(225deg);
+        background: white;
+        color: black;
+    }
+    85%{
+        transform: rotateX(270deg);
+        background: white;
+        color: black;
+    }
+    95%{
+        transform: rotateX(315deg);
+        background: white;
+        color: black;
+    }
+    100%{
+        transform: rotateX(360deg);
+        background: white;
+        color: black;
+    }
+}
+.twit{
+    background: #05ADE8;
+    width: 30px;
+    text-align: center;
+    padding: 8px 0;
+    color: white;
+
+}
+.twit:hover{
+    background: white;
+    color: black;
+    animation: twit 1s;
+}
+@keyframes twit {
+    0%{
+
+        color: white;
+    }
+    15%{
+        transform: rotateX(45deg);
+        background: #05ADE8;
+        color: white;
+    }
+    30%{
+        transform: rotateX(90deg);
+        background: #05ADE8;
+        color: white;
+    }
+    45%{
+        transform: rotateX(135deg);
+        background: white;
+        color: black;
+    }
+    65%{
+        transform: rotateX(180deg);
+        background: white;
+        color: black;
+    }
+    75%{
+        transform: rotateX(225deg);
+        background: white;
+        color: black;
+    }
+    85%{
+        transform: rotateX(270deg);
+        background: white;
+        color: black;
+    }
+    95%{
+        transform: rotateX(315deg);
+        background: white;
+        color: black;
+    }
+    100%{
+        transform: rotateX(360deg);
+        background: white;
+        color: black;
+    }
+}
+.ig{
+    background: #F77645;
+    width: 30px;
+    text-align: center;
+    padding: 8px 0;
+    color: white;
+}
+.ig:hover{
+    background: white;
+    color: black;
+    animation:ig 1s;
+}
+@keyframes ig {
+    0%{
+
+        color: white;
+    }
+    15%{
+        transform: rotateX(45deg);
+        background: #F77645;
+        color: white;
+    }
+    30%{
+        transform: rotateX(90deg);
+        background: #F77645;
+        color: white;
+    }
+    45%{
+        transform: rotateX(135deg);
+        background: white;
+        color: black;
+    }
+    65%{
+        transform: rotateX(180deg);
+        background: white;
+        color: black;
+    }
+    75%{
+        transform: rotateX(225deg);
+        background: white;
+        color: black;
+    }
+    85%{
+        transform: rotateX(270deg);
+        background: white;
+        color: black;
+    }
+    95%{
+        transform: rotateX(315deg);
+        background: white;
+        color: black;
+    }
+    100%{
+        transform: rotateX(360deg);
+        background: white;
+        color: black;
+    }
+}
+.linkedin{
+    background: #BB0122;
+    width: 30px;
+    text-align: center;
+    padding: 8px 0;
+    color: white;
+}
+.linkedin:hover{
+    background: white;
+    color: black;
+    animation: link 1s;
+}
+@keyframes link {
+    0%{
+
+        color: white;
+    }
+    15%{
+        transform: rotateX(45deg);
+        background: #BB0122;
+        color: white;
+    }
+    30%{
+        transform: rotateX(90deg);
+        background: #BB0122;
+        color: white;
+    }
+    45%{
+        transform: rotateX(135deg);
+        background: white;
+        color: black;
+    }
+    65%{
+        transform: rotateX(180deg);
+        background: white;
+        color: black;
+    }
+    75%{
+        transform: rotateX(225deg);
+        background: white;
+        color: black;
+    }
+    85%{
+        transform: rotateX(270deg);
+        background: white;
+        color: black;
+    }
+    95%{
+        transform: rotateX(315deg);
+        background: white;
+        color: black;
+    }
+    100%{
+        transform: rotateX(360deg);
+        background: white;
+        color: black;
+    }
+}

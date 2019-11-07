@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-mysql-authentication",
+  "version": "1.0.0",
+  "description": "nodejs login with jwt token",
+  "main": "server.js",
+  "scripts": {
+    "client": "npm start --prefix client",
+    "start": "concurrently \"npm run dev\" \"npm run client\"",
+    "dev": "nodemon server.js"
+  },
+  "author": "Arjun Araneta",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.17.2",
+    "concurrently": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^7.4.2",
+    "mkdirp": "^0.5.1",
+    "mongodb": "^3.1.6",
+    "mongoose": "^5.2.15",
+    "multer": "^1.4.2",
+    "nodemon": "^1.18.3",
+    "socket-io": "^1.0.0",
+    "socket.io": "^2.3.0",
+    "uuid": "^3.3.3",
+    "ws": "^7.1.2"
+  }
+}

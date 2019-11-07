@@ -1,0 +1,21 @@
+.fixed{
+    background: url("../slider/slideimg/banner3.jpg") 100% 0% no-repeat;
+    margin-top: 80px;
+    background-attachment: fixed;
+    height: 25em;
+    padding: 5em 0em;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    margin-top: 80px;
+}
+.fixed h3{
+    font-weight: bolder;
+    font-size: 50px;
+    letter-spacing: 6px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+.fixed h3 span{
+    color: #1F1F1F;
+}

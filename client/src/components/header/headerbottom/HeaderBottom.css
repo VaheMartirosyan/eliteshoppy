@@ -1,0 +1,82 @@
+.headB{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: -10px;
+    align-self: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.headlogos ul{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-self: center;
+}
+.headlogos ul li{
+    list-style-type: none;
+}
+.searchform{
+    flex: 1;
+    padding: 2px;
+}
+.logo{
+    flex: 1.5;
+}
+.headlogos{
+    flex: 1;
+
+}
+.logo{
+    text-align: center;
+    position: relative;
+}
+.logo i{
+    position: absolute;
+    font-size: 20px;
+    top:84%;
+    right: 22%;
+    color: #2BDABA;
+}
+.e{
+    background: black;
+    color: white;
+    padding: 0px 17px;
+    font-weight: bolder;
+}
+.logo a{
+    font-size: 1.4em;
+    text-decoration: none;
+}
+.lite{
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+}
+.searchform input{
+    padding: 8px 110px 8px 5px;
+    border: 1px solid lightgray;
+    margin-top: -100px;
+
+    font-size: 15px;
+}
+.searchform input::placeholder{
+    font-size: 15px;
+    color: lightgray;
+
+}
+.searchform button{
+    padding: 5px;
+    margin-left: 4px;
+
+    background: #2BDABA;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+.shareon{
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}

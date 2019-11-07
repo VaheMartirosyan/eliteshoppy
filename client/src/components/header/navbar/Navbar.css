@@ -1,0 +1,191 @@
+.navall{
+    background: black;
+    position: relative;
+
+}
+
+.navbars{
+   margin: 0 auto;
+    width: 75%;
+
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+nav ul li{
+    list-style-type: none;
+    border-bottom: 5px solid transparent;
+    padding: 31px 0;
+    text-align: center;
+    width: 120%
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+}
+nav ul li:hover{
+    border-bottom:5px solid #2BDABA;
+    transition: 1s;
+}
+nav ul li a:hover{
+    text-decoration: none;
+    color: white;
+}
+.mens{
+    position:absolute;
+    top:100%;
+    left: 28.3%;
+    background: white;
+    padding: 30px;
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    border-bottom: 5px solid #2BDABA;
+    z-index: 1;
+}
+.menstxt{
+    display: flex;
+}
+.menstxt li{
+    list-style-type: none;
+}
+.menstxt1 ul li{
+    margin-top: 12px;
+}
+.menstxt1{
+    margin-left: 20px;
+}
+.mensimg{
+    width: 50%;
+}
+.mensimg img{
+    width: 100%;
+}
+.menstxt2 ul li{
+    margin-top: 12px;
+}
+.menstxt2{
+    margin-left: 30px;
+}
+.menstxt ul li a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+}
+.menstxt ul li a:hover{
+    text-decoration: none;
+    color: #2BDABA;
+    transition: .5s;
+}
+.womens{
+    position:absolute;
+    top:100%;
+    left: 39%;
+    background: white;
+    padding: 30px;
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    border-bottom: 5px solid #2BDABA;
+    z-index: 1;
+}
+.womenstxt{
+    display: flex;
+}
+.womenstxt li{
+    list-style-type: none;
+}
+.womenstxt1 ul li{
+    margin-top: 12px;
+}
+.womenstxt2{
+    margin-right: 20px;
+}
+.womensimg{
+    width: 50%;
+}
+.womensimg img{
+    width: 100%;
+}
+.womenstxt2 ul li{
+    margin-top: 12px;
+}
+.womenstxt2{
+    margin-left: 30px;
+}
+.womenstxt ul li a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+}
+.womenstxt ul li a:hover{
+    text-decoration: none;
+    color: #2BDABA;
+    transition: .5s;
+}
+.codes{
+    position: absolute;
+    background: white;
+    border: 1px solid lightgray;
+    border-bottom: 5px solid #2BDABA;
+    top:100%;
+    right: 40.1%;
+    text-align: center;
+    z-index: 1;
+}
+.codes li{
+    list-style-type: none;
+    padding: 10px 18px;
+}
+.codes li:first-child{
+    border-bottom: 1px solid lightgray;
+}
+.codes li a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+}
+.codes li a:hover{
+    text-decoration: none;
+    color: #2BDABA;
+    transition: .5s;
+}
+.shop{
+    background: #2BDABA;
+    position: relative;
+    text-align: center;
+    align-self: center;
+    flex: .3;
+    align-items: stretch;
+    padding: 19px 20px;
+}
+.shop i{
+    padding: 10px 12px;background: #FFB840;
+    margin-top: 5px;
+    background: #0FC3A4;
+    font-size: 25px;
+}
+.cart{
+    position: fixed;
+    z-index: 1;
+    background: whitesmoke;
+    right: 30%;
+    padding: 30px;
+    border-radius: 8px;
+}
+.user{
+    color: azure;
+}

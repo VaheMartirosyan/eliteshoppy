@@ -1,0 +1,70 @@
+.botall{
+    display: flex;
+    justify-content: space-between;
+    width: 87%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.figure-hover{
+    position: relative;
+    overflow: hidden;
+}
+.d {
+    width: 100%;
+}
+.test{
+    height: 300px;
+}
+.test:hover .d{
+    width: 103%;
+    transition: 1s;
+}
+.figure-hover figcaption{
+    position: absolute;
+    padding: 90px 0px 90px 250px ;
+    border: 5px solid transparent;
+    top: 15%;
+    right: 8%;
+    background: rgba(0,0,0,.2);
+}
+.h h3 span{
+    color: red;
+    font-weight: bolder;
+}
+.h h3{
+    color: white;
+    font-size: 30px;
+    letter-spacing: 3px;
+    text-align: right;
+    font-family: 'Open Sans', sans-serif;
+
+
+}
+figcaption p{
+    color: floralwhite;
+    font-size: 18px;
+    letter-spacing: 15px;
+    opacity: 0;
+    width: 293px;
+    font-family: 'Open Sans', sans-serif;
+
+
+}
+
+.test:hover figcaption {
+
+    border: 5px solid white;
+
+    transform: translateX(30px);
+    transition: .7s
+}
+.test:hover figcaption p{
+    opacity: 1;
+    transition: 1s;
+}
+.h{
+    position: absolute;
+    top:28%;
+    right: 7%;
+    z-index: 1;
+}
