@@ -58,14 +58,14 @@ route.post('/good', (req, res) => {
     
     const userData = {
       goods_name,
-      men_products,
-      women_products, 
+     
       new_arrivals,
       description,
       img,
       price,
       created,
       cotegory,
+      productCotegory,
       cartId,
       discont,
       stok,
@@ -138,10 +138,67 @@ route.get ('/test', (req, res) => {
 });
 
 })
-route.get ('/getProductCarts', (req, res) => {
+route.get ('/default', (req, res) => {
   Goods.aggregate(  [
     {
       '$match': {}
+    }, {
+      '$sort': {
+        'date': -1
+      }
+    }, {
+      '$limit': 8
+    }
+  ])
+  .exec(function(err, goods) {
+    if (err) throw err;
+     
+    res.json(goods)
+});
+
+})
+route.get ('/Womens', (req, res) => {
+  Goods.aggregate(  [
+    {
+      '$match': {productCotegory:"womensProduct"}
+    }, {
+      '$sort': {
+        'date': -1
+      }
+    }, {
+      '$limit': 8
+    }
+  ])
+  .exec(function(err, goods) {
+    if (err) throw err;
+     
+    res.json(goods)
+});
+
+})
+route.get ('/Kids', (req, res) => {
+  Goods.aggregate(  [
+    {
+      '$match': {productCotegory:"womensProduct"}
+    }, {
+      '$sort': {
+        'date': -1
+      }
+    }, {
+      '$limit': 8
+    }
+  ])
+  .exec(function(err, goods) {
+    if (err) throw err;
+     
+    res.json(goods)
+});
+
+})
+route.get ('/Mens', (req, res) => {
+  Goods.aggregate(  [
+    {
+      '$match': {productCotegory:"meanProduct"}
     }, {
       '$sort': {
         'date': -1

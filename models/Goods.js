@@ -27,6 +27,10 @@ const GoodsSchema = new Schema({
     type: String,
     required: true
   },
+  cotegory: {
+    type: String,
+    required: true
+  },
   cartId: {
     type: String,
     default: new Date()
