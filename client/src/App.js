@@ -21,13 +21,13 @@ class App extends Component {
   componentDidCatch(){
     this.setState({hasError:true})
       }
-  getUser = ()=>{
-    const token = localStorage.usertoken
-    if(token !== undefined){
-     const decoded = jwt_decode(token)
-     this.setState({shopClient:decoded})
-  } 
-}
+//   getUser = ()=>{
+//     const token = localStorage.usertoken
+//     if(token !== undefined){
+//      const decoded = jwt_decode(token)
+//      this.setState({shopClient:decoded})
+//   } 
+// }
 render(){
   if(this.state.hasError) {
     return 

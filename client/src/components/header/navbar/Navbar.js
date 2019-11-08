@@ -13,19 +13,19 @@ export default class Navbar extends Component{
         shop:false,
         userProfile:''
     };
-    componentDidMount(){
-        const token = localStorage.usertoken
-        if(token !== undefined){
-         const decoded = jwt_decode(token)
-        !this.state.userProfile &&   this.setState({userProfile:decoded})
-    }
-}
+//     componentDidMount(){
+//         const token = localStorage.usertoken
+//         if(token !== undefined){
+//          const decoded = jwt_decode(token)
+//         !this.state.userProfile &&   this.setState({userProfile:decoded})
+//     }
+// }
     
-    componentWillReceiveProps(nextProps) {
-        if (this.props.getuser !== nextProps.getuser) {
-        this.setState({userProfile:nextProps.getuser})
-        }
-      }
+//     componentWillReceiveProps(nextProps) {
+//         if (this.props.getuser !== nextProps.getuser) {
+//         this.setState({userProfile:nextProps.getuser})
+//         }
+//       }
     
     menuHandler = (a,b) =>{
         b.preventDefault()
