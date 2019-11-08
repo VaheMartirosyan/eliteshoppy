@@ -61,7 +61,7 @@
   }
 }
 .cartNavigate{
-  width:85%;
+  width:60%;
   margin: 0 auto;
   margin-bottom: 40px;
   ul{
@@ -79,11 +79,19 @@
     padding: 5px 0;
   }
 }
-.active {
+.notactive{
+  border : 1px solid rgba(128,128,128,0.5);
+  border-radius: 5px;
+  margin: 0 10px;
+
+}
+.actives{
   background: #FC626D;
   transition: .4s;
   color: white;
-
+  border:1px solid transparent  ;
+  border-radius: 5px;
+  margin: 0 10px;
 }
 .shops{
   margin-top: 80px;
