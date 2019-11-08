@@ -1,25 +1,13 @@
 import React from 'react';
 
-const FormWrap2 = ({ onChange, state, swith, womenSwith, newAraivle }) => {
+const FormWrap2 = ({ onChange, newAraivle }) => {
   return (
     <div>
       <fieldset>
 
         <div className="castomForms">
-          <div className="form-group">
-            <div className="custom-control custom-switch">
-              <input type="checkbox" className="custom-control-input"
-                disabled={state.women_products} id="customSwitch2" onChange={swith} />
-              <label className="custom-control-label" htmlFor="customSwitch2">Mean`s wear</label>
-            </div>
-          </div>
-          <div className="form-group">
-            <div className="custom-control custom-switch">
-              <input type="checkbox" className="custom-control-input"
-                disabled={state.men_products} id="customSwitch3" onChange={womenSwith} />
-              <label className="custom-control-label" htmlFor="customSwitch3">Womean`s wear</label>
-            </div>
-          </div>
+        
+        
           <div className="form-group">
             <div className="custom-control custom-switch">
               <input type="checkbox" className="custom-control-input"

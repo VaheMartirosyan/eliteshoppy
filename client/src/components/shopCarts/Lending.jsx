@@ -8,9 +8,10 @@ export default class Shopcart extends React.Component {
         products:[],
         loading:true,
         active:null,
+        query:'default'
     }
     componentDidMount(){
-        setProduct("http://localhost:5000/stok/getProductCarts","GET")
+        setProduct(`http://localhost:5000/stok/${this.state.query}`,"GET")
             .then(body =>{
                 this.getProduct(body)
             })
@@ -20,10 +21,17 @@ export default class Shopcart extends React.Component {
 
     getProduct = body => this.setState({products:body,loading:false});
 
-    activeclass(e,i){
+    activeclass(e,el){
         this.setState({
-            active:e
+            active:e,
+            query:el
+
         })
+        setProduct(`http://localhost:5000/stok/${el}`,"GET")
+        .then(body =>{
+            this.getProduct(body)
+        })
+        .catch(err => console.log(err))
     }
     render(){
 
@@ -31,7 +39,7 @@ export default class Shopcart extends React.Component {
             return <Spiner />
         }
 
-        const ad = ["Men`s", "Women`s", "Kid`s"];
+        const ad = ["Mens", "Womens", "Kids"];
 
         return (
             <div className="shops">
@@ -41,7 +49,7 @@ export default class Shopcart extends React.Component {
                     <ul className="resp-tabs-list">
                         {ad.map((el, i) => {
                             return(
-                                <li key={i} onClick={this.activeclass.bind(this,i)} className={ i == this.state.active ? 'actives' : 'notactive'}>{el}</li>
+                                <li key={i} onClick={this.activeclass.bind(this,i,el)} className={ i == this.state.active ? 'actives' : 'notactive'}>{el}</li>
                             )
                         })}
                     </ul>

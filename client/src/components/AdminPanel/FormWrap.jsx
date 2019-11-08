@@ -3,6 +3,7 @@ import React from 'react';
 const FormWrap = ({ onChange }) => {
   const products = ['onChangeimg', 'Wallets', 'Footwear', 'Watches', 'Accessories', 'Bags', 'Swimwear',
     ' Caps & Hats', 'Jewellery', 'One', 'Sunglasses', 'Perfumes', 'Beauty', 'Shirts', 'Sunglasses']
+  const productCotegory = ['womensProduct','meanProduct','chaiildrenProduct'] ;
   return (
     <fieldset>
       <legend> Goods registration</legend>
@@ -21,8 +22,16 @@ const FormWrap = ({ onChange }) => {
           {products.map((item, i) => {
             return <option key={i} value={item}>{item}</option>
           })}
+          </select>
+          <select className="custom-select" name="productCotegory" defaultValue={'DEFAULT'} onChange={onChange}>
+          <option value="DEFAULT" disabled>Choose productCotegory </option>
+          {productCotegory.map((item, i) => {
+            return <option key={i+10} value={item}>{item}</option>
+          })}
 
         </select>
+
+      
       </div>
       <div className={`form-group `}>
 

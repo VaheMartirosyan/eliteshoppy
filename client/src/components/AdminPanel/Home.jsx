@@ -28,7 +28,7 @@ export default class Home extends Component {
   <thead>
   <tr>
       <th scope="col">Img</th>
-      <th scope="col">ID</th>
+      <th scope="col">productCotegory</th>
       <th scope="col">Brend</th>
       <th scope="col">Prodct count</th>
       <th scope="col">Product Type</th>
@@ -40,7 +40,7 @@ export default class Home extends Component {
    return <tr key={i} className="table-active">
       <th scope="row"><img src={`./img/${item.img}`}
       width="50px" height="50px" alt={item.category}/></th>
-      <th >{item._id}</th>
+      <th >{item.productCotegory}</th>
       <td>{item.goods_name}</td>
       <td>{item.stok}</td>
       <td>{item.cotegory}</td>

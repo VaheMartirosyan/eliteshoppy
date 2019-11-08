@@ -6,10 +6,9 @@ import Home from './Home'
 import AddProduct from './AddProduct'
 export default class Goods extends Component {
     state = {
-      men_products:false,
-      women_products:false,
       new_arrivals:false, 
       discont:false,
+      productCotegory:'',
       goods_name: '',
         description: '',
         img: '',
@@ -17,19 +16,17 @@ export default class Goods extends Component {
         cotegory:'',
         productCountInSok:'',
       fileSelected:null,
-      navigate:'home'
+      navigate:'home',
       } 
       onChange = (e)=> {
         const name = e.target.name;
         const value = e.target.value;
           this.setState({ [name]: value })
-         console.log(this.state)
+        
       }
       onSubmit=(e)=> {
         e.preventDefault()
             const newGood = {
-            men_products:this.state.men_products,
-            women_products:this.state.women_products,
             new_arrivals:this.state.new_arrivals,
             goods_name:this.state.goods_name,
             description:this.state.description,
@@ -39,12 +36,12 @@ export default class Goods extends Component {
             cartId:uuid(),
             stok:this.state.productCountInSok,
             discont:this.state.discont,
+            productCotegory:this.state.productCotegory
                   }
         sendData('stok/good',newGood)
         .then(respons=>{
-            this.setState({men_products:false,women_products:false,new_arrivals:false,
-                                goods_name:'',description:'',img:'',price:'',cotegory:''})
-                                console.log(respons);
+          respons.data.goods.cartId && alert('product registered')
+                               
         }).catch(err=>console.log(err))
           }
           onImgSubmit = (e)=>{
