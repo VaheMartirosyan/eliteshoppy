@@ -2,8 +2,9 @@ import React from 'react';
 import './shopCarts.scss'
 import {setProduct} from '../UserFunctions'
 import Spiner from '../Spiner/Spiner'
+import {connect} from 'react-redux'
 
-export default class Shopcart extends React.Component {
+class Shopcart extends React.Component {
     state={
         products:[],
         loading:true,
@@ -16,7 +17,6 @@ export default class Shopcart extends React.Component {
                 this.getProduct(body)
             })
             .catch(err => console.log(err))
-
     }
 
     getProduct = body => this.setState({products:body,loading:false});
@@ -28,10 +28,14 @@ export default class Shopcart extends React.Component {
 
         })
         setProduct(`http://localhost:5000/stok/${el}`,"GET")
-        .then(body =>{
-            this.getProduct(body)
-        })
-        .catch(err => console.log(err))
+            .then(body =>{
+                this.getProduct(body)
+            })
+            .catch(err => console.log(err))
+    }
+    addToCartHandler = (i, e) => {
+        e.preventDefault()
+        this.props.magazine.push(i)
     }
     render(){
 
@@ -71,7 +75,7 @@ export default class Shopcart extends React.Component {
                                         <span>${item.price}</span>
                                     </div>
                                     <span className={'new'}>New</span>
-                                    <div className={'cartbutton'}>
+                                    <div className={'cartbutton'} onClick={this.addToCartHandler.bind(this, item)}>
                                    <span className={'cartaddhover'}>
                                        <form >
                                        <fieldset>
@@ -97,3 +101,11 @@ export default class Shopcart extends React.Component {
         )
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        magazine: state.magazine
+    }
+}
+
+export default connect(mapStateToProps)(Shopcart)

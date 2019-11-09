@@ -5,7 +5,7 @@
 }
 
 .navbars{
-   margin: 0 auto;
+    margin: 0 auto;
     width: 75%;
 
 }
@@ -180,12 +180,31 @@ nav ul li a:hover{
 }
 .cart{
     position: fixed;
+    width: 40%;
     z-index: 1;
     background: whitesmoke;
     right: 30%;
+    top: 10%;
     padding: 30px;
+    background: #FBFBFB;
     border-radius: 8px;
 }
 .user{
     color: azure;
+}
+.cart ul {
+    display: flex;
+    background: white;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 10px;
+}
+.cart ul li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.cart ul li img {
+    width: 10%;
 }

@@ -3,7 +3,10 @@ import './Navbar.css';
 import men from './navimages/top2.jpg';
 import women from './navimages/top1.jpg'
 import jwt_decode from 'jwt-decode'
-export default class Navbar extends Component{
+import {connect} from 'react-redux'
+
+
+class Navbar extends Component{
 
     state = {
         mens:false,
@@ -20,13 +23,13 @@ export default class Navbar extends Component{
 //         !this.state.userProfile &&   this.setState({userProfile:decoded})
 //     }
 // }
-    
+
 //     componentWillReceiveProps(nextProps) {
 //         if (this.props.getuser !== nextProps.getuser) {
 //         this.setState({userProfile:nextProps.getuser})
 //         }
 //       }
-    
+
     menuHandler = (a,b) =>{
         b.preventDefault()
         if(a === 2){
@@ -86,10 +89,15 @@ export default class Navbar extends Component{
         this.setState({
             shop:!this.state.shop
         })
+    };
+    closeshopwindow = () =>{
+        this.setState({
+            shop:false
+        })
     }
 
     render() {
-      
+
         const arr = ['Home','About','Men`s wear','Women`s wear','Short Codes','Contact'];
 
         const mens = {one:['Clothing','Wallets','Footwear','Watches','Accessories','Bags','Caps & Hats'],
@@ -98,6 +106,7 @@ export default class Navbar extends Component{
         const womens = {one:['Clothing','Wallets','Footwear','Watches','Accessories','Bags','Caps & Hats'],
             two:['Jewellery','Sunglasses','Parfumes','Beauty','Shirts','Sunglasses','Swimwear']};
 
+        const {magazine} = this.props
         return (
             <div className={'navall'}  onClick={this.closewindow}>
                 <div className='navbars'>
@@ -109,13 +118,12 @@ export default class Navbar extends Component{
                                         <li   onClick={this.menuHandler.bind(this,i)}>
                                             <a href="">{e}</a>
                                         </li>
-
                                     </div>
 
                                 )
                             })}
                             <div className={'shop'} onClick={this.openCartHandler}>
-                                    <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
                             </div>
                             <div className="user">{this.state.userProfile && <span>Profile: {this.state.userProfile.email}</span>}</div>
                         </ul>
@@ -182,20 +190,48 @@ export default class Navbar extends Component{
                                 <img src={women} alt=""/>
                             </div>
                         </div> :
-                    this.state.codes ?
-                        <div className={'codes'}>
-                            <li>
-                                <a href="">WEB ICONS</a>
-                            </li>
-                            <li>
-                                <a href="">TYPOGRAPHY</a>
-                            </li>
-                        </div>
-                        :
-                this.state.shop ?
-                    <div className={'cart'}>duyakiyekdaghhdwkbwsj,khzbd</div>:null}
+                        this.state.codes ?
+                            <div className={'codes'}>
+                                <li>
+                                    <a href="">WEB ICONS</a>
+                                </li>
+                                <li>
+                                    <a href="">TYPOGRAPHY</a>
+                                </li>
+                            </div>
+                            :
+                            this.state.shop ?
+                                <div className={'cart'}>
+                                    {magazine.length === 0 ? 'Your shopping cart is empty': <div>
+                                        <ul>
+
+                                            {magazine.map((e, i) => {
+                                                return(
+                                                    <li key={i}>
+                                                        <img src={`./img/${e.img}`} alt="shoose"/>
+                                                        <h4 className="title">{e.goods_name}</h4>
+                                                        <span>${e.price}</span>
+                                                    </li>
+                                                )
+                                            })}
+
+                                        </ul>
+                                        <h3>Subtotal</h3>
+                                    </div> }
+
+                                    <button type="button" className="close" data-dismiss="modal" onClick={this.closeshopwindow}>×</button>
+
+                                </div>:null}
             </div>
 
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        magazine: state.magazine
+    }
+}
+
+export default connect(mapStateToProps)(Navbar)
