@@ -1,5 +1,6 @@
 .fixed{
-    background: url("../slider/slideimg/banner3.jpg") 100% 0% no-repeat;
+    background: url("../slider/slideimg/banner3.jpg") no-repeat;
+    background-size: cover;
     margin-top: 80px;
     background-attachment: fixed;
     height: 25em;

@@ -1,14 +1,19 @@
-import React,{Component} from 'react';
-import './Navbar.css';
-import men from './navimages/top2.jpg';
+import React,{Component} from 'react'
+import './Navbar.css'
+import men from './navimages/top2.jpg'
 import women from './navimages/top1.jpg'
 import jwt_decode from 'jwt-decode'
 import {connect} from 'react-redux'
+import {NavLink} from "react-router-dom"
 
 
 class Navbar extends Component{
 
     state = {
+        navlink:[
+            {name:'Home',link:'/'},{name:'About',link:'/about'},{name:'Men`s wear',link:'/mens'},
+            {name:'Women`s wear',link:'/womens'},{name:'Short Codes',link:'/codes'},{name:'Contact',link:'/contact'}
+        ],
         mens:false,
         womens:false,
         codes:false,
@@ -98,7 +103,7 @@ class Navbar extends Component{
 
     render() {
 
-        const arr = ['Home','About','Men`s wear','Women`s wear','Short Codes','Contact'];
+
 
         const mens = {one:['Clothing','Wallets','Footwear','Watches','Accessories','Bags','Caps & Hats'],
             two:['Jewellery','Sunglasses','Parfumes','Beauty','Shirts','Sunglasses','Swimwear']};
@@ -112,11 +117,11 @@ class Navbar extends Component{
                 <div className='navbars'>
                     <nav>
                         <ul className={'navul'}>
-                            {arr.map((e,i)=>{
+                            {this.state.navlink.map((e,i)=>{
                                 return (
                                     <div key={i} className={'hoverdiv'}>
                                         <li   onClick={this.menuHandler.bind(this,i)}>
-                                            <a href="">{e}</a>
+                                            <NavLink to={e.link}>{e.name}</NavLink>
                                         </li>
                                     </div>
 

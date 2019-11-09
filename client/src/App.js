@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import Slider from './components/slider/Slider';
-import SliderBottom from './components/sliderbottom/SliderBottom';
-import Middle from './components/middle/Middle';
-import Fixed from './components/fixed/Fixed'
-import ShopCart from'./components/shopCarts/Lending'
 import Admin from './components/AdminPanel/Admin'
 import './App.css';
+import Home from './home/Home'
+import About from './about/About'
+import Mens from './mens/Mens'
+import Womens from './womens/Womens'
+import ShortCode from './shortCode/ShortCode'
+import Contact from './contact/Contact'
 
 class App extends Component {
   state = {
@@ -38,12 +39,13 @@ render(){
         <header>
             <Header getUser={this.state.shopClient}/>
         </header>
-        <Slider />
-        <SliderBottom />
-        <Middle />
-        <ShopCart />
+        <Route exact path={'/'} component={Home} />
         <Route exact path="/admin" component={Admin} />
-        <Fixed/>
+        <Route path={'/about'} component={About} />
+        <Route path={'/mens'} component={Mens} />
+        <Route path={'/womens'} component={Womens} />
+        <Route path={'/codes'} component={ShortCode} />
+        <Route path={'/contact'} component={Contact} />
       <footer>
           <Footer/>
       </footer>
