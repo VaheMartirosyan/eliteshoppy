@@ -1,8 +1,9 @@
 import React from 'react';
 import './shopCarts.scss'
-import {setProduct} from '../UserFunctions'
+import {setProduct,cart} from '../UserFunctions'
 import Spiner from '../Spiner/Spiner'
 import {connect} from 'react-redux'
+import { Link } from 'react-router-dom';
 
 class Shopcart extends React.Component {
     state={
@@ -18,7 +19,17 @@ class Shopcart extends React.Component {
             })
             .catch(err => console.log(err))
     }
-
+    onSubmit= (e)=>{
+      
+      
+        cart({id:e.target.name})
+        .then(body =>{
+            // const tok = localStorage.cartId;
+           
+        })
+        .catch(err => console.log(err))
+       
+    } 
     getProduct = body => this.setState({products:body,loading:false});
 
     activeclass(e,el){
@@ -53,7 +64,7 @@ class Shopcart extends React.Component {
                     <ul className="resp-tabs-list">
                         {ad.map((el, i) => {
                             return(
-                                <li key={i} onClick={this.activeclass.bind(this,i,el)} className={ i == this.state.active ? 'actives' : 'notactive'}>{el}</li>
+                                <li key={i} onClick={this.activeclass.bind(this,i,el)} className={ i === this.state.active ? 'actives' : 'notactive'}>{el}</li>
                             )
                         })}
                     </ul>
@@ -77,13 +88,16 @@ class Shopcart extends React.Component {
                                     <span className={'new'}>New</span>
                                     <div className={'cartbutton'} onClick={this.addToCartHandler.bind(this, item)}>
                                    <span className={'cartaddhover'}>
-                                       <form >
+                                       <form  >
                                        <fieldset>
                                            <input type="hidden" name="cmd" value={item._id}/>
                                            <input type="hidden" name="add" value="1"/>
                                            <input type="hidden" name="return" value=" "/>
                                            <input type="hidden" name="cancel_return" value=" "/>
-                                           <input type="submit" name="submit" value="Add to cart" className="button"/>
+                                           <Link to = '/about'>
+                                           <input type="submit" name={item._id} value="Add to cart" className="button" onClick={this.onSubmit}/>
+                                           </Link>
+         
                                        </fieldset>
                                    </form>
                                    </span>

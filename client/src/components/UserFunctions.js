@@ -44,3 +44,17 @@ export const register = async newUser => {
     const body = res.json();
    return body
   }
+
+  export const cart = async user => {
+    
+    return await axios
+      .post('stok/cartVew', user)
+      .then(response => {
+        localStorage.setItem('cartId', JSON.stringify(response.data))
+       
+        return response.data
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }

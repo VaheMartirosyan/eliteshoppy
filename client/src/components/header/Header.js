@@ -41,13 +41,13 @@ export default class Header extends Component{
     signin(e,a){
 
         a.preventDefault();
-        if(e == 0){
+        if(e === 0){
             this.setState({
                 openSign:true,
                 modal:"#myModal"
             })
         }
-        else if(e == 1){
+        else if(e === 1){
             this.setState({
                 openUp:true,
                 openSign:false,
