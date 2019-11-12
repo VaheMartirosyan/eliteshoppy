@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import './Navbar.css'
-import men from './navimages/top2.jpg'
-import women from './navimages/top1.jpg'
+import Menshover from './hovercomponents/mens/menshover'
+import Womenshover from './hovercomponents/womens/womenshover'
 import jwt_decode from 'jwt-decode'
 import {connect} from 'react-redux'
 import {NavLink} from "react-router-dom"
@@ -35,60 +35,6 @@ class Navbar extends Component{
 //         }
 //       }
 
-    menuHandler = (a,b) =>{
-        b.preventDefault()
-        if(a === 2){
-            this.setState({
-                mens:!this.state.mens,
-                womens:false,
-                codes:false,
-                c:a
-            })
-        }
-        if(a === 3){
-            this.setState({
-                mens:false,
-                womens:!this.state.womens,
-                codes:false,
-                c:a
-            })
-        }
-        if(a === 4){
-            this.setState({
-                mens:false,
-                womens:false,
-                codes:!this.state.codes,
-                c:a
-            })
-        }
-
-
-    };
-
-    closewindow = () =>{
-
-        if(this.state.c === 2){
-            this.setState({
-                mens:false,
-                c:0
-
-            })
-        }
-        else if(this.state.c === 3){
-            this.setState({
-                womens:false,
-                c:0
-
-            })
-        }
-        else if(this.state.c === 4){
-            this.setState({
-                codes:false,
-                c:0
-            })
-        }
-
-    };
 
     openCartHandler = () =>{
         this.setState({
@@ -104,29 +50,33 @@ class Navbar extends Component{
     render() {
 
 
-
-        const mens = {one:['Clothing','Wallets','Footwear','Watches','Accessories','Bags','Caps & Hats'],
-            two:['Jewellery','Sunglasses','Parfumes','Beauty','Shirts','Sunglasses','Swimwear']};
-
-        const womens = {one:['Clothing','Wallets','Footwear','Watches','Accessories','Bags','Caps & Hats'],
-            two:['Jewellery','Sunglasses','Parfumes','Beauty','Shirts','Sunglasses','Swimwear']};
-
         const {magazine} = this.props
         return (
             <div className={'navall'}  onClick={this.closewindow}>
                 <div className='navbars'>
-                    <nav>
+                    <nav className={'navnav'}>
                         <ul className={'navul'}>
-                            {this.state.navlink.map((e,i)=>{
-                                return (
-                                    <div key={i} className={'hoverdiv'}>
-                                        <li   onClick={this.menuHandler.bind(this,i)}>
-                                            <NavLink to={e.link}>{e.name}</NavLink>
-                                        </li>
-                                    </div>
-
-                                )
-                            })}
+                            <li className={'navulli'}>
+                                <NavLink to={'/'} >Home</NavLink>
+                            </li>
+                            <li className={'navulli'}>
+                                <NavLink to={'/about'} >About</NavLink>
+                            </li>
+                            <li  className={'limens navulli'}>
+                                <NavLink to={'/mens'} >Men`s wear</NavLink>
+                                <div className={'menshover'}>
+                                    <Menshover />
+                                </div>
+                            </li>
+                            <li className={'liwomens navulli'}>
+                                <NavLink to={'/womens'} >Women`s wear</NavLink>
+                                <div className={'womenshover'}>
+                                    <Womenshover/>
+                                </div>
+                            </li>
+                            <li className={'navulli'}>
+                                <NavLink to={'/contact'} >Contact</NavLink>
+                            </li>
                             <div className={'shop'} onClick={this.openCartHandler}>
                                 <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
                             </div>
@@ -134,99 +84,29 @@ class Navbar extends Component{
                         </ul>
                     </nav>
                 </div>
-                {this.state.mens ?
-                    <div  className={'mens'}>
-                        <div className={'mensimg'}>
-                            <img src={men} alt=""/>
-                        </div>
-                        <div className={'menstxt'}>
-                            <div className={'menstxt1'}>
-                                <ul>
-                                    {mens.one.map((e,i)=>{
-                                        return(
-                                            <li key={i}>
-                                                <a href="">{e}</a>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                            <div className={'menstxt2'}>
-                                <ul>
-                                    {mens.two.map((e,i)=>{
-                                        return(
-                                            <li key={i}>
-                                                <a href="">{e}</a>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                        </div>
-                    </div> :
-                    this.state.womens ?
-                        <div className={'womens'} >
 
-                            <div className={'womenstxt'}>
-                                <div className={'womenstxt1'}>
-                                    <ul>
-                                        {mens.one.map((e,i)=>{
-                                            return(
-                                                <li key={i}>
-                                                    <a href="">{e}</a>
-                                                </li>
-                                            )
-                                        })}
-                                    </ul>
-                                </div>
-                                <div className={'womenstxt2'}>
-                                    <ul>
-                                        {mens.two.map((e,i)=>{
-                                            return(
-                                                <li key={i}>
-                                                    <a href="">{e}</a>
-                                                </li>
-                                            )
-                                        })}
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className={'womensimg'}>
-                                <img src={women} alt=""/>
-                            </div>
-                        </div> :
-                        this.state.codes ?
-                            <div className={'codes'}>
-                                <li>
-                                    <a href="">WEB ICONS</a>
-                                </li>
-                                <li>
-                                    <a href="">TYPOGRAPHY</a>
-                                </li>
-                            </div>
-                            :
-                            this.state.shop ?
-                                <div className={'cart'}>
-                                    {magazine.length === 0 ? 'Your shopping cart is empty': <div>
-                                        <ul>
+                {this.state.shop ?
+                    <div className={'cart'}>
+                        {magazine.length === 0 ? 'Your shopping cart is empty': <div>
+                            <ul>
 
-                                            {magazine.map((e, i) => {
-                                                return(
-                                                    <li key={i}>
-                                                        <img src={`./img/${e.img}`} alt="shoose"/>
-                                                        <h4 className="title">{e.goods_name}</h4>
-                                                        <span>${e.price}</span>
-                                                    </li>
-                                                )
-                                            })}
+                                {magazine.map((e, i) => {
+                                    return(
+                                        <li key={i}>
+                                            <img src={`./img/${e.img}`} alt="shoose"/>
+                                            <h4 className="title">{e.goods_name}</h4>
+                                            <span>${e.price}</span>
+                                        </li>
+                                    )
+                                })}
 
-                                        </ul>
-                                        <h3>Subtotal</h3>
-                                    </div> }
+                            </ul>
+                            <h3>Subtotal</h3>
+                        </div> }
 
-                                    <button type="button" className="close" data-dismiss="modal" onClick={this.closeshopwindow}>×</button>
+                        <button type="button" className="close" data-dismiss="modal" onClick={this.closeshopwindow}>×</button>
 
-                                </div>:null}
+                    </div>:null}
             </div>
 
         );
@@ -240,3 +120,4 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Navbar)
+

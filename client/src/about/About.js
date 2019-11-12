@@ -20,7 +20,7 @@ render(){
    const cart = this.state.selectedCart;
     return(
         <div>
-            <h1> {cart.goods_name} </h1>
+            <h1> {cart.goods_name}</h1>
             <img src={`./img/${cart.img}`} alt="good"/>
         </div>
     )

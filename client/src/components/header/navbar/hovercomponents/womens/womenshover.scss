@@ -1,0 +1,55 @@
+.womens{
+
+  position:absolute;
+  top:100%;
+  left: 45%;
+  background: white;
+  padding: 30px;
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  border-bottom: 5px solid #2BDABA;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.womenstxt{
+  display: flex;
+
+}
+.womenstxt li{
+  list-style-type: none;
+}
+.womenstxt1 ul li{
+  margin-top: 12px;
+}
+.womenstxt1{
+  margin-left: 20px;
+}
+.womensimg{
+  width: 50%;
+}
+.womensimg img{
+  width: 100%;
+}
+.womenstxt2 ul li{
+  margin-top: 12px;
+}
+.womenstxt2{
+  margin-left: 30px;
+}
+.womenstxt ul li a{
+  text-decoration: none;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  font-size: 14px;
+}
+.womenstxt ul li a:hover{
+  text-decoration: none;
+  color: #2BDABA;
+  transition: .5s;
+}

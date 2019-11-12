@@ -1,0 +1,53 @@
+.mens{
+  display: flex;
+  justify-content: space-between;
+  position:absolute;
+  top:100%;
+  left: 28.3%;
+  background: white;
+  padding: 30px;
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  border-bottom: 5px solid #2BDABA;
+  z-index: 1;
+
+}
+
+
+.menstxt{
+  display: flex;
+}
+.menstxt li{
+  list-style-type: none;
+}
+.menstxt1 ul li{
+  margin-top: 12px;
+}
+.menstxt1{
+  margin-left: 20px;
+}
+.mensimg{
+  width: 50%;
+}
+.mensimg img{
+  width: 100%;
+}
+.menstxt2 ul li{
+  margin-top: 12px;
+}
+.menstxt2{
+  margin-left: 30px;
+}
+.menstxt ul li a{
+  text-decoration: none;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+  font-size: 14px;
+}
+.menstxt ul li a:hover{
+  text-decoration: none;
+  color: #2BDABA;
+  transition: .5s;
+}

@@ -79,25 +79,31 @@ export default class Header extends Component{
 
     ///FUNCTION FOR LABELS (GO UP AND DOWN)
 
-    addClassUpToTopHandler = (type) => {
+    addClassUpToTopHandler = (type, e) => {
         switch (type) {
             case 0 : return this.setState({signName:true, email:false, signupconfirm:false, signuppass:false});
             case 1 : return this.setState({signName:false, email:true, signupconfirm:false, signuppass:false});
             case 2 : return this.setState({signName:false, email:false, signupconfirm:false, signuppass:true});
             case 3 : return this.setState({signName:false, email:false, signupconfirm:true, signuppass:false});
         }
+        console.log(e.target.value)
     }
 
     /// FUNCTION FOR LABELS GO DOWN
 
-    deleteClass = () => {
-        this.setState({
-            email: false,
-            signName:false,
-            signupconfirm:false,
-            signuppass:false
-        })
+    deleteClass = (e,type) => {
+        if(type.target.value.length === 0) {
+            this.setState({
+                email: false,
+                signName:false,
+                signupconfirm:false,
+                signuppass:false
+            })
+        }
+        console.log(e)
     }
+
+
     onChange=(e)=> {
         this.setState({ [e.target.name]: e.target.value })
         
@@ -181,7 +187,7 @@ export default class Header extends Component{
                                 <form onSubmit={this.onSubmit}>
                                     <div className={'signinform'}>
                                         <input type="password"  className={"signname"} onFocus={this.addClassUpToTopHandler.bind(this,0 )}
-                                               onBlur={this.deleteClass} onChange={this.onChange} name="password"/>
+                                               onBlur={this.deleteClass.bind(this,0)} onChange={this.onChange} name="password"/>
                                         <label onClick={this.addClassUpToTopHandler.bind(this,0 )} htmlFor="" style={this.state.signName ?
                                             {top:'-40%',transition:'0.5s',color:'#2BDABA' } : {transition:'0.5'}}>Password</label>
                                         <span></span>

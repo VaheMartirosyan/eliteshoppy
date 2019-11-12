@@ -9,7 +9,6 @@ import Home from './home/Home'
 import About from './about/About'
 import Mens from './mens/Mens'
 import Womens from './womens/Womens'
-import ShortCode from './shortCode/ShortCode'
 import Contact from './contact/Contact'
 
 class App extends Component {
@@ -44,7 +43,6 @@ render(){
         <Route path='/about' component={About} />
         <Route path='/mens' component={Mens} />
         <Route path='/womens' component={Womens} />
-        <Route path='/codes' component={ShortCode} />
         <Route path='/contact' component={Contact} />
       <footer>
           <Footer/>
