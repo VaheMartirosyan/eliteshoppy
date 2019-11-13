@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom'
 import './HeaderBottom.css'
 
 export default ()=>{
@@ -12,11 +13,11 @@ export default ()=>{
             </div>
             <div className={'logo'}>
                 <h1>
-                    <a href="#">
+                    <NavLink to={'/'} exact>
                         <span className={'e'}>E</span>
                         <span className={'lite'}>lite Shoppy</span>
                         <i className="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i>
-                    </a>
+                    </NavLink>
                 </h1>
             </div>
             <div className={'headlogos'}>

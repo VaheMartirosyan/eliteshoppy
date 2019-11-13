@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="13efa7bd-0884-43a6-b500-c2c87ff553db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/navbar/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/navbar/Navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/shopCarts/Lending.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/shopCarts/Lending.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/header/headerbottom/HeaderBottom.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/headerbottom/HeaderBottom.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,12 +17,27 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/components/header/navbar/Navbar.css">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/components/header/Header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="209" column="1" selection-start-line="209" selection-start-column="1" selection-end-line="209" selection-end-column="1" />
+            <state relative-caret-position="316">
+              <caret line="211" column="170" selection-start-line="211" selection-start-column="170" selection-end-line="211" selection-end-column="170" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/components/header/headerbottom/HeaderBottom.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,6 +65,8 @@
         <option value="$PROJECT_DIR$/client/src/index.js" />
         <option value="$PROJECT_DIR$/client/src/reducer/magazine.js" />
         <option value="$PROJECT_DIR$/client/src/components/header/navbar/Navbar.css" />
+        <option value="$PROJECT_DIR$/client/src/components/header/Header.js" />
+        <option value="$PROJECT_DIR$/client/src/components/header/headerbottom/HeaderBottom.js" />
       </list>
     </option>
   </component>
@@ -111,6 +122,24 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="header" type="462c0819:PsiDirectoryNode" />
+              <item name="headerbottom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eliteshoppy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliteshoppy" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eliteshoppy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eliteshoppy" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
               <item name="navbar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -158,11 +187,13 @@
       <workItem from="1573202791779" duration="744000" />
       <workItem from="1573304719895" duration="4805000" />
       <workItem from="1573316219399" duration="103000" />
+      <workItem from="1573586851383" duration="907000" />
+      <workItem from="1573640320698" duration="2301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6475000" />
+    <option name="totallyTimeSpent" value="9683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="808" extended-state="0" />
@@ -299,7 +330,27 @@
     <entry file="file://$PROJECT_DIR$/client/src/components/header/navbar/Navbar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
-          <caret line="209" column="1" selection-start-line="209" selection-start-column="1" selection-end-line="209" selection-end-column="1" />
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/header/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="211" column="170" selection-start-line="211" selection-start-column="170" selection-end-line="211" selection-end-column="170" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/header/headerbottom/HeaderBottom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -10,7 +10,7 @@ import jwt_decode from 'jwt-decode'
 
 export default class Header extends Component{
 
-    state={
+    state = {
         headup:[
             {txt:'Sign In', i:'fa fa-unlock'},
             {txt:'Sign Up', i:"fa fa-pencil-square-o"},
@@ -21,10 +21,6 @@ export default class Header extends Component{
         /// FOR SIGN IN & SIGNUP WINDOWS
         openSign: false,
         openUp: false,
-        signName: false,
-        email:false,
-        signupconfirm:false,
-        signuppass:false,
         emails: '',
         password: '',
         errors: '',
@@ -66,7 +62,6 @@ export default class Header extends Component{
 
     }
 
-    /// FUNCTION FOR CLOSING THAT WINDOWS
 
     closewindow=()=>{
         this.setState({
@@ -77,36 +72,11 @@ export default class Header extends Component{
     }
 
 
-    ///FUNCTION FOR LABELS (GO UP AND DOWN)
-
-    addClassUpToTopHandler = (type, e) => {
-        switch (type) {
-            case 0 : return this.setState({signName:true, email:false, signupconfirm:false, signuppass:false});
-            case 1 : return this.setState({signName:false, email:true, signupconfirm:false, signuppass:false});
-            case 2 : return this.setState({signName:false, email:false, signupconfirm:false, signuppass:true});
-            case 3 : return this.setState({signName:false, email:false, signupconfirm:true, signuppass:false});
-        }
-        console.log(e.target.value)
-    }
-
-    /// FUNCTION FOR LABELS GO DOWN
-
-    deleteClass = (e,type) => {
-        if(type.target.value.length === 0) {
-            this.setState({
-                email: false,
-                signName:false,
-                signupconfirm:false,
-                signuppass:false
-            })
-        }
-        console.log(e)
-    }
 
 
     onChange=(e)=> {
         this.setState({ [e.target.name]: e.target.value })
-        
+
       }
       onSubmit=(e)=> {
         e.preventDefault()
@@ -186,18 +156,10 @@ export default class Header extends Component{
                                 <p className={'signp'}><b>Sign In</b> Now</p>
                                 <form onSubmit={this.onSubmit}>
                                     <div className={'signinform'}>
-                                        <input type="password"  className={"signname"} onFocus={this.addClassUpToTopHandler.bind(this,0 )}
-                                               onBlur={this.deleteClass.bind(this,0)} onChange={this.onChange} name="password"/>
-                                        <label onClick={this.addClassUpToTopHandler.bind(this,0 )} htmlFor="" style={this.state.signName ?
-                                            {top:'-40%',transition:'0.5s',color:'#2BDABA' } : {transition:'0.5'}}>Password</label>
-                                        <span></span>
+                                        <input type="password"  className={"signname"} onChange={this.onChange} placeholder={'Enter Your Password'} name="password"/>
                                     </div>
                                     <div className={'signinform'}>
-                                        <input type="email" className={"signname"}  onFocus={this.addClassUpToTopHandler.bind(this,1)}
-                                               onBlur={this.deleteClass} name="emails" onChange={this.onChange} />
-                                        <label onClick={this.addClassUpToTopHandler.bind(this,1 )} htmlFor="" style={this.state.email ?
-                                            {top:'-40%',transition:'0.5s',color:'#2BDABA' } : {transition:'0.5'}}>Email</label>
-                                        <span></span>
+                                        <input type="email" className={"signname"}   name="emails" onChange={this.onChange} placeholder={'Enter Your Email'} />
                                     </div>
                                     <input type="submit" value={'Sign In'} className={'signbutton'}/>
                                 </form>
@@ -235,40 +197,19 @@ export default class Header extends Component{
                                 <p className={'signp'}><b>Sign Up</b> Now</p>
                                 <form onSubmit={this.onSubmits}>
                                     <div className={'signinform'}>
-
-                                        <input type="text"  className={"signname"} onFocus={this.addClassUpToTopHandler.bind(this,0 )}
-                                               onBlur={this.deleteClass} onChange={this.onChange} name="first_name"/>
-                                        <label onClick={this.addClassUpToTopHandler.bind(this,0 )} htmlFor="" style={this.state.signName ?
-                                            {top:'-40%',transition:'0.5s',color:'#2BDABA' } : {transition:'0.5'}}>Name</label>
-                                        <span></span>
-
+                                        <input type="text"  className={"signname"} onChange={this.onChange} name="first_name" placeholder={'Enter Your Name'}/>
+                                    </div>
+                                    <div className={'signinform'}>
+                                        <input type="email" className={"signname"}  name="myemail" onChange={this.onChange} placeholder={'Enter Your Email'}/>
                                     </div>
                                     <div className={'signinform'}>
 
-                                        <input type="email" className={"signname"}  onFocus={this.addClassUpToTopHandler.bind(this,1)}
-                                               onBlur={this.deleteClass} name="myemail" onChange={this.onChange}/>
-                                        <label onClick={this.addClassUpToTopHandler.bind(this,1 )} htmlFor="" style={this.state.email ?
-                                            {top:'-40%',transition:'0.5s',color:'#2BDABA' } : {transition:'0.5'}}>Email</label>
-                                        <span></span>
+                                        <input type="password" className={"signname"}  onChange={this.onChange} name="mypassword" placeholder={'Enter Your Password'}/>
+
 
                                     </div>
                                     <div className={'signinform'}>
-
-                                        <input type="password" className={"signname"}  onFocus={this.addClassUpToTopHandler.bind(this,2)}
-                                               onBlur={this.deleteClass} onChange={this.onChange} name="mypassword"/>
-                                        <label onClick={this.addClassUpToTopHandler.bind(this,2 )} htmlFor="" style={this.state.signuppass ?
-                                            {top:'-40%',transition:'0.5s',color:'#2BDABA' } : {transition:'0.5'}}>Password</label>
-                                        <span></span>
-
-                                    </div>
-                                    <div className={'signinform'}>
-
-                                        <input type="password" className={"signname"}  onFocus={this.addClassUpToTopHandler.bind(this,3)}
-                                               onBlur={this.deleteClass} onChange={this.onChange} name="confirmPassword"/>
-                                        <label onClick={this.addClassUpToTopHandler.bind(this,3 )} htmlFor="" style={this.state.signupconfirm ?
-                                            {top:'-40%',transition:'0.5s',color:'#2BDABA' } : {transition:'0.5'}}>Confirm Password</label>
-                                        <span></span>
-
+                                        <input type="password" className={"signname"}  onChange={this.onChange} name="confirmPassword" placeholder={'Confirm Your Password'}/>
                                     </div>
                                     <input type="submit" value={'Sign In'} className={'signbutton'}/>
                                     <div className={'signcontacts'}>
