@@ -18,7 +18,6 @@ class Navbar extends Component{
         womens:false,
         codes:false,
         c:0,
-        shop:false,
         userProfile:''
     };
 //     componentDidMount(){
@@ -37,18 +36,13 @@ class Navbar extends Component{
 
 
     openCartHandler = () =>{
-        this.setState({
-            shop:!this.state.shop
-        })
+
     };
     closeshopwindow = () =>{
-        this.setState({
-            shop:false
-        })
+
     }
 
     render() {
-
 
         const {magazine} = this.props
         return (
@@ -77,7 +71,7 @@ class Navbar extends Component{
                             <li className={'navulli'}>
                                 <NavLink to={'/contact'} >Contact</NavLink>
                             </li>
-                            <div className={'shop'} onClick={this.openCartHandler}>
+                            <div className={'shop'} onClick={this.props.shopOpen}>
                                 <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
                             </div>
                             <div className="user">{this.state.userProfile && <span>Profile: {this.state.userProfile.email}</span>}</div>
@@ -85,7 +79,7 @@ class Navbar extends Component{
                     </nav>
                 </div>
 
-                {this.state.shop ?
+                {this.props.shop ?
                     <div className={'cart'}>
                         {magazine.length === 0 ? 'Your shopping cart is empty': <div>
                             <ul>
@@ -104,7 +98,7 @@ class Navbar extends Component{
                             <h3>Subtotal</h3>
                         </div> }
 
-                        <button type="button" className="close" data-dismiss="modal" onClick={this.closeshopwindow}>×</button>
+                        <button type="button" className="close" data-dismiss="modal" onClick={this.props.shopClose}>×</button>
 
                     </div>:null}
             </div>
@@ -114,10 +108,24 @@ class Navbar extends Component{
 }
 
 const mapStateToProps = state => {
+    console.log(state)
     return {
-        magazine: state.magazine
+        magazine: state.magazine.initmagazine,
+        shop: state.magazine.shop
     }
 }
 
-export default connect(mapStateToProps)(Navbar)
+const mapDispatchToProps = dispatch => {
+    return {
+        shopOpen: () => {
+            return dispatch({type: 'shopChange'})
+
+        },
+        shopClose: () =>{
+            return dispatch({type: 'closeShop'})
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
 

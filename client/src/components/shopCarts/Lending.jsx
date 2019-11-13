@@ -10,7 +10,8 @@ class Shopcart extends React.Component {
         products:[],
         loading:true,
         active:null,
-        query:'default'
+        query:'default',
+        b:true
     }
     componentDidMount(){
         setProduct(`http://localhost:5000/stok/${this.state.query}`,"GET")
@@ -19,17 +20,17 @@ class Shopcart extends React.Component {
             })
             .catch(err => console.log(err))
     }
-    onSubmit= (e)=>{
-      
-      
-        cart({id:e.target.name})
-        .then(body =>{
-            // const tok = localStorage.cartId;
-           
-        })
-        .catch(err => console.log(err))
-       
-    } 
+    // onSubmit= (e)=>{
+    //
+    //
+    //     cart({id:e.target.name})
+    //     .then(body =>{
+    //         // const tok = localStorage.cartId;
+    //
+    //     })
+    //     .catch(err => console.log(err))
+    //
+    // }
     getProduct = body => this.setState({products:body,loading:false});
 
     activeclass(e,el){
@@ -47,6 +48,11 @@ class Shopcart extends React.Component {
     addToCartHandler = (i, e) => {
         e.preventDefault()
         this.props.magazine.push(i)
+        console.log(this.props.magazine)
+        this.setState({
+            b:false
+        })
+        this.props.shopOpen();
     }
     render(){
 
@@ -94,9 +100,9 @@ class Shopcart extends React.Component {
                                            <input type="hidden" name="add" value="1"/>
                                            <input type="hidden" name="return" value=" "/>
                                            <input type="hidden" name="cancel_return" value=" "/>
-                                           <Link to = '/about'>
+                                           {/*<Link to = '/about'>*/}
                                            <input type="submit" name={item._id} value="Add to cart" className="button" onClick={this.onSubmit}/>
-                                           </Link>
+                                           {/*</Link>*/}
          
                                        </fieldset>
                                    </form>
@@ -117,9 +123,18 @@ class Shopcart extends React.Component {
 }
 
 const mapStateToProps = state => {
+    console.log(state)
     return {
-        magazine: state.magazine
+        magazine: state.magazine.initmagazine
     }
 }
 
-export default connect(mapStateToProps)(Shopcart)
+const mapDispatchToProps = dispatch => {
+    return {
+        shopOpen: () => {
+            dispatch({type: 'shopChange'})
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Shopcart)

@@ -77,6 +77,10 @@ export default class Header extends Component{
     onChange=(e)=> {
         this.setState({ [e.target.name]: e.target.value })
 
+        if(e.target.value.length === 1) {
+            console.log('sdv')
+        }
+
       }
       onSubmit=(e)=> {
         e.preventDefault()
