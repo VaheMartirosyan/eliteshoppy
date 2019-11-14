@@ -7,6 +7,7 @@
     flex-wrap: wrap;
     img {
       width: 70%;
+
     }
   }
 }
@@ -105,4 +106,30 @@
   span{
   font-weight:100;
   }
+}
+.imgquick{
+  position: relative;
+}
+.imgquick:hover .quickdiv{
+  top:80%;
+  opacity: 1;
+  transition: 1s;
+}
+.quickdiv {
+  position: absolute;
+  left: 15%;
+  top:0;
+  width: 70%;
+  opacity: 0;
+
+}
+.quickbtn{
+  background: #2BDABA;
+  border: none;
+  padding: 5px 0;
+  width: 100%;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  color: white;
+  font-size: 15px;
 }

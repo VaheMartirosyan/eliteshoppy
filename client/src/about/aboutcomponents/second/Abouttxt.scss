@@ -1,0 +1,31 @@
+.aboutuspic{
+  width: 45%;
+}
+.aboutour{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.aboutourtxt{
+  margin-left: 50px;
+  flex: 1;
+  margin-top: -20px ;
+}
+.aboutourtxt h2 span{
+  font-weight: bolder;
+}
+.aboutourtxt h2{
+  font-weight: lighter;
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+}
+.aboutourtxt p{
+  font-weight: bold;
+  color: #848484;
+  font-size: 14px ;
+  letter-spacing: 2px;
+}

@@ -82,9 +82,13 @@ class Shopcart extends React.Component {
                             return (
 
                                 <div key={index} className={'shopCarts'}>
-                                    <div>
+                                    <div className={'imgquick'}>
                                         <img src={`./img/${item.img}`} alt="shoose"/>
+                                        <div className={'quickdiv'}>
+                                            <button className={'quickbtn'}>Quick View</button>
+                                        </div>
                                     </div>
+
                                     <div className={'cartitemname'}>
                                         <h4 className="title">{item.goods_name}</h4>
                                     </div>
@@ -92,6 +96,7 @@ class Shopcart extends React.Component {
                                         <span>${item.price}</span>
                                     </div>
                                     <span className={'new'}>New</span>
+
                                     <div className={'cartbutton'} onClick={this.addToCartHandler.bind(this, item)}>
                                    <span className={'cartaddhover'}>
                                        <form  >
