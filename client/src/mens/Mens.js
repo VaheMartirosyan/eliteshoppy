@@ -1,9 +1,17 @@
-import React from 'react'
+import React, {Component} from 'react'
+import Wear from "../wear/Wear";
 
-export default () => {
-    return(
-        <div>
-            <h1>Mens</h1>
-        </div>
-    )
+export default class Mens extends Component {
+    state = {
+        wearTitle: 'MEN\'S WEAR'
+    }
+    render() {
+       const {wearTitle} = this.state
+        return(
+            <div>
+                <Wear wear={wearTitle} />
+            </div>
+        )
+    }
+
 }

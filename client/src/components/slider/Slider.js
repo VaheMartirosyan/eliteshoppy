@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Carousel from 'react-bootstrap/Carousel'
 import pic1 from './slideimg/banner1.jpg';
 import pic2 from './slideimg/banner2.jpg';
-import pic3 from './slideimg/banner3.jpg';
+import pic3 from '../../wear/wearImg/banner3.jpg';
 import pic4 from './slideimg/banner4.jpg';
 import pic5 from './slideimg/banner5.jpg';
 import './Slider.css'

@@ -179,7 +179,7 @@ route.get ('/Womens', (req, res) => {
 route.get ('/Kids', (req, res) => {
   Goods.aggregate(  [
     {
-      '$match': {productCotegory:"womensProduct"}
+      '$match': {productCotegory:"chaiildrenProduct"}
     }, {
       '$sort': {
         'date': -1

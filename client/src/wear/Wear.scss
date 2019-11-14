@@ -1,0 +1,35 @@
+.wear {
+  background: url("./wearImg/banner3.jpg") no-repeat 100% 40%;
+  margin-top: -10px;
+  .shadow {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+    padding: 30px 0 50px;
+  }
+  .wearTitle {
+    h2 {
+      text-align: center;
+      color: white;
+      font-size: 50px;
+    }
+  }
+  .gohome {
+    padding-top: 30px;
+     .activehome {
+       font-size: 18px;
+       font-weight: 500;
+       color: #0FC3A4;
+       text-decoration: none;
+     }
+    span {
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .borderBetween {
+      border-left: 2px solid white;
+      padding: 0 8px 0 5px;
+    }
+  }
+}
