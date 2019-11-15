@@ -10,7 +10,6 @@ export const register = async newUser => {
       })
       
   }
-
   export const login = user => {
     return axios
       .post('users/login', {
@@ -18,9 +17,10 @@ export const register = async newUser => {
         password: user.password
       })
       .then(response => {
-        localStorage.setItem('usertoken', response.data)
+       if(response.data.error) return response.data;
+        localStorage.setItem('myusertoken', response.data)
        
-        return response.data
+        return {islogined:true}
       })
       .catch(err => {
         console.log(err)
@@ -44,17 +44,23 @@ export const register = async newUser => {
     const body = res.json();
    return body
   }
-
-  export const cart = async user => {
+export class GetShopBascket {
+   itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : []
+   cart = async user => {
+   
+    
     
     return await axios
       .post('stok/cartVew', user)
       .then(response => {
-        localStorage.setItem('cartId', JSON.stringify(response.data))
-       
+        this.itemsArray.push(response.data)
+        // localStorage.setItem('cartId', JSON.stringify(this.itemsArray))   
         return response.data
       })
       .catch(err => {
         console.log(err)
       })
   }
+  
+}
+  

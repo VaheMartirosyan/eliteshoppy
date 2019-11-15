@@ -1,10 +1,14 @@
 import React from 'react';
 import './shopCarts.scss'
-import {setProduct,cart} from '../UserFunctions'
+import {setProduct,GetShopBascket} from '../UserFunctions'
 import Spiner from '../Spiner/Spiner'
 import {connect} from 'react-redux'
+<<<<<<< HEAD
 import {changeInitmagazine} from '../../store/header/action'
 import { Link } from 'react-router-dom';
+=======
+// import {  } from 'react-router-dom';
+>>>>>>> 48375b2e5ee738fb051863887a3254ce20b443dd
 
 class Shopcart extends React.Component {
 
@@ -22,17 +26,21 @@ class Shopcart extends React.Component {
             })
             .catch(err => console.log(err))
     }
-    // onSubmit= (e)=>{
-    //
-    //
-    //     cart({id:e.target.name})
-    //     .then(body =>{
-    //         // const tok = localStorage.cartId;
-    //
-    //     })
-    //     .catch(err => console.log(err))
-    //
-    // }
+    quickvew = ()=>{
+        
+    }    
+
+    onSubmit= (e)=>{
+            e.preventDefault()
+            const getShopBascket = new GetShopBascket()
+            getShopBascket.cart({id:e.target.name})
+            .then(body =>{
+              const setitem = this.props.setitem;
+              setitem(body)
+                    })
+        .catch(err => console.log(err))
+    
+    }
     getProduct = body => this.setState({products:body,loading:false});
 
     activeclass(e,el){
@@ -53,7 +61,15 @@ class Shopcart extends React.Component {
 
         this.props.changeInitmagazine(i)
         console.log(this.props.magazine)
+<<<<<<< HEAD
         // this.props.shopOpen();
+=======
+        this.setState({
+            b:false
+        })
+        this.props.shopOpen();
+    
+>>>>>>> 48375b2e5ee738fb051863887a3254ce20b443dd
     }
     render(){
         console.log(this.props)
@@ -63,7 +79,7 @@ class Shopcart extends React.Component {
         }
 
         const ad = ["Mens", "Womens", "Kids"];
-
+     
         return (
             <div className="shops">
                 <h2 className="wthree_text_info">New <span>Arrivals</span></h2>
@@ -87,7 +103,7 @@ class Shopcart extends React.Component {
                                     <div className={'imgquick'}>
                                         <img src={`./img/${item.img}`} alt="shoose"/>
                                         <div className={'quickdiv'}>
-                                            <button className={'quickbtn'}>Quick View</button>
+                                            <button className={'quickbtn'} onClick={this.quickvew}>Quick View</button>
                                         </div>
                                     </div>
 
@@ -98,8 +114,8 @@ class Shopcart extends React.Component {
                                         <span>${item.price}</span>
                                     </div>
                                     <span className={'new'}>New</span>
-
-                                    <div className={'cartbutton'} onClick={this.addToCartHandler.bind(this, item)}>
+                                    {/* onClick={this.addToCartHandler.bind(this, item)} */}
+                                    <div className={'cartbutton'} >
                                    <span className={'cartaddhover'}>
                                        <form  >
                                        <fieldset>
@@ -107,9 +123,8 @@ class Shopcart extends React.Component {
                                            <input type="hidden" name="add" value="1"/>
                                            <input type="hidden" name="return" value=" "/>
                                            <input type="hidden" name="cancel_return" value=" "/>
-                                           {/*<Link to = '/about'>*/}
                                            <input type="submit" name={item._id} value="Add to cart" className="button" onClick={this.onSubmit}/>
-                                           {/*</Link>*/}
+                                           
          
                                        </fieldset>
                                    </form>
@@ -129,10 +144,17 @@ class Shopcart extends React.Component {
     }
 }
 
+<<<<<<< HEAD
 const mapStateToProps = (state) => {
     console.log(state)
     return{
         magazine: state.shopCards.initmagazine
+=======
+const mapStateToProps = state => {
+ 
+    return {
+        magazine: state.magazine.initmagazine
+>>>>>>> 48375b2e5ee738fb051863887a3254ce20b443dd
     }
 
 }
