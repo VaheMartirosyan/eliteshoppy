@@ -29,6 +29,7 @@ export default class Person extends Component {
                         </div>
                     </div>
                     <div className={'product'}>
+                        <h2>sdvlskjd</h2>
                         <h3> PRODUCT <span>COMPARE(0)</span></h3>
                     </div>
                 </div>
