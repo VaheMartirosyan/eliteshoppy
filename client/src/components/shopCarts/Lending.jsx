@@ -102,7 +102,7 @@ class Shopcart extends React.Component {
                                     </div>
                                     <span className={'new'}>New</span>
                                     {/* onClick={this.addToCartHandler.bind(this, item)} */}
-                                    <div className={'cartbutton'} >
+                                    <div className={'cartbutton'} onClick = {this.props.shopOpen} >
                                    <span className={'cartaddhover'}>
                                        <form  >
                                        <fieldset>

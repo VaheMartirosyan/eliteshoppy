@@ -101,6 +101,8 @@ componentWillReceiveProps(prevProps,nextProps) {
             // this.props.history.push(`/`)
            this.getuser()
            
+          }else{
+              console.log(res.data)
           }
         }).catch(this.setState(state => ({ errors:'such user does not exist' })) );
        

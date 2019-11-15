@@ -23,7 +23,7 @@ class Navbar extends Component{
         bascket:this.props.shopProduct,
     };
     componentDidMount(){
-        const token = localStorage.usertoken
+        const token = localStorage.myusertoken
         if(token !== undefined){
          const decoded = jwt_decode(token)
         !this.state.userProfile &&   this.setState({userProfile:decoded})
