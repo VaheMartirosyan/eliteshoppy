@@ -14,31 +14,44 @@ import Contact from './contact/Contact'
 class App extends Component {
   state = {
     hasError:false,
-    shopClient:''
+    shopProduct:'',
+    key:1
   }
+  itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : [];
+ componentDidMount(){
+ console.log(this.itemsArray);
+ this.setState({shopProduct:this.itemsArray})
  
-  
+ }
+  setitem = (item)=>{
+    this.itemsArray.push(item)
+    localStorage.setItem('cartId', JSON.stringify(this.itemsArray))
+    this.setState({shopProduct:this.itemsArray,key:this.state.key + 1})
+  }
   componentDidCatch(){
     this.setState({hasError:true})
       }
-//   getUser = ()=>{
-//     const token = localStorage.usertoken
-//     if(token !== undefined){
-//      const decoded = jwt_decode(token)
-//      this.setState({shopClient:decoded})
-//   } 
-// }
+  deletItem = e=>{
+        const item = this.itemsArray.filter(item=> e !== item._id  )
+        localStorage.setItem('cartId', JSON.stringify(item))  
+        this.itemsArray = item
+        this.setState({shopProduct:this.itemsArray, key:this.state.key + 1})
+       
+        }    
+
 render(){
+ 
   if(this.state.hasError) {
     return 
       }
+     
   return (
     <Router>
     <div>
-        <header>
-            <Header getUser={this.state.shopClient}/>
+        <header key={this.state.key}>
+            <Header shopProduct={this.state.shopProduct } deletItem={this.deletItem}/>
         </header>
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' render = {()=><Home setitem={this.setitem} />} />
         <Route exact path="/admin" component={Admin} />
         <Route path='/about' component={About} />
         <Route path='/mens' component={Mens} />

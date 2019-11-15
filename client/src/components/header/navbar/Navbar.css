@@ -101,3 +101,8 @@
     border-bottom: 5px solid #2BDABA;
     transition: 1s;
 }
+.delete{
+    font-size: x-large;
+    cursor: pointer;
+    color: #423039;
+}

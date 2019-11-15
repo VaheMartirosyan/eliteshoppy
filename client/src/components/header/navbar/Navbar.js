@@ -5,6 +5,7 @@ import Womenshover from './hovercomponents/womens/womenshover'
 import jwt_decode from 'jwt-decode'
 import {connect} from 'react-redux'
 import {NavLink} from "react-router-dom"
+import {GetShopBascket} from '../../UserFunctions'
 
 
 class Navbar extends Component{
@@ -18,23 +19,29 @@ class Navbar extends Component{
         womens:false,
         codes:false,
         c:0,
-        userProfile:''
+        userProfile:'',
+        bascket:this.props.shopProduct,
     };
-//     componentDidMount(){
-//         const token = localStorage.usertoken
-//         if(token !== undefined){
-//          const decoded = jwt_decode(token)
-//         !this.state.userProfile &&   this.setState({userProfile:decoded})
-//     }
-// }
+    componentDidMount(){
+        const token = localStorage.usertoken
+        if(token !== undefined){
+         const decoded = jwt_decode(token)
+        !this.state.userProfile &&   this.setState({userProfile:decoded})
+    }
+     
+    
+    
+}
 
-//     componentWillReceiveProps(nextProps) {
-//         if (this.props.getuser !== nextProps.getuser) {
-//         this.setState({userProfile:nextProps.getuser})
-//         }
-//       }
-
-
+    onItemDelete = e =>{
+       const getShopBascket = new GetShopBascket();
+       getShopBascket.deletItem(e)
+       this.refreshState()
+     }
+     refreshState(){
+        const product = JSON.parse(localStorage.cartId);
+        this.setState({bascket:product})
+     }
     openCartHandler = () =>{
 
     };
@@ -44,7 +51,7 @@ class Navbar extends Component{
 
     render() {
 
-        const {magazine} = this.props
+      
         return (
             <div className={'navall'}  onClick={this.closewindow}>
                 <div className='navbars'>
@@ -81,15 +88,16 @@ class Navbar extends Component{
 
                 {this.props.shop ?
                     <div className={'cart'}>
-                        {magazine.length === 0 ? 'Your shopping cart is empty': <div>
+                        {this.state.bascket.length === 0 ? 'Your shopping cart is empty': <div>
                             <ul>
 
-                                {magazine.map((e, i) => {
+                                {this.props.shopProduct.map((e, i) => {
                                     return(
                                         <li key={i}>
                                             <img src={`./img/${e.img}`} alt="shoose"/>
                                             <h4 className="title">{e.goods_name}</h4>
                                             <span>${e.price}</span>
+                                            <span className="delete" onClick = {()=>this.props.deletItem(e._id)}>x</span>
                                         </li>
                                     )
                                 })}
@@ -108,7 +116,7 @@ class Navbar extends Component{
 }
 
 const mapStateToProps = state => {
-    console.log(state)
+  
     return {
         magazine: state.magazine.initmagazine,
         shop: state.magazine.shop

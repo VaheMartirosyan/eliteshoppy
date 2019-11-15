@@ -99,16 +99,26 @@ route.get ('/getProduct', (req, res) => {
 
 })
 
-
-// route.get ('/test', (req, res) => {
-//   Goods.aggregate (
-//     [ { $match : { price : "150" } } ])
-       
-//      .exec(function(err, data) {
-//     if (err) throw err;
+route.get ('/menproduct', (req, res) => {
+  Goods.aggregate(  [
+    {
+      '$match': {productCotegory:"meanProduct"}
+    }, {
+      '$sort': {
+        'date': -1
+      }
+    }, {
+      '$limit': 11
+    }
+  ])
+  .exec(function(err, goods) {
+    if (err) throw err;
      
-//     res.json(data)
-// });
+    res.json(goods)
+});
+
+})
+
 route.get ('/test', (req, res) => {
   Goods.aggregate (
     [
@@ -213,6 +223,14 @@ route.get ('/Mens', (req, res) => {
     res.json(goods)
 });
 
+})
+route.post('/cartVew',(req,res)=>{
+  const id = req.body.id
+  Goods.findById(id, function (err, item) { 
+     res.json(item)
+   
+  } );
+  
 })
 
 module.exports = route;

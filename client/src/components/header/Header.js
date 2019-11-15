@@ -28,7 +28,8 @@ export default class Header extends Component{
         confirmPassword: '',
         myemail: '',
         mypassword: '',
-        user:''
+        user:'',
+        props:this.props.shopProduct,
 
     };
 
@@ -78,21 +79,18 @@ export default class Header extends Component{
         this.setState({ [e.target.name]: e.target.value })
 
         if(e.target.value.length === 1) {
-            console.log('sdv')
+           
         }
 
       }
       onSubmit=(e)=> {
         e.preventDefault()
-      
-        const user = {
+          const user = {
           email: this.state.emails,
           password: this.state.password
         }
-       
         login(user).then(res => {
-          
-          if (!res.error) {
+          if (res.islogined) {
             // this.props.history.push(`/`)
            this.getuser()
            
@@ -101,11 +99,12 @@ export default class Header extends Component{
        
       }
       getuser = ()=> {
-        const token = localStorage.usertoken;
+        const token = localStorage.myusertoken;
         if(token !== undefined){
          const decoded = jwt_decode(token)
       this.setState({user:decoded})
       }
+      console.log(this.state.user)
     }
       onSubmits=(e)=> {
         e.preventDefault()
@@ -128,7 +127,7 @@ export default class Header extends Component{
           }
 
     render() {
-     
+    
         return(
             <div>
                 <div className={'headup'}>
@@ -244,7 +243,7 @@ export default class Header extends Component{
 
                     </div>:null}
                     <HeaderBottom/>
-                    <Navbar getuser={this.state.user}/>
+                    <Navbar shopProduct={this.props.shopProduct} deletItem={this.props.deletItem}/>
                 </div>
 
 

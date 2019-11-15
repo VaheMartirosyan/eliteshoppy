@@ -5,13 +5,14 @@ import Middle from '../components/middle/Middle';
 import Fixed from '../components/fixed/Fixed'
 import ShopCart from'../components/shopCarts/Lending'
 
-export default () => {
+export default ({setitem,shopProduct}) => {
+   
     return(
         <div>
             <Slider/>
             <SliderBottom/>
             <Middle />
-            <ShopCart />
+            <ShopCart setitem={setitem}/>
             <Fixed />
 
         </div>

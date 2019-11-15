@@ -1,9 +1,9 @@
 import React from 'react';
 import './shopCarts.scss'
-import {setProduct,cart} from '../UserFunctions'
+import {setProduct,GetShopBascket} from '../UserFunctions'
 import Spiner from '../Spiner/Spiner'
 import {connect} from 'react-redux'
-import { Link } from 'react-router-dom';
+// import {  } from 'react-router-dom';
 
 class Shopcart extends React.Component {
     state={
@@ -20,17 +20,21 @@ class Shopcart extends React.Component {
             })
             .catch(err => console.log(err))
     }
-    // onSubmit= (e)=>{
-    //
-    //
-    //     cart({id:e.target.name})
-    //     .then(body =>{
-    //         // const tok = localStorage.cartId;
-    //
-    //     })
-    //     .catch(err => console.log(err))
-    //
-    // }
+    quickvew = ()=>{
+        
+    }    
+
+    onSubmit= (e)=>{
+            e.preventDefault()
+            const getShopBascket = new GetShopBascket()
+            getShopBascket.cart({id:e.target.name})
+            .then(body =>{
+              const setitem = this.props.setitem;
+              setitem(body)
+                    })
+        .catch(err => console.log(err))
+    
+    }
     getProduct = body => this.setState({products:body,loading:false});
 
     activeclass(e,el){
@@ -53,6 +57,7 @@ class Shopcart extends React.Component {
             b:false
         })
         this.props.shopOpen();
+    
     }
     render(){
 
@@ -61,7 +66,7 @@ class Shopcart extends React.Component {
         }
 
         const ad = ["Mens", "Womens", "Kids"];
-
+     
         return (
             <div className="shops">
                 <h2 className="wthree_text_info">New <span>Arrivals</span></h2>
@@ -85,7 +90,7 @@ class Shopcart extends React.Component {
                                     <div className={'imgquick'}>
                                         <img src={`./img/${item.img}`} alt="shoose"/>
                                         <div className={'quickdiv'}>
-                                            <button className={'quickbtn'}>Quick View</button>
+                                            <button className={'quickbtn'} onClick={this.quickvew}>Quick View</button>
                                         </div>
                                     </div>
 
@@ -96,8 +101,8 @@ class Shopcart extends React.Component {
                                         <span>${item.price}</span>
                                     </div>
                                     <span className={'new'}>New</span>
-
-                                    <div className={'cartbutton'} onClick={this.addToCartHandler.bind(this, item)}>
+                                    {/* onClick={this.addToCartHandler.bind(this, item)} */}
+                                    <div className={'cartbutton'} >
                                    <span className={'cartaddhover'}>
                                        <form  >
                                        <fieldset>
@@ -105,9 +110,8 @@ class Shopcart extends React.Component {
                                            <input type="hidden" name="add" value="1"/>
                                            <input type="hidden" name="return" value=" "/>
                                            <input type="hidden" name="cancel_return" value=" "/>
-                                           {/*<Link to = '/about'>*/}
                                            <input type="submit" name={item._id} value="Add to cart" className="button" onClick={this.onSubmit}/>
-                                           {/*</Link>*/}
+                                           
          
                                        </fieldset>
                                    </form>
@@ -128,7 +132,7 @@ class Shopcart extends React.Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
+ 
     return {
         magazine: state.magazine.initmagazine
     }
