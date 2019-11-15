@@ -34,6 +34,13 @@ export default class Header extends Component{
     };
 
 /// FUNCTION FOR OPEN SIGNIN OR SIGN UP WINDOWS HANGED ON THEIR NUMBERS
+componentWillReceiveProps(prevProps,nextProps) {
+    if (this.props !== nextProps) {
+     this.setState({props:prevProps.shopProduct})
+    console.log(nextProps,prevProps);
+    }
+  }
+
 
     signin(e,a){
 
@@ -243,7 +250,7 @@ export default class Header extends Component{
 
                     </div>:null}
                     <HeaderBottom/>
-                    <Navbar shopProduct={this.props.shopProduct} deletItem={this.props.deletItem}/>
+                    <Navbar shopProduct={this.state.props} deletItem={this.props.deletItem}/>
                 </div>
 
 

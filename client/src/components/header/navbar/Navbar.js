@@ -28,11 +28,19 @@ class Navbar extends Component{
          const decoded = jwt_decode(token)
         !this.state.userProfile &&   this.setState({userProfile:decoded})
     }
-     
+      let minibusket = new GetShopBascket().itemsArray;
+      this.setState({bascket:minibusket})
     
     
 }
+componentDidUpdate(prevProps, prevState) {if(prevProps.shopProduct !== this.props.shopProduct) {
+    console.log(prevProps, '//////////', prevState); } }
 
+    componentWillReceiveProps(prevProps,nextProps) {
+        if (this.props !== nextProps) {
+        console.log(nextProps,prevProps);
+        }
+      }
     onItemDelete = e =>{
        const getShopBascket = new GetShopBascket();
        getShopBascket.deletItem(e)

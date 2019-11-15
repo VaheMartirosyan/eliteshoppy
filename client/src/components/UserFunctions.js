@@ -61,6 +61,9 @@ export class GetShopBascket {
         console.log(err)
       })
   }
-  
+  deletItem = e=>{
+  const item = this.itemsArray.filter(item=> e !== item._id  )
+  localStorage.setItem('cartId', JSON.stringify(item))  
+  }
 }
   
