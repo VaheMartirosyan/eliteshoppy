@@ -19,8 +19,9 @@ class App extends Component {
   }
   itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : [];
  componentDidMount(){
- console.log(this.itemsArray);
+ 
  this.setState({shopProduct:this.itemsArray})
+ 
  
  }
   setitem = (item)=>{
@@ -40,7 +41,7 @@ class App extends Component {
         }    
 
 render(){
- 
+  console.log(this.state.shopProduct);
   if(this.state.hasError) {
     return 
       }
