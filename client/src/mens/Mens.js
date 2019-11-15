@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Wear from "../wear/Wear";
+import Person from "../wear/person/Person";
 
 export default class Mens extends Component {
     state = {
@@ -10,6 +11,7 @@ export default class Mens extends Component {
         return(
             <div>
                 <Wear wear={wearTitle} />
+                <Person />
             </div>
         )
     }

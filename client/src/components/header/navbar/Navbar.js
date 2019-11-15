@@ -110,8 +110,8 @@ class Navbar extends Component{
 const mapStateToProps = state => {
     console.log(state)
     return {
-        magazine: state.magazine.initmagazine,
-        shop: state.magazine.shop
+        magazine: state.shopCards.initmagazine
+        // shop: state.magazine.shop
     }
 }
 

@@ -3,9 +3,11 @@ import './shopCarts.scss'
 import {setProduct,cart} from '../UserFunctions'
 import Spiner from '../Spiner/Spiner'
 import {connect} from 'react-redux'
+import {changeInitmagazine} from '../../store/header/action'
 import { Link } from 'react-router-dom';
 
 class Shopcart extends React.Component {
+
     state={
         products:[],
         loading:true,
@@ -47,14 +49,14 @@ class Shopcart extends React.Component {
     }
     addToCartHandler = (i, e) => {
         e.preventDefault()
-        this.props.magazine.push(i)
+        // this.props.magazine.push(i)
+
+        this.props.changeInitmagazine(i)
         console.log(this.props.magazine)
-        this.setState({
-            b:false
-        })
-        this.props.shopOpen();
+        // this.props.shopOpen();
     }
     render(){
+        console.log(this.props)
 
         if(this.state.loading){
             return <Spiner />
@@ -127,19 +129,16 @@ class Shopcart extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     console.log(state)
-    return {
-        magazine: state.magazine.initmagazine
+    return{
+        magazine: state.shopCards.initmagazine
     }
+
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        shopOpen: () => {
-            dispatch({type: 'shopChange'})
-        }
-    }
+const mapDispatchToProps={
+    changeInitmagazine: changeInitmagazine
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shopcart)
