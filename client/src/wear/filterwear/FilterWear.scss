@@ -1,0 +1,97 @@
+.filter {
+  display: flex;
+  justify-content: space-between;
+  margin: 70px 0;
+  .price {
+    flex: 1.2;
+    .byprice {
+      h2 {
+        text-align: center;
+      }
+      span {
+        font-weight: lighter;
+      }
+    }
+    .range {
+       margin: 20px 0;
+      .between {
+        width: 100%;
+        outline: none;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 20px;
+        margin: 20px 0;
+      }
+     }
+    .categories {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(0, 0, 0, .2);
+      .categorieswear {
+        background: #F7F7F7;
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+        h3 {
+          text-align: center;
+          color: #0FC3A4;
+        }
+      }
+      .contain {
+        width: 70%;
+        margin: 30px auto;
+        div {
+          margin: 10px 0;
+          i {
+            color: #0FC3A4;
+            font-weight: 100;
+            font-size: 19px;
+            cursor: pointer;
+          }
+          span {
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+          }
+        }
+        .ethnicwear {
+          width: 55%;
+          margin: 0 auto;
+        }
+      }
+      .ethnic {
+        width: 90%;
+        div {
+          width: 70%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .compare {
+    flex: 2.8;
+    margin-left: 40px;
+    .bycompare {
+      span {
+        font-weight: lighter;
+      }
+    }
+  }
+}
+.community {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, .2);
+  margin: 20px 0;
+  .communitypoll {
+    background: #F7F7F7;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    h3 {
+      text-align: center;
+      color: #0FC3A4;
+    }
+  }
+}
+.checkboxes {
+  width: 90%;
+  margin: 0 auto;
+}

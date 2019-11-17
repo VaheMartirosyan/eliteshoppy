@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Wear from "../wear/Wear";
 import {setProduct} from '../components/UserFunctions'
+import FilterWear from "../wear/filterwear/FilterWear";
 
 export default class Mens extends Component {
     state = {
@@ -20,6 +21,7 @@ export default class Mens extends Component {
         return(
             <div>
                 <Wear wear={wearTitle} />
+                <FilterWear />
             </div>
         )
     }
