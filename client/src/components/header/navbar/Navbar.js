@@ -21,6 +21,7 @@ class Navbar extends Component{
         c:0,
         userProfile:'',
         bascket:this.props.shopProduct,
+        shopProduct:'',
     };
     componentDidMount(){
         const token = localStorage.myusertoken
@@ -28,19 +29,20 @@ class Navbar extends Component{
          const decoded = jwt_decode(token)
         !this.state.userProfile &&   this.setState({userProfile:decoded})
     }
-      let minibusket = new GetShopBascket().itemsArray;
-      this.setState({bascket:minibusket})
-    
+     
     
 }
-componentDidUpdate(prevProps, prevState) {if(prevProps.shopProduct !== this.props.shopProduct) {
-    console.log(prevProps, '//////////', prevState); } }
 
+<<<<<<< HEAD
     componentWillReceiveProps(prevProps,nextProps) {
         if (this.props !== nextProps) {
        
         }
       }
+=======
+
+   
+>>>>>>> app on react  hooks
     onItemDelete = e =>{
        const getShopBascket = new GetShopBascket();
        getShopBascket.deletItem(e)
@@ -98,8 +100,7 @@ componentDidUpdate(prevProps, prevState) {if(prevProps.shopProduct !== this.prop
                     <div className={'cart'}>
                         {this.state.bascket.length === 0 ? 'Your shopping cart is empty': <div>
                             <ul>
-
-                                {this.props.shopProduct.map((e, i) => {
+                            {this.props.shopProduct && this.props.shopProduct.map((e, i) => {
                                     return(
                                         <li key={i}>
                                             <img src={`./img/${e.img}`} alt="shoose"/>
@@ -110,6 +111,7 @@ componentDidUpdate(prevProps, prevState) {if(prevProps.shopProduct !== this.prop
                                         </li>
                                     )
                                 })}
+                               
 
                             </ul>
                             <h3>Subtotal</h3>

@@ -37,11 +37,14 @@ export default class Header extends Component{
 componentWillReceiveProps(prevProps,nextProps) {
     if (this.props !== nextProps) {
      this.setState({props:prevProps.shopProduct})
-    console.log(nextProps,prevProps);
+   console.log(prevProps.shopProduct);
     }
   }
+  componentDidUpdate(prevProps){
+      console.log(prevProps);
+  }
 
-
+  
     signin(e,a){
 
         a.preventDefault();
@@ -136,7 +139,7 @@ componentWillReceiveProps(prevProps,nextProps) {
           }
 
     render() {
-    
+   
         return(
             <div>
                 <div className={'headup'}>
@@ -253,6 +256,7 @@ componentWillReceiveProps(prevProps,nextProps) {
                     </div>:null}
                     <HeaderBottom/>
                     <Navbar shopProduct={this.state.props} deletItem={this.props.deletItem}/>
+                  
                 </div>
 
 

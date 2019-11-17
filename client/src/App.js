@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from "react"
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-// import jwt_decode from 'jwt-decode'
+
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Admin from './components/AdminPanel/Admin'
@@ -11,6 +11,7 @@ import Mens from './mens/Mens'
 import Womens from './womens/Womens'
 import Contact from './contact/Contact'
 
+<<<<<<< HEAD
 class App extends Component {
   state = {
     hasError:false,
@@ -46,25 +47,41 @@ class App extends Component {
 
   deletItem = e=>{
         const item = this.itemsArray.filter(item=> e !== item._id  )
+=======
+function App(){
+  let itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : [];
+  let [shopProduct, setStates] = useState({itemsArray:itemsArray,key:1});
+  
+ var setitem = (item)=>{
+    itemsArray.push(item)
+    localStorage.setItem('cartId', JSON.stringify(itemsArray))
+    setStates({itemsArray:itemsArray,key:1});
+  }
+  
+ var deletItem = e=>{
+        const item = itemsArray.filter(item=> e !== item._id  )
+>>>>>>> app on react  hooks
         localStorage.setItem('cartId', JSON.stringify(item))  
-        this.itemsArray = item
-        this.setState({shopProduct:this.itemsArray, key:this.state.key + 1})
-       
-        }    
+        itemsArray = item
+        setStates({itemsArray:itemsArray})
+        }
 
+<<<<<<< HEAD
 render(){
 
   if(this.state.hasError) {
     return 
       }
      
+=======
+>>>>>>> app on react  hooks
   return (
     <Router>
     <div>
-        <header key={this.state.key}>
-            <Header shopProduct={this.state.shopProduct } deletItem={this.deletItem}/>
+        <header key={shopProduct.key}>
+            <Header shopProduct={shopProduct.itemsArray } deletItem={deletItem}/>
         </header>
-        <Route exact path='/' render = {()=><Home setitem={this.setitem} />} />
+        <Route exact path='/' render = {()=><Home setitem={setitem} />} />
         <Route exact path="/admin" component={Admin} />
         <Route path='/about' component={About} />
         <Route path='/mens' component={Mens} />
@@ -77,7 +94,6 @@ render(){
     </div>
     </Router>
   );
-}
 }
 
 export default App;

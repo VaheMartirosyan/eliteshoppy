@@ -104,5 +104,10 @@
 .delete{
     font-size: x-large;
     cursor: pointer;
-    color: #423039;
+    color: #ccc;
 }
+.delete:hover{
+   transition: 0.5s;
+    color: rgb(39, 38, 38);
+    transform: scale(1.1);
+   }

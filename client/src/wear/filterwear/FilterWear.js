@@ -21,73 +21,14 @@ export default class FilterWear extends Component {
         checkfive: false,
     }
 
-    showMensCollection = () => {
-        this.setState({
-            isVisible: !this.state.isVisible
-        })
-}
-    showEthnic = () => {
-        this.setState({
-            ethnicIsVisible: !this.state.ethnicIsVisible
-        })
-    }
-    showShoes = () => {
-        this.setState({
-            shoesIsVisible: !this.state.shoesIsVisible
-        })
-    }
-    showCaps = () => {
-        this.setState({
-            capIsVisible: !this.state.capIsVisible
-        })
-    }
-    showGlasses = () => {
-        this.setState({
-            arrivalIsVisible: !this.state.arrivalIsVisible
-        })
-    }
-    showoffer = () => {
-        this.setState({
-            offerIsVisible: !this.state.offerIsVisible
-        })
-    }
-    showGlasses = () => {
-        this.setState({
-            summer: !this.state.summer
-        })
-    }
-    showFlat = () => {
-        this.setState({
-            flatIsVisible: !this.state.flatIsVisible
-        })
-    }
-    clickCheck = () => {
-        this.setState({
-            checked: !this.state.checked
-        })
-    }
-    clickCheckTwo = () => {
-        this.setState({
-            checktwo: !this.state.checktwo
-        })
-    }
-    clickCheckThree = () => {
-        this.setState({
-            checkthree: !this.state.checkthree
-        })
-    }
-    clickCheckFour = () => {
-        this.setState({
-            checkfour: !this.state.checkfour
-        })
-    }
 
-    clickCheckFive = () => {
-        this.setState({
-            checkfive: !this.state.checkfive
-        })
-    }
-
+    // showGlasses = () => {
+    //     this.setState({ summer: !this.state.summer })
+    // }
+    // clickCheckTwo = () => {
+    //     this.setState({ checktwo: !this.state.checktwo
+    //     })
+    // }
     render() {
         return(
             <div>
@@ -99,18 +40,20 @@ export default class FilterWear extends Component {
                             </div>
                             <div className={'range'}>
                                 <input type="range"/>
-                                <input type="text" value={'$ 100 - $ 700'} className={'between'}/>
+                                <input type="text" placeholder={'$ 100 - $ 700'} className={'between'}/>
                             </div>
                             <div className="categories">
                                 <div className={'categorieswear'}>
                                     <h3>CATEGORIES</h3>
                                 </div>
                                 <div className={'contain'}>
-                                    <div onClick={this.showMensCollection}>
+                                    <div onClick={()=> this.setState({isVisible: !this.state.isVisible})}>
                                         <i className="fa fa-long-arrow-right"></i> <span>Men's Wear</span>
                                     </div>
                                     {this.state.isVisible ? <div className={'ethnic'}>
-                                        <div onClick={this.showEthnic}>
+                                        <div onClick={()=> this.setState({ethnicIsVisible: !this.state.ethnicIsVisible })}>
+      
+          
                                             <i className="fa fa-long-arrow-right"></i> <span>Ethnic Wear</span>
                                         </div>
                                         {this.state.ethnicIsVisible ? this.state.weartypeone.map((e, i) => {
@@ -120,7 +63,7 @@ export default class FilterWear extends Component {
                                                 </div>
                                             )
                                         }) : null}
-                                        <div onClick={this.showCaps}>
+                                        <div onClick={()=>this.setState({capIsVisible: !this.state.capIsVisible})}>
                                             <i className="fa fa-long-arrow-right"></i> <span>Party Wear</span>
                                         </div>
                                         {this.state.capIsVisible ? this.state.weartypeone.map((e, i) => {
@@ -130,7 +73,7 @@ export default class FilterWear extends Component {
                                                 </div>
                                             )
                                         }) : null}
-                                        <div onClick={this.showShoes}>
+                                        <div onClick={()=> this.setState({ shoesIsVisible: !this.state.shoesIsVisible })}>
                                             <i className="fa fa-long-arrow-right"></i> <span>Casual Wear</span>
                                         </div>
                                         {this.state.shoesIsVisible ? this.state.weartypeone.map((e, i) => {
@@ -141,11 +84,11 @@ export default class FilterWear extends Component {
                                             )
                                         }) : null}
                                     </div> : null}
-                                    <div onClick={this.showoffer}>
+                                    <div onClick={()=> this.setState({  offerIsVisible: !this.state.offerIsVisible })}>
                                         <i className="fa fa-long-arrow-right"></i> <span>Best Offers</span>
                                     </div>
                                     {this.state.offerIsVisible ? <div className={'ethnic'}>
-                                        <div onClick={this.showGlasses}>
+                                        <div onClick={()=> this.setState({ arrivalIsVisible: !this.state.arrivalIsVisible })}>
                                             <i className="fa fa-long-arrow-right"></i> <span>Summer Sales</span>
                                         </div>
                                         {this.state.summer ? this.state.weartypefour.map((e, i) => {
@@ -155,7 +98,7 @@ export default class FilterWear extends Component {
                                                 </div>
                                             )
                                         }) : null}
-                                        <div onClick={this.showFlat}>
+                                        <div onClick={()=> this.setState({   flatIsVisible: !this.state.flatIsVisible })}>
                                             <i className="fa fa-long-arrow-right"></i> <span>Flat</span>
                                         </div>
                                         {this.state.flatIsVisible ? this.state.weartypethree.map((e, i) => {
@@ -179,10 +122,10 @@ export default class FilterWear extends Component {
                                                 checkedthree={this.state.checkthree}
                                                 checkedfour={this.state.checkfour}
                                                 checkedfive={this.state.checkfive}
-                                                clickchecktwo={this.clickCheckTwo}
-                                                clickcheckthree={this.clickCheckThree}
-                                                clickcheckfour={this.clickCheckFour}
-                                                clickcheckfive={this.clickCheckFive}
+                                                clickchecktwo={()=>this.setState({ checked: !this.state.checked})}
+                                                clickcheckthree={()=> this.setState({checkthree: !this.state.checkthree})}
+                                                clickcheckfour={()=>this.setState({ checkfour: !this.state.checkfour })}
+                                                clickcheckfive={()=> this.setState({  checkfive: !this.state.checkfive })}
                                     />
                                 </div>
                             </div>
