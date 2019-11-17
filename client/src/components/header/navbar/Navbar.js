@@ -33,16 +33,16 @@ class Navbar extends Component{
     
 }
 
-<<<<<<< HEAD
+
     componentWillReceiveProps(prevProps,nextProps) {
         if (this.props !== nextProps) {
        
         }
       }
-=======
+
 
    
->>>>>>> app on react  hooks
+
     onItemDelete = e =>{
        const getShopBascket = new GetShopBascket();
        getShopBascket.deletItem(e)
