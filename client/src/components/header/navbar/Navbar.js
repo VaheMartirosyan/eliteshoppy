@@ -38,7 +38,7 @@ componentDidUpdate(prevProps, prevState) {if(prevProps.shopProduct !== this.prop
 
     componentWillReceiveProps(prevProps,nextProps) {
         if (this.props !== nextProps) {
-        console.log(nextProps,prevProps);
+       
         }
       }
     onItemDelete = e =>{
@@ -104,6 +104,7 @@ componentDidUpdate(prevProps, prevState) {if(prevProps.shopProduct !== this.prop
                                         <li key={i}>
                                             <img src={`./img/${e.img}`} alt="shoose"/>
                                             <h4 className="title">{e.goods_name}</h4>
+
                                             <span>${e.price}</span>
                                             <span className="delete" onClick = {()=>this.props.deletItem(e._id)}>x</span>
                                         </li>

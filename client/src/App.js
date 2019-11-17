@@ -25,13 +25,25 @@ class App extends Component {
  
  }
   setitem = (item)=>{
-    this.itemsArray.push(item)
+
+     this.itemsArray.push(item);
+     console.log(this.itemsArray);
+      for(let i = 0; i < this.itemsArray.length; i++){
+          // if(this.itemsArray[i]._id === a._id) {
+          //     console.log(1)
+          // }
+          // console.log(this.itemsArray[i]._id, "item" + item._id )
+
+           }
     localStorage.setItem('cartId', JSON.stringify(this.itemsArray))
     this.setState({shopProduct:this.itemsArray,key:this.state.key + 1})
-  }
+
+  };
+
   componentDidCatch(){
     this.setState({hasError:true})
       }
+
   deletItem = e=>{
         const item = this.itemsArray.filter(item=> e !== item._id  )
         localStorage.setItem('cartId', JSON.stringify(item))  
@@ -41,7 +53,7 @@ class App extends Component {
         }    
 
 render(){
-  console.log(this.state.shopProduct);
+
   if(this.state.hasError) {
     return 
       }

@@ -25,16 +25,18 @@ class Shopcart extends React.Component {
     }    
 
     onSubmit= (e)=>{
-            e.preventDefault()
-            const getShopBascket = new GetShopBascket()
+            e.preventDefault();
+            const getShopBascket = new GetShopBascket();
             getShopBascket.cart({id:e.target.name})
             .then(body =>{
               const setitem = this.props.setitem;
+
               setitem(body)
                     })
         .catch(err => console.log(err))
     
-    }
+    };
+
     getProduct = body => this.setState({products:body,loading:false});
 
     activeclass(e,el){
@@ -42,23 +44,15 @@ class Shopcart extends React.Component {
             active:e,
             query:el
 
-        })
+        });
         setProduct(`http://localhost:5000/stok/${el}`,"GET")
             .then(body =>{
                 this.getProduct(body)
             })
             .catch(err => console.log(err))
     }
-    addToCartHandler = (i, e) => {
-        e.preventDefault()
-        this.props.magazine.push(i)
-        console.log(this.props.magazine)
-        this.setState({
-            b:false
-        })
-        this.props.shopOpen();
-    
-    }
+
+
     render(){
 
         if(this.state.loading){
