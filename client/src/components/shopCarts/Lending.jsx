@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 import './shopCarts.scss'
 import {setProduct,GetShopBascket} from '../UserFunctions'
 import Spiner from '../Spiner/Spiner'
@@ -20,8 +21,10 @@ class Shopcart extends React.Component {
             })
             .catch(err => console.log(err))
     }
-    quickvew = ()=>{
-        
+    quickvew = (e)=>{
+        e.preventDefault();
+        console.log(e.target.name);
+        // this.props.history.push(`/profile`)
     }    
 
     onSubmit= (e)=>{
@@ -30,7 +33,7 @@ class Shopcart extends React.Component {
             getShopBascket.cart({id:e.target.name})
             .then(body =>{
               const setitem = this.props.setitem;
-
+console.log(this.props);
               setitem(body)
                     })
         .catch(err => console.log(err))
@@ -84,7 +87,7 @@ class Shopcart extends React.Component {
                                     <div className={'imgquick'}>
                                         <img src={`./img/${item.img}`} alt="shoose"/>
                                         <div className={'quickdiv'}>
-                                            <button className={'quickbtn'} onClick={this.quickvew}>Quick View</button>
+                                            <button className={'quickbtn'} name={item._id} onClick={this.quickvew}>Quick View</button>
                                         </div>
                                     </div>
 
@@ -140,4 +143,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Shopcart)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Shopcart))

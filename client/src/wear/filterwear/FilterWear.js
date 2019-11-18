@@ -22,13 +22,7 @@ export default class FilterWear extends Component {
     }
 
 
-    // showGlasses = () => {
-    //     this.setState({ summer: !this.state.summer })
-    // }
-    // clickCheckTwo = () => {
-    //     this.setState({ checktwo: !this.state.checktwo
-    //     })
-    // }
+  
     render() {
         return(
             <div>

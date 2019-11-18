@@ -42,7 +42,7 @@ export const register = async newUser => {
       throw new Error(`Cud not fatch ${url} Resivd ${res.status}`)
     }
     const body = res.json();
-   return body
+    return body
   }
 export class GetShopBascket {
    itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : []

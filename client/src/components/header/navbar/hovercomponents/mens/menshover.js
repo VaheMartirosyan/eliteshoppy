@@ -1,5 +1,6 @@
 import React from 'react'
 import men from "../../navimages/top2.jpg";
+import {Link} from 'react-router-dom'
 import './menshover.scss'
 
 export default ()=>{
@@ -16,7 +17,7 @@ export default ()=>{
                         {mens.one.map((e,i)=>{
                             return(
                                 <li key={i}>
-                                    <a href="">{e}</a>
+                                   <Link to={`mens/${e}`}>{e}</Link>
                                 </li>
                             )
                         })}

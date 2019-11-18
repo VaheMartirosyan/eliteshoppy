@@ -16,8 +16,7 @@ export default class Mens extends Component {
             .catch(err => console.log(err))
     }
     render() {
-        console.log(this.state)
-       const {wearTitle} = this.state
+        const {wearTitle} = this.state
         return(
             <div>
                 <Wear wear={wearTitle} />

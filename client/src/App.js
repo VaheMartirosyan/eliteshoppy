@@ -18,10 +18,14 @@ function App(){
  
   
  var setitem = (item)=>{
-    itemsArray.push(item)
-    localStorage.setItem('cartId', JSON.stringify(itemsArray))
-    setStates({itemsArray:itemsArray,key:1});
-   
+ const arr = itemsArray.find( arr=>arr._id == item._id)
+     if(arr){
+      console.log('wtf',itemsArray)
+     }else{
+       itemsArray.push(item)
+       localStorage.setItem('cartId', JSON.stringify(itemsArray))
+       setStates({itemsArray:itemsArray,key:1});
+     }
 
   }
   
