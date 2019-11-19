@@ -37,13 +37,9 @@ export default class Header extends Component{
 componentWillReceiveProps(prevProps,nextProps) {
     if (this.props !== nextProps) {
      this.setState({props:prevProps.shopProduct})
-   console.log(prevProps.shopProduct);
+  
     }
   }
-  componentDidUpdate(prevProps){
-      console.log(prevProps);
-  }
-
   
     signin(e,a){
 
@@ -68,9 +64,6 @@ componentWillReceiveProps(prevProps,nextProps) {
         }
 
             window.onscroll = function () { window.scrollTo(0, 0); };
-
-
-
     }
 
 
@@ -87,11 +80,7 @@ componentWillReceiveProps(prevProps,nextProps) {
 
     onChange=(e)=> {
         this.setState({ [e.target.name]: e.target.value })
-
-        if(e.target.value.length === 1) {
-           
-        }
-
+     
       }
       onSubmit=(e)=> {
         e.preventDefault()
@@ -100,12 +89,11 @@ componentWillReceiveProps(prevProps,nextProps) {
           password: this.state.password
         }
         login(user).then(res => {
-          if (res.islogined) {
-            // this.props.history.push(`/`)
-           this.getuser()
-           
+          if (res.islogined === true) {
+         this.getuser()
+          
           }else{
-              console.log(res.data)
+              console.log(res)
           }
         }).catch(this.setState(state => ({ errors:'such user does not exist' })) );
        
@@ -116,7 +104,7 @@ componentWillReceiveProps(prevProps,nextProps) {
          const decoded = jwt_decode(token)
       this.setState({user:decoded})
       }
-      console.log(this.state.user)
+     
     }
       onSubmits=(e)=> {
         e.preventDefault()
@@ -255,7 +243,7 @@ componentWillReceiveProps(prevProps,nextProps) {
 
                     </div>:null}
                     <HeaderBottom/>
-                    <Navbar shopProduct={this.state.props} deletItem={this.props.deletItem}/>
+                    <Navbar shopProduct={this.state.props} deletItem={this.props.deletItem} user={this.state.user}/>
                   
                 </div>
 

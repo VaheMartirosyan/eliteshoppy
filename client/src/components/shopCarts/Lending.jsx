@@ -23,8 +23,8 @@ class Shopcart extends React.Component {
     }
     quickvew = (e)=>{
         e.preventDefault();
-        console.log(e.target.name);
-        // this.props.history.push(`/profile`)
+        const id = e.target.name;
+        this.props.history.push(`/quickview/${id}`)
     }    
 
     onSubmit= (e)=>{
@@ -98,7 +98,6 @@ console.log(this.props);
                                         <span>${item.price}</span>
                                     </div>
                                     <span className={'new'}>New</span>
-                                    {/* onClick={this.addToCartHandler.bind(this, item)} */}
                                     <div className={'cartbutton'} onClick = {this.props.shopOpen} >
                                    <span className={'cartaddhover'}>
                                        <form  >

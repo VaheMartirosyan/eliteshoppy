@@ -20,7 +20,7 @@ function App(){
  var setitem = (item)=>{
  const arr = itemsArray.find( arr=>arr._id == item._id)
      if(arr){
-      console.log('wtf',itemsArray)
+   
      }else{
        itemsArray.push(item)
        localStorage.setItem('cartId', JSON.stringify(itemsArray))

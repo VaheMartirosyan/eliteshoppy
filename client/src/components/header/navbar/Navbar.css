@@ -58,6 +58,35 @@
 }
 .user{
     color: azure;
+    position: relative;
+    color: azure;
+    position: relative;
+    padding: 44px 0;
+}
+.user:hover .exitProfile{
+    display: block;
+}
+.user span{
+    padding-left: 29px;
+    font-weight: 900;
+    cursor: pointer;
+}
+.exitProfile{
+    position: absolute;
+    left: 12px;
+    width: 139px;
+    text-align: right;
+    display: none;
+    transition: 0.5s;
+    
+}
+.exitProfile p{
+   cursor: pointer;
+   font-size: 16px;
+  
+}
+.exitProfile a{
+    color: #FBFBFB;
 }
 .cart ul {
     display: flex;

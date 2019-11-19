@@ -4,6 +4,7 @@ import './admin.css'
 import uuid from 'uuidv4';
 import Home from './Home'
 import AddProduct from './AddProduct'
+import LoginAdmin from './LoginAdmin'
 export default class Goods extends Component {
     state = {
       new_arrivals:false, 
@@ -74,7 +75,13 @@ export default class Goods extends Component {
     render() {
          
         return (
-        <div className="s">
+            <LoginAdmin />
+       
+        
+        )
+    }
+}
+ {/* <div className="s">
           <div className="navPanel">
             <ul>
               <li onClick={()=>this.navigate('home')}>products</li>
@@ -85,8 +92,5 @@ export default class Goods extends Component {
           </div>
           {(this.state.navigate === 'home')?<Home />
           :(this.state.navigate === 'add product')?<AddProduct setings={this.setings} />:null}
-                </div>
         
-        )
-    }
-}
+                </div> */}

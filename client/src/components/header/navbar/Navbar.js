@@ -25,24 +25,20 @@ class Navbar extends Component{
     };
     componentDidMount(){
         const token = localStorage.myusertoken
-        if(token !== undefined){
-         const decoded = jwt_decode(token)
+      
+        if(token){
+        const decoded = jwt_decode(token)
         !this.state.userProfile &&   this.setState({userProfile:decoded})
+       
     }
-     
-    
 }
 
-
-    componentWillReceiveProps(prevProps,nextProps) {
-        if (this.props !== nextProps) {
+componentWillReceiveProps(nextProps) {
+            if (this.props.user !== nextProps.user) {
+            this.setState({userProfile:nextProps.user})
+            }
+          }
        
-        }
-      }
-
-
-   
-
     onItemDelete = e =>{
        const getShopBascket = new GetShopBascket();
        getShopBascket.deletItem(e)
@@ -91,7 +87,9 @@ class Navbar extends Component{
                             <div className={'shop'} onClick={this.props.shopOpen}>
                                 <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
                             </div>
-                            <div className="user">{this.state.userProfile && <span>Profile: {this.state.userProfile.email}</span>}</div>
+                            <div className="user">{this.state.userProfile && <span>Profile: {this.state.userProfile.email}</span>}
+                               <div className="exitProfile"><p onClick={()=> localStorage.removeItem('myusertoken')}><a href='/'>exit</a></p></div>
+                            </div>
                         </ul>
                     </nav>
                 </div>
