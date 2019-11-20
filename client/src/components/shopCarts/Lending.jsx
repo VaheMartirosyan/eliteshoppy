@@ -4,7 +4,7 @@ import './shopCarts.scss'
 import {setProduct,GetShopBascket} from '../UserFunctions'
 import Spiner from '../Spiner/Spiner'
 import {connect} from 'react-redux'
-// import {  } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Shopcart extends React.Component {
     state={
@@ -25,18 +25,18 @@ class Shopcart extends React.Component {
         e.preventDefault();
         const id = e.target.name;
         this.props.history.push(`/quickview/${id}`)
-    }    
+    }
 
     onSubmit= (e)=>{
-            e.preventDefault();
-            const getShopBascket = new GetShopBascket();
-            getShopBascket.cart({id:e.target.name})
+        e.preventDefault();
+        const getShopBascket = new GetShopBascket();
+        getShopBascket.cart({id:e.target.name})
             .then(body =>{
-              const setitem = this.props.setitem;
-console.log(this.props);
-              setitem(body)
-                    })
-        .catch(err => console.log(err))
+                const setitem = this.props.setitem;
+                console.log(this.props);
+                setitem(body)
+            })
+            .catch(err => console.log(err))
     };
 
     getProduct = body => this.setState({products:body,loading:false});
@@ -62,7 +62,7 @@ console.log(this.props);
         }
 
         const ad = ["Mens", "Womens", "Kids"];
-     
+
         return (
             <div className="shops">
                 <h2 className="wthree_text_info">New <span>Arrivals</span></h2>
@@ -86,7 +86,9 @@ console.log(this.props);
                                     <div className={'imgquick'}>
                                         <img src={`./img/${item.img}`} alt="shoose"/>
                                         <div className={'quickdiv'}>
-                                            <button className={'quickbtn'} name={item._id} onClick={this.quickvew}>Quick View</button>
+                                            <button className={'quickbtn'} name={item._id} onClick={this.quickvew}>
+                                                <Link to={'/quick'}>Quick View</Link>
+                                            </button>
                                         </div>
                                     </div>
 
@@ -127,7 +129,7 @@ console.log(this.props);
 }
 
 const mapStateToProps = state => {
- 
+
     return {
         magazine: state.magazine.initmagazine
     }
