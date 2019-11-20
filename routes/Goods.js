@@ -3,6 +3,7 @@ const route = express.Router()
 const multer = require('multer');
 const Goods = require('../models/Goods')
 const path = require('path')
+const url =require('url')
 const uuidv4 = require ( 'uuid/v4' ) 
 // const mkdirp = require('mkdirp');
 
@@ -97,6 +98,16 @@ route.get ('/getProduct', (req, res) => {
       res.json(goods)
   });
 
+})
+route.post('/getSinglProduct', (req, res) => {
+ const id = req.body.product
+  Goods.findById(id, function (err, user) {
+    if(err) throw err
+    res.json({
+      res:user
+    })
+  })
+  
 })
 
 route.get ('/menproduct', (req, res) => {

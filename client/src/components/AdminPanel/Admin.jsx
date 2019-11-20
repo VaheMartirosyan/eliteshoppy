@@ -18,6 +18,7 @@ export default class Goods extends Component {
         productCountInSok:'',
       fileSelected:null,
       navigate:'home',
+      adminISLogined:''
       } 
       onChange = (e)=> {
         const name = e.target.name;
@@ -60,7 +61,8 @@ export default class Goods extends Component {
           womenSwith=()=>  this.setState({women_products:!this.state.women_products})
           newAraivle=()=>  this.setState({new_arrivals:!this.state.new_arrivals})
           onChangeimg = e=> this.setState({fileSelected:e.target.files[0]})
-          navigate =(text) => this.setState({navigate:text})
+          navigate =(navigate,text) => this.setState({[navigate]: text})
+          admin = (admin)=>this.setState({adminISLogined:admin})
           setings = {
             onSubmit:this.onSubmit,
             onImgSubmit:this.onImgSubmit,
@@ -71,26 +73,26 @@ export default class Goods extends Component {
             womenSwith:this.womenSwith,
             newAraivle:this.newAraivle
           }
-         
+    
     render() {
-         
-        return (
-            <LoginAdmin />
-       
-        
-        )
-    }
+      let admin = this.state.adminISLogined.islogined;
+           if(admin){
+        return <LoginAdmin admin={this.admin}/>
+      }
+     return(
+     <div className="s">
+      <div className="navPanel">
+        <ul>
+          <li onClick={()=>this.navigate('navigate','home')}>products</li>
+          <li onClick={()=>this.navigate('navigate','add product')}>add product</li>
+          <li onClick={()=>this.navigate('navigate','static')}>static</li>
+          <li onClick={()=>this.navigate('adminISLogined','')}>exit</li>
+        </ul>
+      </div>
+      {(this.state.navigate === 'home')?<Home />
+      :(this.state.navigate === 'add product')?<AddProduct setings={this.setings} />:null}
+    
+            </div>     
+     )
 }
- {/* <div className="s">
-          <div className="navPanel">
-            <ul>
-              <li onClick={()=>this.navigate('home')}>products</li>
-              <li onClick={()=>this.navigate('add product')}>add product</li>
-              <li onClick={()=>this.navigate('static')}>static</li>
-              <li onClick={()=>this.navigate('seil')}>seils</li>
-            </ul>
-          </div>
-          {(this.state.navigate === 'home')?<Home />
-          :(this.state.navigate === 'add product')?<AddProduct setings={this.setings} />:null}
-        
-                </div> */}
+}

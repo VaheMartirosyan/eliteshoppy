@@ -89,8 +89,10 @@ componentWillReceiveProps(prevProps,nextProps) {
           password: this.state.password
         }
         login(user).then(res => {
+
           if (res.islogined === true) {
          this.getuser()
+
           
           }else{
               console.log(res)

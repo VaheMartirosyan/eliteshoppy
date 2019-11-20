@@ -10,6 +10,8 @@ export const register = async newUser => {
       })
       
   }
+ 
+
   export const login = user => {
     return axios
       .post('users/login', {
@@ -32,6 +34,7 @@ export const register = async newUser => {
       .post(url, data)
       
   }
+  
 
   export const setProduct = async (url,query) => {
     const res = await fetch(url,
@@ -64,6 +67,23 @@ export class GetShopBascket {
   deletItem = e=>{
   const item = this.itemsArray.filter(item=> e !== item._id  )
   localStorage.setItem('cartId', JSON.stringify(item))  
+  }
+
+   login = admin => {
+    return axios
+      .post('s/login', {
+        first_name: admin.first_name,
+        password: admin.password
+      })
+      .then(response => {
+       if(response.data.error) return response.data;
+       localStorage.setItem('itemtId',response.data)
+          return {islogined:true}
+        
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 }
   

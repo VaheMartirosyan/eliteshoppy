@@ -37,7 +37,6 @@ console.log(this.props);
               setitem(body)
                     })
         .catch(err => console.log(err))
-    
     };
 
     getProduct = body => this.setState({products:body,loading:false});
