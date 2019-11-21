@@ -1,0 +1,160 @@
+.contactTopDiv{
+  display: flex;
+  width: 60%;
+  margin:80px auto;
+  justify-content: space-between;
+
+}
+.ContDiv{
+  background-color: black;
+  flex: 1;
+  padding: 25px 0;
+  text-align: center;
+  align-items: center;
+  margin:0 5px;
+
+  i{
+    color: white;
+    font-size: 3em;
+  }
+  h4{
+    color: #2FDAB8;
+  }
+  p{
+    color: white;
+  }
+}
+iframe{
+  width: 100%;
+}
+.googleMap{
+  margin-bottom: 80px;
+}
+.MoreInfo{
+  height: 600px;
+  width: 60%;
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  .ForMoreInfo{
+    width: 50%;
+    margin-bottom: 80px;
+  }
+  h2{
+    font-weight: bolder;
+    span{
+      font-weight: 100;
+    }
+  }
+}
+.textInfo{
+  margin-top: 10px;
+  margin-left: 25px;
+  h4{
+    color:#2FDAB8;
+  }
+  p{
+    color:grey;
+  }
+}
+.InfoIcons{
+  display: flex;
+  .iconsI{
+    width: 70px;
+    height: 70px;
+    border:2px solid darkgrey;
+    margin-top: 20px;
+    i:not(.asds){
+      margin-left: 25px;
+    }
+    i{
+      font-size: 30px;
+      margin-top: 15px;
+      margin-left: 20px;
+    }
+  }
+}
+.InpDv{
+  background-color: black;
+  padding:40px;
+  input{
+    width: 100%;
+    margin-top: 20px;
+    background:transparent;
+    border:none;
+    border-bottom: 2px solid whitesmoke;
+    padding: 10px;
+    color: white;
+    &::placeholder{
+      color: #0FC3A4;
+      font-size: 20px;
+    }
+  }
+  textarea{
+    margin-top: 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid whitesmoke;
+    color: white;
+    &::placeholder{
+      color: #0FC3A4;
+      font-size: 20px;
+    }
+  }
+  h2{
+    color:white;
+  }
+}
+.FB{
+  background-color: dodgerblue;
+  padding-bottom: 5px;
+}
+.TW{
+  background-color: #2aa1c0;
+  padding-bottom: 5px;
+}
+.IS{
+  background-color: orangered;
+  padding-bottom: 5px;
+}
+.LK{
+  background-color: darkred;
+  padding-bottom: 5px;
+}
+.hoverIcons{
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+
+ &:hover .hoverIcons1{
+   background-color: white;
+   transform: rotateX(360deg);
+   transition: 2s;
+   i{
+     color: black;
+   }
+ }
+
+  i{
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 11px;
+  }
+}
+.DisHov{
+  width: 35%;
+  margin-left: 20px;
+  display: flex;
+}
+.InIc{
+  margin-top: 20px;
+}
+.BtnSend{
+  margin-top: 20px;
+  padding: 8px 30px;
+  background-color: #2FDAB8;
+  border: 1px solid #2FDAB8;
+  color: white;
+  font-weight: 800;
+}

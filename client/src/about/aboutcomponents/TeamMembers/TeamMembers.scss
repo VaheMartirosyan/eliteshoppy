@@ -1,0 +1,129 @@
+section{
+  background-color: whitesmoke;
+  margin-top: 80px;
+  padding: 100px 0;
+}
+.OurTeamText{
+  h2{
+    text-align: center;
+    font-weight: 900;
+    font-size: 40px;
+    margin-bottom: 60px;
+    margin-right: 15px;
+    margin-left: 15px;
+    span{
+      font-weight: 200;
+    }
+  }
+}
+.HoverColor{
+  width: 100%;
+  background-color: rgba(47,218,184,0.7);
+  height: 150px;
+  z-index: 1;
+  margin-right: 20px;
+  h5{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    padding-top:20px ;
+  }
+  p{
+    color: white;
+    text-align: center;
+  }
+}
+.TeamPeople1{
+  flex: 1;
+  overflow: hidden;
+  height: 300px;
+  background-image: url("img/t1.jpg");
+  background-size: cover;
+  border: 1px solid;
+}
+.TeamPeople2{
+  flex: 1;
+  overflow: hidden;
+  height: 300px;
+  background-image: url("img/t2.jpg");
+  background-size: cover;
+  border: 1px solid;
+}
+.TeamPeople3{
+  flex: 1;
+  overflow: hidden;
+  height: 300px;
+  background-image: url("img/t3.jpg");
+  background-size: cover;
+}
+.TeamPeople4{
+  flex: 1;
+  overflow: hidden;
+  height: 300px;
+  background-image: url("img/t4.jpg");
+  background-size: 100% 100%;
+  border: 1px solid;
+}
+.TeamMembers{
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  .TeamPeople{
+    flex: 1;
+    overflow: hidden;
+    height: 300px;
+    z-index: 3;
+    margin: 0 15px;
+    &:hover .HoverColor{
+      margin-top: -160px;
+      transition: .2s;
+      z-index: 1;
+    }
+  }
+}
+.FB1{
+  background-color: dodgerblue;
+  padding-bottom: 5px;
+}
+.TW1{
+  background-color: #2aa1c0;
+  padding-bottom: 5px;
+}
+.IS1{
+  background-color: orangered;
+  padding-bottom: 5px;
+}
+.LK1{
+  background-color: darkred;
+  padding-bottom: 5px;
+}
+.hoverIcons1{
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+
+  &:hover .hoverIcons11{
+    background-color: white;
+    transform: rotateX(360deg);
+    transition: 2s;
+    i{
+      color: black;
+    }
+  }
+
+  i{
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 11px;
+  }
+}
+.DisHov1{
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.InIc1{
+  margin-top: 20px;
+}
