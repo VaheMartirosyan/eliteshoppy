@@ -55,7 +55,7 @@ function App(){
                 <Route path='/mens' component={Mens} />
                 <Route path='/womens' component={Womens} />
                 <Route path='/contact' component={Contact} />
-                <Route path='/quick' component={QuickView}/>
+                <Route exact path='/quickview' component={QuickView}/>
 
                 <footer>
                     <Footer/>

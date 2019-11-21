@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13efa7bd-0884-43a6-b500-c2c87ff553db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/quickview/QuickView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/quickview/QuickView.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/shopCarts/Lending.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/shopCarts/Lending.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="13efa7bd-0884-43a6-b500-c2c87ff553db" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +75,8 @@
       <workItem from="1573844757719" duration="262000" />
       <workItem from="1574002220993" duration="6937000" />
       <workItem from="1574270082783" duration="498000" />
-      <workItem from="1574279049480" duration="858000" />
+      <workItem from="1574279049480" duration="1026000" />
+      <workItem from="1574322163188" duration="15529000" />
     </task>
     <servers />
   </component>

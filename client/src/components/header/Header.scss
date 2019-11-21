@@ -30,7 +30,9 @@
     flex: 1;
     text-align: center;
 }
-
+.redborder{
+    border-bottom: 1px solid red !important;
+}
 .absolute{
     position: absolute;
     z-index: 2;

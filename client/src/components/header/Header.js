@@ -34,16 +34,18 @@ export default class Header extends Component{
 
         //Login Form Check
         disabled:true,
-        signpasscheck:false,
-        signmailcheck:false,
+        logpassword:'',
+        logemail:'',
+        formError:{email:'',password:''},
+        emailvalid:false,
+        passvalid:false,
+        formValid:false,
 
         //Register Form Check
         disabledreg:true,
-        regname:false,
-        regmail:false,
-        regpass:false,
-        regconfirmpass:false,
-        passcheck:''
+
+
+
     };
 
 /// FUNCTION FOR OPEN SIGNIN OR SIGN UP WINDOWS HANGED ON THEIR NUMBERS
@@ -89,86 +91,60 @@ export default class Header extends Component{
         window.onscroll = function () { window.scrollTo(); };
     }
 
-    onChange=(i,e)=> {
-        this.setState({ [e.target.name]: e.target.value })
-        //login check
-        if(this.state.openSign){
-            if( i === 0 && e.target.value.length >= 6){
-                this.setState({
-                    signpasscheck:true,
-                })
-            }
-            if(i === 1 &&
-                e.target.value.match( /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\ s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
-                this.setState({
-                    signmailcheck:true,
-                })
-            }
-            else{
-                this.setState({
-                    signmailcheck:false
-                })
-            }
-        }
-        if(this.state.signmailcheck && this.state.signpasscheck){
-            this.setState({
-                disabled:false
-            })
-        }
-        else{
-            this.setState({
-                disabled:true,
-            })
-        }
+    onChange=(e)=> {
+    const name = e.target.name;
+    const value = e.target.value;
 
-        //register check
-        if(this.state.openUp){
-            if( i === 0 && e.target.value.length >= 6){
-                this.setState({
-                    passcheck:e.target.value,
-                    regpass:true
-                })
-            }
-            else if(i === 1 && e.target.value.match( /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\ s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
-                this.setState({
-                    regmail:true
-                })
-            }
-            else if(i === 2 && e.target.value.length <= 16){
-                this.setState({
-                    regname:true
-                })
-            }
-            else if(i === 3 && e.target.value === this.state.passcheck ){
-                this.setState({
-                    regconfirmpass:true
-                })
-            }
-            else if(this.state.regconfirmpass && this.state.regmail && this.state.regname && this.state.regpass){
-                this.setState({
-                    disabledreg:false
-                })
-            }
-        }
-        console.log('name',this.state.regname,'mail',this.state.regmail,'pass',this.state.regpass,'confirm',this.state.regconfirmpass,'btn',this.state.disabledreg)
-        //  if(i === 0 && e.target.value.length >= 6){
-        //      this.setState({a: e.target.value})
-        //      console.log('arden chishta mi tanjvi')
-        //  }
-        //  else if(i === 0 && e.target.value.length <=6){
-        //      console.log('parolt sxala')
-        //  }
-        //  else if( i === 1 && !e.target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)){
-        //      console.log('mailtsxala')
-        //  }
-        //  else if(i === 2 && e.target.value.length > 20) {
-        //      console.log('toshni chi anunt')
-        //  }
-        // if (i === 3 && e.target.value === this.state.a){
-        //     console.log('parolnert brnuma')
-        // }
+        this.setState({
+            [name]:value
+        },
+            () => {this.validateField(name,value)}
+        )
+    if(this.state.emailvalid && this.state.passvalid){
+        this.setState({
+            disabled:false
+        })
+    }
+    else{
+        this.setState({
+            disabled:true
+        })
+    }
+    }
 
 
+    validateField = (fieldName,fieldvalue) =>{
+        let formerror = this.state.formError;
+        let emailvalid = this.state.emailvalid;
+        let passvalid = this.state.passvalid;
+        switch(fieldName){
+            case 'logemail' : emailvalid = fieldvalue.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+            formerror.email = emailvalid ? '' : 'redborder';
+            break;
+            case 'logpassword' : passvalid = fieldvalue.length > 5;
+            formerror.password = passvalid ? '' : 'redborder';
+            break;
+
+            default:break;
+
+        }
+        this.setState({
+            formError: formerror,
+            emailvalid: emailvalid,
+            passvalid: passvalid
+        },
+            this.validateForm)
+        console.log(this.state.formError)
+    }
+
+    validateForm=()=>{
+        this.setState({
+            formValid: this.state.emailvalid && this.state.passvalid
+        })
+    }
+
+    errorClass=(error)=>{
+        return(error.length === 0 ? '' : 'redborder')
     }
     onSubmit=(e)=> {
         e.preventDefault()
@@ -249,10 +225,10 @@ export default class Header extends Component{
                             <p className={'signp'}><b>Sign In</b> Now</p>
                             <form onSubmit={this.onSubmit}>
                                 <div className={'signinform'}>
-                                    <input   type="password"  className={"signname"} onChange={this.onChange.bind(this,0)} name="password" placeholder={'Enter Your Password'}/>
+                                    <input   type="password"  className={`signname ${this.errorClass(this.state.formError.password)}`} onChange={this.onChange} name="logpassword" placeholder={'Enter Your Password'}/>
                                 </div>
                                 <div className={'signinform'}>
-                                    <input type="email" className={"signname"}   name="emails" onChange={this.onChange.bind(this,1)}  placeholder={'Enter Your Email'} />
+                                    <input type="email" className={`signname ${this.errorClass(this.state.formError.email)}`} name="logemail" onChange={this.onChange}  placeholder={'Enter Your Email'} />
                                 </div>
                                 <input type="submit" value={'Sign In'} style={this.state.disabled ? {background:'grey'}:null} className={'signbutton'} disabled={this.state.disabled}/>
                             </form>
@@ -290,19 +266,19 @@ export default class Header extends Component{
                             <p className={'signp'}><b>Sign Up</b> Now</p>
                             <form onSubmit={this.onSubmits}>
                                 <div className={'signinform'}>
-                                    <input type="text"  className={"signname"} onChange={this.onChange.bind(this,2)} name="first_name" placeholder={'Enter Your Name'}/>
+                                    <input type="text"  className={"signname"} onChange={this.onChange} name="first_name" placeholder={'Enter Your Name'}/>
                                 </div>
                                 <div className={'signinform'}>
-                                    <input type="email" className={"signname"}  name="myemail" onChange={this.onChange.bind(this,1)} placeholder={'Enter Your Email'}/>
+                                    <input type="email" className={"signname"}  name="myemail" onChange={this.onChange} placeholder={'Enter Your Email'}/>
                                 </div>
                                 <div className={'signinform'}>
 
-                                    <input type="password" className={"signname"}  onChange={this.onChange.bind(this,0)} name="mypassword" placeholder={'Enter Your Password'}/>
+                                    <input type="password" className={"signname"}  onChange={this.onChange} onInput={this.focus} name="mypassword" placeholder={'Enter Your Password'}/>
 
 
                                 </div>
                                 <div className={'signinform'}>
-                                    <input type="password" className={"signname"}  onChange={this.onChange.bind(this,3)} name="confirmPassword" placeholder={'Confirm Your Password'}/>
+                                    <input type="password" className={"signname"}  onChange={this.onChange} onInput={this.fo} name="confirmPassword" placeholder={'Confirm Your Password'}/>
                                 </div>
                                 <input type="submit" value={'Sign In'} style={this.state.disabledreg ? {background:'grey'}:null} disabled={this.state.disabledreg} className={'signbutton'}/>
                                 <div className={'signcontacts'}>

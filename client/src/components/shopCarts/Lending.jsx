@@ -87,7 +87,7 @@ class Shopcart extends React.Component {
                                         <img src={`./img/${item.img}`} alt="shoose"/>
                                         <div className={'quickdiv'}>
                                             <button className={'quickbtn'} name={item._id} onClick={this.quickvew}>
-                                                <Link to={'/quick'}>Quick View</Link>
+                                                <Link to='/quickview'>Quick View</Link>
                                             </button>
                                         </div>
                                     </div>
