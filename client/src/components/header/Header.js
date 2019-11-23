@@ -36,12 +36,21 @@ export default class Header extends Component{
         disabled:true,
         logpassword:'',
         logemail:'',
-        formError:{email:'',password:''},
+        formError:{email:'',password:'',regname:'',regemail:'',regpass:'',regpassconf:''},
         emailvalid:false,
         passvalid:false,
         formValid:false,
 
         //Register Form Check
+        regpassword:'',
+        regconfirm:'',
+        regmail:'',
+        regname:'',
+        namevalid:false,
+        regmailvalid:false,
+        regpassvalid:false,
+        regpassconfirm:false,
+        regFormvalid:false,
         disabledreg:true,
 
 
@@ -100,7 +109,7 @@ export default class Header extends Component{
         },
             () => {this.validateField(name,value)}
         )
-    if(this.state.emailvalid && this.state.passvalid){
+    if(this.state.formValid){
         this.setState({
             disabled:false
         })
@@ -110,6 +119,11 @@ export default class Header extends Component{
             disabled:true
         })
     }
+    if(this.state.regFormvalid){
+        this.setState({
+            disabledreg:false
+        })
+    }
     }
 
 
@@ -117,6 +131,10 @@ export default class Header extends Component{
         let formerror = this.state.formError;
         let emailvalid = this.state.emailvalid;
         let passvalid = this.state.passvalid;
+        let namevalid = this.state.namevalid;
+        let regmailvalid = this.state.regmailvalid;
+        let regpassvalid = this.state.regpassvalid;
+        let regpassconfirmvalid = this.state.regpassconfirm;
         switch(fieldName){
             case 'logemail' : emailvalid = fieldvalue.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
             formerror.email = emailvalid ? '' : 'redborder';
@@ -124,22 +142,42 @@ export default class Header extends Component{
             case 'logpassword' : passvalid = fieldvalue.length > 5;
             formerror.password = passvalid ? '' : 'redborder';
             break;
+            case 'first_name' : namevalid = fieldvalue.length < 16;
+            formerror.regname = namevalid ? '' : 'redborder';
+            break;
+            case 'regemail' : regmailvalid = fieldvalue.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+            formerror.regemail = regmailvalid ? '' : 'redborder';
+            break;
+            case 'regpassword' : regpassvalid= fieldvalue.length > 5;
+            formerror.regpass = regpassvalid ? '' : 'redborder';
+            break;
+            case 'regconfirmPassword' : regpassconfirmvalid = fieldvalue === this.state.regpassword;
+            formerror.regpassconf = regpassconfirmvalid ? '' : 'redborder';
+            break;
+
 
             default:break;
 
         }
+        console.log(this.state.namevalid, 'mail', this.state.regmailvalid, 'pass', this.state.regpassvalid, 'conf', this.state.regpassconfirm)
         this.setState({
             formError: formerror,
+            namevalid:namevalid,
             emailvalid: emailvalid,
-            passvalid: passvalid
+            passvalid: passvalid,
+            regmailvalid: regmailvalid,
+            regpassvalid: regpassvalid,
+            regpassconfirm: regpassconfirmvalid
         },
             this.validateForm)
-        console.log(this.state.formError)
+
     }
 
     validateForm=()=>{
         this.setState({
-            formValid: this.state.emailvalid && this.state.passvalid
+            formValid: this.state.emailvalid && this.state.passvalid,
+            regFormvalid: this.state.namevalid && this.state.regpassvalid && this.state.regmailvalid && this.state.regpassconfirm
+
         })
     }
 
@@ -266,19 +304,19 @@ export default class Header extends Component{
                             <p className={'signp'}><b>Sign Up</b> Now</p>
                             <form onSubmit={this.onSubmits}>
                                 <div className={'signinform'}>
-                                    <input type="text"  className={"signname"} onChange={this.onChange} name="first_name" placeholder={'Enter Your Name'}/>
+                                    <input type="text"  className={`signname ${this.errorClass(this.state.formError.regname)}`} onChange={this.onChange} name="first_name" placeholder={'Enter Your Name'}/>
                                 </div>
                                 <div className={'signinform'}>
-                                    <input type="email" className={"signname"}  name="myemail" onChange={this.onChange} placeholder={'Enter Your Email'}/>
+                                    <input type="email" className={`signname ${this.errorClass(this.state.formError.regemail)}`}  name="regemail" onChange={this.onChange} placeholder={'Enter Your Email'}/>
                                 </div>
                                 <div className={'signinform'}>
 
-                                    <input type="password" className={"signname"}  onChange={this.onChange} onInput={this.focus} name="mypassword" placeholder={'Enter Your Password'}/>
+                                    <input type="password" className={`signname ${this.errorClass(this.state.formError.regpass)}`} onChange={this.onChange}  name="regpassword" placeholder={'Enter Your Password'}/>
 
 
                                 </div>
                                 <div className={'signinform'}>
-                                    <input type="password" className={"signname"}  onChange={this.onChange} onInput={this.fo} name="confirmPassword" placeholder={'Confirm Your Password'}/>
+                                    <input type="password" className={`signname ${this.errorClass(this.state.formError.regpassconf)}`}  onChange={this.onChange}  name="regconfirmPassword" placeholder={'Confirm Your Password'}/>
                                 </div>
                                 <input type="submit" value={'Sign In'} style={this.state.disabledreg ? {background:'grey'}:null} disabled={this.state.disabledreg} className={'signbutton'}/>
                                 <div className={'signcontacts'}>
