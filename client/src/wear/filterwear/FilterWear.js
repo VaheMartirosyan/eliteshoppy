@@ -2,6 +2,10 @@ import React, {Component} from 'react'
 import './FilterWear.scss'
 import InsideFilter from "./insidefilter/InsideFilter";
 import Checkboxes from "./checkboxes/Checkboxes";
+import Compare from "./compare/Compare";
+import Colections from "./colections/Colections";
+import Sliderfitler from './sliderfilter/Sliderfilter'
+import WearCards from "./wearcards/WearCards";
 
 
 export default class FilterWear extends Component {
@@ -127,6 +131,12 @@ export default class FilterWear extends Component {
                         <div className={'compare'}>
                             <div className={'bycompare'}>
                                 <h2> PRODUCT  <span>COMPARE(0)</span> </h2>
+                            </div>
+                            <div className="slidefilter">
+                                <Compare />
+                                <Sliderfitler />
+                                <Colections />
+                                <WearCards />
                             </div>
                         </div>
                     </div>
