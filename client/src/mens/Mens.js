@@ -12,10 +12,12 @@ export default class Mens extends Component {
         setProduct(`stok/menproduct`,"GET")
             .then(body =>{
                 this.setState({products:body})
+               
             })
             .catch(err => console.log(err))
     }
     render() {
+        console.log(this.state.products);
         const {wearTitle} = this.state
         return(
             <div>

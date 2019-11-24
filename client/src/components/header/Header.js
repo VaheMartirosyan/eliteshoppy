@@ -22,8 +22,6 @@ export default class Header extends Component{
         /// FOR SIGN IN & SIGNUP WINDOWS
         openSign: false,
         openUp: false,
-        emails: '',
-        password: '',
         errors: '',
         first_name: '',
         confirmPassword: '',
@@ -184,15 +182,15 @@ export default class Header extends Component{
     errorClass=(error)=>{
         return(error.length === 0 ? '' : 'redborder')
     }
-    onSubmit=(e)=> {
+    onSubmit=(e)=> {    
         e.preventDefault()
         const user = {
-            email: this.state.emails,
-            password: this.state.password
+            email: this.state.logemail,
+            password: this.state.logpassword
         }
         login(user).then(res => {
 
-            if (res.islogined === true) {
+            if (res!== undefined && res.islogined === true) {
                 this.getuser()
                 this.setState({
                     openSign:false,
