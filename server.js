@@ -1,6 +1,6 @@
-var express = require('express')
-var bodyParser = require('body-parser')
-var app = express()
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
 const server = require('http').createServer(app);
 const mongoose = require('mongoose')
 const Users = require('./routes/Users')
@@ -10,6 +10,7 @@ const Products = require ('./routes/Products')
 const port = process.env.PORT || 5000
 const cors = require('cors')
 const morgan = require('morgan')
+const hendelError = require('./middlwere/errorhendeler')
 app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({

@@ -5,6 +5,7 @@ const Goods = require('../models/Goods')
 const path = require('path')
 const url =require('url')
 const uuidv4 = require ( 'uuid/v4' ) 
+const verifi = require('../middlwere/verification')
 // const mkdirp = require('mkdirp');
 
 const rs = () =>
@@ -129,6 +130,27 @@ route.get ('/menproduct', (req, res) => {
 });
 
 })
+route.get ('/womenproduct', (req, res) => {
+  Goods.aggregate(  [
+    {
+      '$match': {productCotegory:"womensProduct"}
+    }, {
+      '$sort': {
+        'date': -1
+      }
+    }, {
+      '$limit': 11
+    }
+  ])
+  .exec(function(err, goods) {
+    if (err) throw err;
+     
+    res.json(goods)
+});
+
+})
+
+
 
 route.get ('/test', (req, res) => {
   Goods.aggregate (
