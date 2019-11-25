@@ -6,6 +6,7 @@ export default ()=>{
 
     return(
        <div className={'footerl'}>
+
            <div className={'footertop'}>
                <div className={'footone'}>
                    <div className={'shopy'}>

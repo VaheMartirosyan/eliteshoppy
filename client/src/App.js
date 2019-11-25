@@ -11,6 +11,7 @@ import About from './about/About'
 import Mens from './mens/Mens'
 import Womens from './womens/Womens'
 import Contact from './contact/Contact'
+import FooterTop from './components/footer/footertop/FooterTop'
 
 function App(){
 
@@ -58,6 +59,7 @@ function App(){
                 <Route exact path='/quickview' component={QuickView}/>
 
                 <footer>
+                    <FooterTop/>
                     <Footer/>
                 </footer>
 

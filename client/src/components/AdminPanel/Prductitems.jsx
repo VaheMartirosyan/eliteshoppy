@@ -22,7 +22,7 @@ return (
                 <th scope="col">Price</th>
             </tr> */}
         </thead>
-      
+
             <tbody>
                 {products.map((item,i)=>{
                 return <tr key={i} className="table-active" onClick={()=>getItem(item._id)}>
@@ -42,7 +42,7 @@ return (
                 </tr>
                 })}
             </tbody>
-      
+
 
     </table>
 </div>

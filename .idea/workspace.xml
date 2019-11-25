@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13efa7bd-0884-43a6-b500-c2c87ff553db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/footer/footertop/FooterTop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/footer/footertop/FooterTop.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AdminPanel/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AdminPanel/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AdminPanel/Prductitems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AdminPanel/Prductitems.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/AdminPanel/ProductChaigPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AdminPanel/ProductChaigPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/footer/Footer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +88,9 @@
       <workItem from="1574279049480" duration="1026000" />
       <workItem from="1574322163188" duration="15529000" />
       <workItem from="1574343382086" duration="286000" />
-      <workItem from="1574529107591" duration="4924000" />
+      <workItem from="1574529107591" duration="5338000" />
+      <workItem from="1574601471692" duration="313000" />
+      <workItem from="1574669940555" duration="3856000" />
     </task>
     <servers />
   </component>

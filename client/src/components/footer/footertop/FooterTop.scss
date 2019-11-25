@@ -1,0 +1,30 @@
+.footicondiv{
+  background: black;
+  color:white;
+  padding: 25px;
+  align-self: center;
+  margin-right: 15px;
+}
+.ictxtdiv:hover .footicondiv{
+  background: #2BDABA;
+  transition: .5s;
+}
+.ictxtdiv{
+  display: flex;
+}
+.foottop{
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 80px;
+
+  justify-content: space-between;
+}
+.foottoptxt h3{
+  text-transform: uppercase;
+  color: #2BDABA;
+
+}
+.foottoptxt{
+  margin-top: -10px;
+}

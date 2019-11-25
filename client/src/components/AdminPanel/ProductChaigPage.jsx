@@ -30,16 +30,16 @@ const ProductChaigPage = ({prodct}) => {
        else{
         setstate({apdProduct:[prod.data.res],visibl:true})
        }
-        
+
       })
     },[])
     const product = ()=>{
       return (
-       
+
         <div>
-        <span>{apdProduct.apdProduct.cartId}</span>  
+        <span>{apdProduct.apdProduct.cartId}</span>
          {apdProduct.visibl &&  <div> {apdProduct.apdProduct.map((item,i)=>{
-          
+
             return  <div className='divWraper' key={i}>
                <div className="myinputs">
                <TextField
@@ -53,27 +53,27 @@ const ProductChaigPage = ({prodct}) => {
              />
                </div>
                <div className="myinputs">
-                 
+
                </div>
-            </div>  
-             
+            </div>
+
           })}
      </div>     }
                   </div>
-         
- 
-         
+
+
+
      )
     }
   if(apdProduct !== ''){
     console.log(apdProduct);
-    return product() 
+    return product()
   }
-  
+
  return(
     <span>oo</span>
  )
-    
+
 }
 
 export default ProductChaigPage;

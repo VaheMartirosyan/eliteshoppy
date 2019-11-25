@@ -1,15 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-import DeleteIcon from '@material-ui/icons/Delete'; 
+import DeleteIcon from '@material-ui/icons/Delete';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
 
 function getModalStyle() {
-  const top = 50 
-  const left = 50 
+  const top = 50
+  const left = 50
 
   return {
     top: `${top}%`,
@@ -59,7 +59,7 @@ export default function SimpleModal() {
       >
         <div style={modalStyle} className={classes.paper}>
           <h2 id="simple-modal-title">you really want to delete this item</h2>
-         
+
           <button onClick={handleClose} >delete</button>
         </div>
       </Modal>
