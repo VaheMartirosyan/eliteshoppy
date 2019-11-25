@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import {divWithClassName} from "react-bootstrap/esm/utils/divWithClassName";
+import React from 'react'
 import Wear from "../wear/Wear";
 import Abouttxt from "./aboutcomponents/second/Abouttxt";
 import SliderBottom from "../components/sliderbottom/SliderBottom";

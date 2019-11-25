@@ -102,7 +102,7 @@ componentWillReceiveProps(nextProps) {
                     <div className={'cart'}>
                         {this.state.bascket.length === 0 ? 'Your shopping cart is empty': <div>
                             <ul>
-                            {this.props.shopProduct && this.props.shopProduct.map((e, i) => {
+                            {this.props.shopProduct.map((e, i) => {
                                     return(
                                         <li key={i}>
                                             <img src={`./img/${e.img}`} alt="shoose"/>

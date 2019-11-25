@@ -11,7 +11,7 @@ export default function Home() {
     const [productforApdate, chaingState] = useState({item:'',visibl:false})
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage] = useState(1);
     const [postsPerPage] = useState(10);
   
     useEffect(() => {
@@ -29,7 +29,6 @@ const indexOfFirstPost = indexOfLastPost - postsPerPage;
 const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
 // Change page
-const paginate = pageNumber => setCurrentPage(pageNumber);
 
  const getItem = (text)=>{
   
