@@ -1,9 +1,11 @@
 .footicondiv{
   background: black;
   color:white;
-  padding: 25px;
+  padding: 25px 30px;
   align-self: center;
-  margin-right: 15px;
+  margin-right: 15px ;
+  margin-left: 2px;
+  font-size: 18px;
 }
 .ictxtdiv:hover .footicondiv{
   background: #2BDABA;
@@ -11,6 +13,7 @@
 }
 .ictxtdiv{
   display: flex;
+
 }
 .foottop{
   display: flex;
@@ -23,6 +26,8 @@
 .foottoptxt h3{
   text-transform: uppercase;
   color: #2BDABA;
+  font-size: 15px;
+
 
 }
 .foottoptxt{
