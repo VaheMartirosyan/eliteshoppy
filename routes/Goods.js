@@ -102,6 +102,7 @@ route.get ('/getProduct', (req, res) => {
 })
 route.post('/getSinglProduct', (req, res) => {
  const id = req.body.product
+ 
   Goods.findById(id, function (err, user) {
     if(err) throw err
     res.json({

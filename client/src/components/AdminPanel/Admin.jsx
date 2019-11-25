@@ -18,7 +18,9 @@ export default class Goods extends Component {
         productCountInSok:'',
       fileSelected:null,
       navigate:'home',
-      adminISLogined:''
+      navigation:[{id:1,text:'home'},{id:2,text:'add product'},{id:3,text:'static'},{id:4,text:'exit'}],
+      adminISLogined:'',
+      selectedId:null,
       } 
       onChange = (e)=> {
         const name = e.target.name;
@@ -61,7 +63,10 @@ export default class Goods extends Component {
           womenSwith=()=>  this.setState({women_products:!this.state.women_products})
           newAraivle=()=>  this.setState({new_arrivals:!this.state.new_arrivals})
           onChangeimg = e=> this.setState({fileSelected:e.target.files[0]})
-          navigate =(navigate,text) => this.setState({[navigate]: text})
+          navigate =(item) => {
+                     this.setState({navigate: item.item.text,selectedId:item.item.id})
+         
+          }
           admin = (admin)=>this.setState({adminISLogined:admin})
           setings = {
             onSubmit:this.onSubmit,
@@ -75,6 +80,7 @@ export default class Goods extends Component {
           }
     
     render() {
+     
       let admin = this.state.adminISLogined.islogined;
            if(admin){
         return <LoginAdmin admin={this.admin}/>
@@ -82,11 +88,16 @@ export default class Goods extends Component {
      return(
      <div className="s">
       <div className="navPanel">
-        <ul>
-          <li onClick={()=>this.navigate('navigate','home')}>products</li>
-          <li onClick={()=>this.navigate('navigate','add product')}>add product</li>
-          <li onClick={()=>this.navigate('navigate','static')}>static</li>
-          <li onClick={()=>this.navigate('adminISLogined','')}>exit</li>
+        <ul>{this.state.navigation.map((item,i)=>{
+          let classes = ['list'];
+          if (item.id === this.state.selectedId){
+            classes.push('text-succsess')
+          }
+        return  <li key={i} className={classes.join(' ')}
+                     onClick={()=>this.navigate({item},{i})}>{item.text}</li>
+          })}
+         
+          
         </ul>
       </div>
       {(this.state.navigate === 'home')?<Home />

@@ -117,7 +117,11 @@
   .sub:active {
     background: #999;
   }
-  
+  .text-succsess{
+    color: deeppink;
+    line-height: inherit;
+    text-decoration: overline;
+  }
   input.question:valid ~ input[type="submit"], textarea.question:valid ~ input[type="submit"] {
     -webkit-animation: appear 1s forwards;
     animation: appear 1s forwards;

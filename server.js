@@ -52,6 +52,7 @@ app.use((error,req,res,next)=>{
     }
   })
 })
+app.use(hendelError)
 server.listen(port, function () {
   console.log('Server is running on port: ' + port)
 })

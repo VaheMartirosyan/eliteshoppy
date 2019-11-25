@@ -74,3 +74,24 @@
     justify-content: center;
     align-items: center;
 }
+.divWraper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    border: 1px solid blueviolet;
+    width: 1500px;;
+}
+
+.myinputs{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid rgb(21, 184, 135);
+    width: 48%;
+    height: 800px;
+    margin: 10px;
+   
+
+}
+.myinputs input, label{
+    font-size: 20px !important;
+}
