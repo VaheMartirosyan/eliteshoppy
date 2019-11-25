@@ -12,6 +12,8 @@ import Mens from './mens/Mens'
 import Womens from './womens/Womens'
 import Contact from './contact/Contact'
 import FooterTop from './components/footer/footertop/FooterTop'
+import Shop from './shop/Shop'
+
 
 function App(){
 
@@ -56,6 +58,7 @@ function App(){
                 <Route path='/mens' component={Mens} />
                 <Route path='/womens' component={Womens} />
                 <Route path='/contact' component={Contact} />
+                <Route path='/shop' component={Shop}/>
                 <Route exact path='/quickview' component={QuickView}/>
 
                 <footer>

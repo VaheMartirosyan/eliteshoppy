@@ -13,7 +13,8 @@ class Navbar extends Component{
     state = {
         navlink:[
             {name:'Home',link:'/'},{name:'About',link:'/about'},{name:'Men`s wear',link:'/mens'},
-            {name:'Women`s wear',link:'/womens'},{name:'Short Codes',link:'/codes'},{name:'Contact',link:'/contact'}
+            {name:'Women`s wear',link:'/womens'},{name:'Short Codes',link:'/codes'},{name:'Contact',link:'/contact'},
+            {name:'Shop',link:'/shop'}
         ],
         mens:false,
         womens:false,
@@ -83,6 +84,9 @@ componentWillReceiveProps(nextProps) {
                             </li>
                             <li className={'navulli'}>
                                 <NavLink to={'/contact'} >Contact</NavLink>
+                            </li>
+                            <li className={'navulli'}>
+                                <NavLink to={'/shop'} >Our shop</NavLink>
                             </li>
                             <div className={'shop'} onClick={this.props.shopOpen}>
                                 <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
