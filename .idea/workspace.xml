@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13efa7bd-0884-43a6-b500-c2c87ff553db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/shop/Shop.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/shop/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shop/Shop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
         <option value="JavaScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -86,7 +89,9 @@
       <workItem from="1574601471692" duration="313000" />
       <workItem from="1574669940555" duration="11759000" />
       <workItem from="1574755883793" duration="1888000" />
-      <workItem from="1574758354516" duration="12907000" />
+      <workItem from="1574758354516" duration="13121000" />
+      <workItem from="1574786359224" duration="13000" />
+      <workItem from="1574786655155" duration="9359000" />
     </task>
     <servers />
   </component>
