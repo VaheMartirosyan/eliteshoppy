@@ -5,6 +5,8 @@ import Wear from "../wear/Wear";
 export default class Shop extends Component{
     state={
         shops:[],
+        a:0,
+        b:0
 
     }
     componentDidMount() {
@@ -12,15 +14,15 @@ export default class Shop extends Component{
     }
     changeQuantity=(i,e)=>{
         console.log(e.target.value);
-        var a = this.state.shops.find(a=>a._id == i._id)
-        a.price = a.price * e.target.value;
-        var b = a
-        console.log(a.price)
-        this.setState({
-            b:this.state.shops.price
-        })
-
+        var a = this.state.shops.find(a=>a._id === i._id);
+        this.state.a = a.price * e.target.value;
+        
+        this.setState({a:a.price})
+        console.log(this.state.a)
     }
+
+
+
     shopBasket() {
         const shop = localStorage.getItem('cartId');
         const a = JSON.parse(shop)
