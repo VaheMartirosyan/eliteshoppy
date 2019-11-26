@@ -5,20 +5,23 @@ import Wear from "../wear/Wear";
 export default class Shop extends Component{
     state={
         shops:[],
-        a:0,
-        b:0
+        a:true,
+        b:1,
+
 
     }
     componentDidMount() {
         this.shopBasket()
     }
-    changeQuantity=(i,e)=>{
-        console.log(e.target.value);
-        var a = this.state.shops.find(a=>a._id === i._id);
-        this.state.a = a.price * e.target.value;
-        
-        this.setState({a:a.price})
-        console.log(this.state.a)
+    changeQuantity=(i,index, a)=>{
+
+        i.__v = a.target.value * i.price
+
+       this.setState({
+          b:this.state.shops[index].__v,
+           a:false
+       })
+
     }
 
 
@@ -44,9 +47,9 @@ export default class Shop extends Component{
                                                 <li key={i}>
                                                     <img src={`./img/${e.img}`} alt="shoose"/>
                                                     <h4 >{e.goods_name}</h4>
-                                                    <input type="number" min={0} max={e.stok}   onChange={this.changeQuantity.bind(this,e)}/>
+                                                    <input type="number" min={1} max={e.stok}   onChange={this.changeQuantity.bind(this,e,i)}/>
 
-                                                    <span>${e.price}</span>
+                                                    <span>${ e.__v}</span>
                                                     <span className="delete" >x</span>
                                                 </li>
                                             )
