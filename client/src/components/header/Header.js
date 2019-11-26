@@ -117,11 +117,7 @@ export default class Header extends Component{
             disabled:true
         })
     }
-    if(this.state.regFormvalid){
-        this.setState({
-            disabledreg:false
-        })
-    }
+
     }
 
 
@@ -168,6 +164,11 @@ export default class Header extends Component{
             regpassconfirm: regpassconfirmvalid
         },
             this.validateForm)
+        if(this.state.regFormvalid){
+            this.setState({
+                disabledreg:false
+            })
+        }
 
     }
 

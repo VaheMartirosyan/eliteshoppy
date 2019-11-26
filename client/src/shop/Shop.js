@@ -4,12 +4,23 @@ import Wear from "../wear/Wear";
 
 export default class Shop extends Component{
     state={
-        shops:[]
+        shops:[],
+
     }
     componentDidMount() {
         this.shopBasket()
     }
+    changeQuantity=(i,e)=>{
+        console.log(e.target.value);
+        var a = this.state.shops.find(a=>a._id == i._id)
+        a.price = a.price * e.target.value;
+        var b = a
+        console.log(a.price)
+        this.setState({
+            b:this.state.shops.price
+        })
 
+    }
     shopBasket() {
         const shop = localStorage.getItem('cartId');
         const a = JSON.parse(shop)
@@ -20,7 +31,7 @@ export default class Shop extends Component{
     }
     render() {
 
-        console.log(this.state.shops)
+
         return(
             <div>
                 <Wear wear={'OUR SHOP'}/>
@@ -31,7 +42,8 @@ export default class Shop extends Component{
                                                 <li key={i}>
                                                     <img src={`./img/${e.img}`} alt="shoose"/>
                                                     <h4 >{e.goods_name}</h4>
-                                                    <input type="number"/>
+                                                    <input type="number" min={0} max={e.stok}   onChange={this.changeQuantity.bind(this,e)}/>
+
                                                     <span>${e.price}</span>
                                                     <span className="delete" >x</span>
                                                 </li>
