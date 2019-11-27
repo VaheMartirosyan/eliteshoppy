@@ -33,7 +33,6 @@ class Shopcart extends React.Component {
         getShopBascket.cart({id:e.target.name})
             .then(body =>{
                 const setitem = this.props.setitem;
-                console.log(this.props);
                 setitem(body)
             })
             .catch(err => console.log(err))

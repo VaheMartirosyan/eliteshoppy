@@ -8,22 +8,12 @@ import ShopItems from './shopitems/Shopitem'
 export default class Shop extends Component{
     state={
         shops:[],
+       
     }
     componentDidMount() {
         this.shopBasket()
     }
-    itemsDeleteHandler = (e) =>{
-        let itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : [];
-        let a = itemsArray.filter(a=> a._id!== e)
-        itemsArray = a
-        localStorage.setItem('cartId',JSON.stringify(itemsArray))
-        this.state.shops = itemsArray
-        this.setState({
-
-        })
-
-        console.log(a)
-    }
+    
     shopBasket() {
         const shop = localStorage.getItem('cartId');
         const a = JSON.parse(shop)
@@ -38,10 +28,10 @@ export default class Shop extends Component{
         return(
             <div>
                 <Wear wear={'OUR SHOP'}/>
-                {this.state.shops.map((item,key)=>{
+                {this.state.shops.map((item,i)=>{
                     return(
-                        <div key={key}>
-                            <ShopItems item ={item} deletehandler={this.itemsDeleteHandler}/>
+                        <div key={i}>
+                            <ShopItems item ={item} deletehandler={this.props.deletItem}/>
                         </div>
                     )
                 })}

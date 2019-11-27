@@ -67,6 +67,11 @@ export default class Goods extends Component {
                      this.setState({navigate: item.item.text,selectedId:item.item.id})
          
           }
+          apdateProduct = product =>{
+              this.setings.apdateProduct = product
+             this.setState({navigate:'add product'})
+             
+          }
           admin = (admin)=>this.setState({adminISLogined:admin})
           setings = {
             onSubmit:this.onSubmit,
@@ -76,7 +81,8 @@ export default class Goods extends Component {
             state:this.state,
             swith:this.swith,
             womenSwith:this.womenSwith,
-            newAraivle:this.newAraivle
+            newAraivle:this.newAraivle,
+            apdateProduct:''
           }
     
     render() {
@@ -100,7 +106,7 @@ export default class Goods extends Component {
           
         </ul>
       </div>
-      {(this.state.navigate === 'home')?<Home />
+      {(this.state.navigate === 'home')?<Home apdateProduct={this.apdateProduct} />
       :(this.state.navigate === 'add product')?<AddProduct setings={this.setings} />:null}
     
             </div>     

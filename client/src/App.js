@@ -21,7 +21,7 @@ function App(){
     let [shopProduct, setStates] = useState({itemsArray:itemsArray,key:1});
 
 
-    var setitem = (item)=>{
+    const setitem = (item)=>{
 
         const arr = itemsArray.find( arr=>arr._id === item._id);
         if(arr){
@@ -33,12 +33,12 @@ function App(){
         }
     }
 
-    var deletItem = e=>{
+    const deletItem = e=>{
         const item = itemsArray.filter(item=> e !== item._id  );
         localStorage.setItem('cartId', JSON.stringify(item))  ;
         itemsArray = item
-        setStates({itemsArray:itemsArray})
-
+        setStates({itemsArray:itemsArray,key:shopProduct.key + shopProduct.key})
+          
     }
 
 
@@ -58,7 +58,7 @@ function App(){
                 <Route path='/mens' component={Mens} />
                 <Route path='/womens' component={Womens} />
                 <Route path='/contact' component={Contact} />
-                <Route path='/shop' component={Shop}/>
+                <Route path='/shop' render={()=><Shop  key={shopProduct.key + 1} deletItem={deletItem}/>}/>
                 <Route exact path='/quickview' component={QuickView}/>
 
                 <footer>

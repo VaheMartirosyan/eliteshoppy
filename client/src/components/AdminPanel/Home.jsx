@@ -5,7 +5,7 @@ import ProductChaigPage from './ProductChaigPage'
 import Prductitems from './Prductitems'
 
 
-export default function Home() {
+export default function Home(props) {
     
     // const [products, setState] = useState({item:[],loading:true})
     const [productforApdate, chaingState] = useState({item:'',visibl:false})
@@ -42,7 +42,7 @@ const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
    }
    return(
      <>
-     <Prductitems products={currentPosts} getItem={getItem}/>
+     <Prductitems products={currentPosts} getItem={getItem} apdateProduct={props.apdateProduct}/>
    
      </>
    )  

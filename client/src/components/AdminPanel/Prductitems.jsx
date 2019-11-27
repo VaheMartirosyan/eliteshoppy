@@ -1,12 +1,12 @@
 import React from 'react';
 import CreateIcon from '@material-ui/icons/Create';
-import DeleteIcon from '@material-ui/icons/Delete';
 import SimpleModal from './Modal'
 
 
 
 
-const Prductitems = ({products,getItem}) => {
+const Prductitems = ({products,getItem,apdateProduct}) => {
+
 return (
 <div>
 
@@ -25,7 +25,7 @@ return (
 
             <tbody>
                 {products.map((item,i)=>{
-                return <tr key={i} className="table-active" onClick={()=>getItem(item._id)}>
+                return <tr key={i} className="table-active" >
                     <th scope="row"><img src={`./img/${item.img}`} width="50px" height="50px" alt={item.category} />
                     </th>
                     <th>{item.productCotegory}</th>
@@ -33,7 +33,7 @@ return (
                     <td>{item.stok}</td>
                     <td>{item.cotegory}</td>
                     <td>{item.price}$</td>
-                    <td><CreateIcon
+                    <td><CreateIcon onClick ={()=>apdateProduct(item)}
                      style={{color:"green",
                      cursor:'pointer',fontSize:'x-large'}}
                       /></td>
