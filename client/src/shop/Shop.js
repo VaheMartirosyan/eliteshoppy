@@ -1,6 +1,7 @@
 import React , {Component} from 'react'
 import NumericInput from 'react-numeric-input'
 import Wear from "../wear/Wear"
+import ShopItems from './shopitems/Shopitem'
 import './Shop.scss'
 
 
@@ -35,11 +36,11 @@ export default class Shop extends Component{
 
     }
     render() {
-
+  
 
         return(
             <div>
-                <Wear wear={'OUR SHOP'}/>
+                {/* <Wear wear={'OUR SHOP'}/>
                 <div>
                     {this.state.shops.length === 0 ? 'Your Basket is empty' : <div>
                         {this.state.shops.map((e,i)=>{
@@ -59,8 +60,12 @@ export default class Shop extends Component{
 
 
                     </div> }
-                </div>
+                </div> */}
 
+                {this.state.shops.map(item=>{
+                    return <ShopItems item ={item} />
+                })}
+                   
             </div>
         )
     }
