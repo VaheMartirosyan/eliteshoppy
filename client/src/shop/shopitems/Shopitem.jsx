@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './Shopitem.scss'
 
 class ShopItems extends React.Component{
 state = {
@@ -8,19 +9,22 @@ state = {
 }
 
 change = (e) => {
-    var items = parseInt(this.state.items.price)*e.target.value 
+    var items = parseInt(this.state.items.price)*e.target.value
     this.setState({
         price:items
     })
 }
+
    render(){
-    console.log(parseInt(this.state.items.price) + parseInt(this.props.item.price))
+
     return (
-        <div>
-            
+        <div className={'shopItems'}>
+            <div className={'imgShop'} style={{backgroundImage:`url(./img/${this.state.items.img})`}}></div>
+
+            <h3>{this.state.items.goods_name}</h3>
             <p>{this.state.price}</p>
-            <p>{this.state.items.price}</p>
-            <input max = {this.props.item.stok} min={1} type='number' onChange={this.change}/>
+            <input defaultValue={1} max = {this.props.item.stok} min={1} type='number' onChange={this.change}/>
+            <button className={'itemsdelete'} onClick={this.props.deletehandler.bind(this, this.state.items._id)}>x</button>
         </div>
     )
    }

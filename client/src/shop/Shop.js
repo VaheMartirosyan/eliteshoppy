@@ -1,32 +1,29 @@
 import React , {Component} from 'react'
-import NumericInput from 'react-numeric-input'
+
 import Wear from "../wear/Wear"
 import ShopItems from './shopitems/Shopitem'
-import './Shop.scss'
+
 
 
 export default class Shop extends Component{
     state={
         shops:[],
-        a:true,
-        b:0,
-        c:55
-
     }
     componentDidMount() {
         this.shopBasket()
     }
+    itemsDeleteHandler = (e) =>{
+        let itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : [];
+        let a = itemsArray.filter(a=> a._id!== e)
+        itemsArray = a
+        localStorage.setItem('cartId',JSON.stringify(itemsArray))
+        this.state.shops = itemsArray
+        this.setState({
 
-    changeQuantity=(a,i,e)=>{
+        })
 
-        a.price = this.state.c * e
-        this.setState({})
-
-        console.log(this.state.shops)
+        console.log(a)
     }
-
-
-
     shopBasket() {
         const shop = localStorage.getItem('cartId');
         const a = JSON.parse(shop)
@@ -40,30 +37,13 @@ export default class Shop extends Component{
 
         return(
             <div>
-                {/* <Wear wear={'OUR SHOP'}/>
-                <div>
-                    {this.state.shops.length === 0 ? 'Your Basket is empty' : <div>
-                        {this.state.shops.map((e,i)=>{
-                                return(
-                                                <li key={i}>
-                                                    <img src={`./img/${e.img}`} alt="shoose"/>
-                                                    <h4 >{e.goods_name}</h4>
-
-                                                    <NumericInput  min={0} max={e.stok}  onChange={this.changeQuantity.bind(this,e,i)}/>
-                                                    <span>${e.price}</span>
-                                                    <span className="delete" >x</span>
-
-                                                </li>
-
-                                            )
-                                        })}
-
-
-                    </div> }
-                </div> */}
-
-                {this.state.shops.map(item=>{
-                    return <ShopItems item ={item} />
+                <Wear wear={'OUR SHOP'}/>
+                {this.state.shops.map((item,key)=>{
+                    return(
+                        <div key={key}>
+                            <ShopItems item ={item} deletehandler={this.itemsDeleteHandler}/>
+                        </div>
+                    )
                 })}
                    
             </div>
