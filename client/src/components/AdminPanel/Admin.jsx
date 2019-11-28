@@ -54,10 +54,15 @@ export default class Goods extends Component {
              formData.append('file', this.state.fileSelected)
              sendData('stok/imgDownload',formData,{})
              .then(respons=>{
+               this.setings.apdateProduct = respons;
               this.setState({img:respons.data.fileName})
-              console.log(this.state.img);
-          }).catch(err=>console.log(err))
+              console.log(this.state.img +  this.setings.apdateProduct);
+          }).catch(err=>{
+            this.setings.apdateProduct = err 
+            console.log(err)})
+          
           }
+          reset = ()=>{this.setings.apdateProduct  = ''; console.log(this.setings.apdateProduct)}
           swith= (state)=> this.setState({men_products:!this.state.men_products})
           discont=state=>  this.setState({discont:!this.state.discont})
           womenSwith=()=>  this.setState({women_products:!this.state.women_products})
@@ -82,7 +87,8 @@ export default class Goods extends Component {
             swith:this.swith,
             womenSwith:this.womenSwith,
             newAraivle:this.newAraivle,
-            apdateProduct:''
+            apdateProduct:'',
+            reset:this.reset
           }
     
     render() {

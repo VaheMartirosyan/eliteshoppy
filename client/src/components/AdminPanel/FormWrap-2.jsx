@@ -9,7 +9,7 @@ const FormWrap2 = (props) => {
     discont = props.state.apdateProduct.discont
     NewArrivals = props.state.apdateProduct.NewArrivals
   }
-  
+  console.log(props.state.newAraivle)
   return (
     <div>
       <fieldset>
@@ -42,6 +42,7 @@ const FormWrap2 = (props) => {
               </textarea>
             </div>
           </div>
+
 
           <div className="SubDiv">
             <button type="submit" className="btn btn-primary">Submit</button>

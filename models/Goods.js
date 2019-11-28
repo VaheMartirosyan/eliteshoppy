@@ -7,6 +7,10 @@ const GoodsSchema = new Schema({
     type: String,
     required: true
   },
+  productCotegory:{
+    type: String,
+    required: true
+  },
   description: {
     type: String,
     required: true
@@ -27,9 +31,9 @@ const GoodsSchema = new Schema({
     type: String,
     required: true
   },
-  cotegory: {
-    type: String,
-    required: true
+  NewArrivals: {
+    type: Boolean,
+    default: false
   },
   cartId: {
     type: String,

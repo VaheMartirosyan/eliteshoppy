@@ -11,6 +11,7 @@ class AddProduct extends Component {
         <div className={'AddProd'}>
         <form onSubmit={this.props.setings.onSubmit} >
 
+
              <div className="FW1">
                  <div className={'SelCom1'}>
                      <ImgLogin  onImgSubmit={this.props.setings.onImgSubmit} onChangeimg={this.props.setings.onChangeimg}/>
@@ -18,6 +19,7 @@ class AddProduct extends Component {
                  <div className={'SelCom2'}>
                      <FormWrap onChange={this.props.setings.onChange} apdeitProduct = {this.props.setings.apdateProduct} />
                  </div>
+
               </div>
               <div className="">
                 <FormWrap2 state={this.props.setings} />

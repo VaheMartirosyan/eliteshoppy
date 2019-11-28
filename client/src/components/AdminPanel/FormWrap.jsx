@@ -16,7 +16,7 @@ const FormWrap = ({ onChange,apdeitProduct }) => {
     price = apdeitProduct.price;
     stok = apdeitProduct.stok
   }
-  console.log(productForApdate);
+ 
   return (
     <fieldset>
       <legend> Goods registration</legend>
@@ -30,13 +30,17 @@ const FormWrap = ({ onChange,apdeitProduct }) => {
         </div>
       </div>
       <div className="form-group">
-        <select className="SelOne" name="cotegory" defaultValue={cotegory} onChange={onChange}>
+
+        <select className="SelOne" name="cotegory" defaultValue={apdeitProduct.goods_name?cotegory:"DEFAULT"} onChange={onChange}>
+
           <option value="DEFAULT" disabled>Choose a product kategory</option>
           {products.map((item, i) => {
             return <option key={i} value={item}>{item}</option>
           })}
           </select>
+
           <select className=" SelTwo" name="productCotegory" defaultValue={productCotegorys} onChange={onChange}>
+
           <option value="DEFAULT" disabled>Choose productCotegory </option>
           {productCotegory.map((item, i) => {
             return <option key={i+10} value={item}>{item}</option>

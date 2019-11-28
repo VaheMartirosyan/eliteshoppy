@@ -5,7 +5,6 @@ class ShopItems extends React.Component{
 state = {
     items: this.props.item,
     price:this.props.item.price
-
 }
 
 change = (e) => {
@@ -18,6 +17,7 @@ change = (e) => {
    render(){
 
     return (
+
         <div className='shopcartwindow'>
             <div className={'shopItems'}>
                 <div className={'imgShop'} style={{backgroundImage:`url(./img/${this.state.items.img})`}}></div>
@@ -26,6 +26,7 @@ change = (e) => {
                 <input defaultValue={1}  className={'changecount'} max = {this.props.item.stok} min={1} type='number' onChange={this.change}/>
                 <button className={'itemsdelete'} onClick={this.props.deletehandler.bind(this, this.state.items._id)}>x</button>
             </div>
+
         </div>
 
     )

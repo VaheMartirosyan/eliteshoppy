@@ -8,7 +8,7 @@ import './Shop.scss'
 export default class Shop extends Component{
     state={
         shops:[],
-       
+
     }
     componentDidMount() {
         this.shopBasket()
