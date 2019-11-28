@@ -1,3 +1,27 @@
 .shopwindow{
   display: flex;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 80px;
+  position: relative;
+}
+.totalprice{
+  flex: 1;
+  height: 150px;
+  box-shadow: 0 0 7px 0 rgba(128,128,128,0.5);
+  position: sticky;
+  border-radius: 5px;
+  top: 15%;
+  .totprice{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 2px;
+  }
+}
+
+.totalitems{
+  flex: 1.2;
+  margin-right: 30px;
 }

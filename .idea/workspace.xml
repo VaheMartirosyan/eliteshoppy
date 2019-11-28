@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13efa7bd-0884-43a6-b500-c2c87ff553db" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/shop/Shop.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/navbar/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/navbar/Navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/navbar/hovercomponents/mens/menshover.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/navbar/hovercomponents/mens/menshover.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/navbar/hovercomponents/mens/menshover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/navbar/hovercomponents/mens/menshover.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/navbar/hovercomponents/womens/womenshover.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/navbar/hovercomponents/womens/womenshover.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/navbar/hovercomponents/womens/womenshover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/navbar/hovercomponents/womens/womenshover.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/mens/Mens.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mens/Mens.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/mens/Mens.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mens/Mens.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/shop/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shop/Shop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/shop/Shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shop/Shop.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/shop/shopitems/Shopitem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shop/shopitems/Shopitem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/shop/shopitems/Shopitem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/shop/shopitems/Shopitem.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/wear/filterwear/FilterWear.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/wear/filterwear/FilterWear.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/wear/filterwear/compare/Compare.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/wear/filterwear/compare/Compare.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/wear/filterwear/wearcards/WearCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/wear/filterwear/wearcards/WearCards.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +92,7 @@
       <workItem from="1574758354516" duration="13121000" />
       <workItem from="1574786359224" duration="13000" />
       <workItem from="1574786655155" duration="9359000" />
-      <workItem from="1574932933335" duration="2992000" />
+      <workItem from="1574932933335" duration="9904000" />
     </task>
     <servers />
   </component>

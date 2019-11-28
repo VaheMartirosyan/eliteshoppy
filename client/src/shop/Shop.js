@@ -22,14 +22,17 @@ export default class Shop extends Component{
         })
 
     }
+    jhandler=()=>{
+        console.log(this.state.shops)
+    }
     render() {
-  
+
 
         return(
-            <div>
+            <div className={'shopwindowall'}>
                 <Wear wear={'OUR SHOP'}/>
                 <div className={'shopwindow'}>
-                    <div>
+                    <div className={'totalitems'}>
                         {this.state.shops.map((item,i)=>{
                             return(
                                 <div key={i}>
@@ -38,8 +41,11 @@ export default class Shop extends Component{
                             )
                         })}
                     </div>
-                    <div>
-                        <h1>hello</h1>
+                    <div className={'totalprice'} onClick={this.jhandler}>
+                       <p className={'totprice'}>total price</p>
+                        <p>
+                            {}
+                        </p>
                     </div>
                 </div>
 
