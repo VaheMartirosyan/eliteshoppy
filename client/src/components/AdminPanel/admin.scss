@@ -1,0 +1,185 @@
+.AddProd{
+    width: 50%;
+    margin: 50px auto;
+}
+
+legend{
+    font-weight: bolder;
+    font-size: 30px;
+}
+.FW1{
+    display: flex;
+    justify-content: space-between;
+
+}
+.APInp1{
+    width: 80%;
+    padding: 7px;
+    font-size: 17px;
+    color: grey;
+    border:0.5px solid grey;
+    border-radius: 5px;
+}
+.s{
+    background-color: whitesmoke;
+    border: 1px solid rgb(198, 226, 43);
+    flex-wrap: wrap;
+}
+.SelOne{
+    width: 80%;
+    padding: 7px;
+    margin-bottom: 20px;
+    font-size: 17px;
+    color: grey;
+    border:0.5px solid grey;
+    border-radius: 5px;
+}
+.SelTwo{
+    width: 80%;
+    padding: 7px;
+    font-size: 17px;
+    color: grey;
+    border: .5px solid grey;
+    border-radius: 5px;
+}
+.ImgLoadInp{
+    margin-top: 50px;
+    div{
+        margin: 0 auto;
+        width: 30%;
+    }
+    span{
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    input{
+        margin-bottom: 20px;
+        &:hover{
+            background-color: #0FC3A4;
+        }
+    }
+    button{
+        background-color: #0FC3A4 ;
+        font-weight: bold;
+        border: 1px solid #0FC3A4;
+        &:hover{
+            background-color: white;
+            color: #0FC3A4;
+            border:1px solid #0FC3A4;
+        }
+    }
+}
+.castomForms{
+    width: 100%;
+    margin: 0 auto;
+}
+.BtnChak{
+    display: flex;
+    margin-top: 50px;
+    .Messege{
+        flex: 2.5;
+        margin-right: 5%;
+        textarea{
+            height: 100px !important;
+        }
+    }
+    .Chak123{
+        flex: 1;
+    }
+}
+.SubDiv{
+    margin: 50px auto;
+    width: 22%;
+    button{
+        background-color: #0FC3A4;
+        font-weight: bold;
+        border: 1px solid #0FC3A4;
+        &:hover{
+            background-color: white;
+            color: #0FC3A4;
+            border: 1px solid #0FC3A4;
+        }
+    }
+    input{
+        background-color: whitesmoke;
+        color: #0FC3A4;
+        &:hover{
+            background-color: #0FC3A4;
+            font-weight: bold;
+            border: 1px solid #0FC3A4;
+            color: white;
+        }
+    }
+}
+.custom-control-label{
+    color:#0FC3A4 !important;
+}
+.navPanel{
+    width: 100%;
+    height: 60px;
+    background: floralwhite;
+    box-shadow: 0 0 3px;
+    display: flex;
+    align-items: inherit;
+}
+.navPanel>ul{
+    margin: 0 auto;
+}
+.navPanel ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 21px;
+    color: black;
+}
+.navPanel ul li:hover{
+   cursor: pointer;
+}
+.ng-scope{
+    margin: 20% auto;
+}
+.alert-warning h4{
+    text-align: center;
+}
+
+.errorDiv{
+    width: 90%;
+    height: 50px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.alert-dismissible{
+    position: absolute;
+}
+.logform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divWraper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    border: 1px solid blueviolet;
+    width: 1500px;;
+}
+
+.myinputs{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid rgb(21, 184, 135);
+    width: 48%;
+    height: 800px;
+    margin: 10px;
+   
+
+}
+.myinputs input, label{
+    font-size: 20px !important;
+}

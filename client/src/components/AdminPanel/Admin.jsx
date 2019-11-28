@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {sendData} from '../UserFunctions'
-import './admin.css'
+import './admin.scss'
 import uuid from 'uuidv4';
 import Home from './Home'
 import AddProduct from './AddProduct'
