@@ -5,7 +5,6 @@ import Checkboxes from "./checkboxes/Checkboxes";
 import Compare from "./compare/Compare";
 import Colections from "./colections/Colections";
 import Sliderfitler from './sliderfilter/Sliderfilter'
-import WearCards from "./wearcards/WearCards";
 
 
 export default class FilterWear extends Component {
@@ -136,7 +135,7 @@ export default class FilterWear extends Component {
                                 <Compare />
                                 <Sliderfitler />
                                 <Colections />
-                                <WearCards />
+
                             </div>
                         </div>
                     </div>

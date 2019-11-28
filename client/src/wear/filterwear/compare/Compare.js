@@ -1,6 +1,5 @@
 import React from 'react'
 import './Compare.scss'
-import Carousel from 'react-bootstrap/Carousel'
 
 export default () => {
     return(

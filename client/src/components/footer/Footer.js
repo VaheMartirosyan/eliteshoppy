@@ -42,22 +42,22 @@ export default ()=>{
                    <div className={'footnav'}>
                        <ul>
                            <li>
-                               <a href="">Home</a>
+                               <a href="1">Home</a>
                            </li>
                            <li>
-                               <a href="">Men`s wear</a>
+                               <a href="1">Men`s wear</a>
                            </li>
                            <li>
-                               <a href="">Women`s wear</a>
+                               <a href="1">Women`s wear</a>
                            </li>
                            <li>
-                               <a href="">About</a>
+                               <a href="1">About</a>
                            </li>
                            <li>
-                               <a href="">Short Codes</a>
+                               <a href="1">Short Codes</a>
                            </li>
                            <li>
-                               <a href="">Contact</a>
+                               <a href="1">Contact</a>
                            </li>
                        </ul>
                    </div>

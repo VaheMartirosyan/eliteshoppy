@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default ({item}) => {
+export default ({item,itemimg,price}) => {
     return(
         <div>
             <div className={'shopCarts'}>
                 <div className={'imgquick'}>
-                    <img src={item} alt="shoose"/>
+                    <img src={`./img/${itemimg}`} alt="shoose"/>
                     <div className={'quickdiv'}>
                         <button className={'quickbtn'} name={item}>Quick View</button>
                     </div>
@@ -15,7 +15,7 @@ export default ({item}) => {
                     <h4 className="title">{item}</h4>
                 </div>
                 <div className={'cartprice'}>
-                    <span>${item}</span>
+                    <span>${price}</span>
                 </div>
                 <span className={'new'}>New</span>
                 <div className={'cartbutton'}>

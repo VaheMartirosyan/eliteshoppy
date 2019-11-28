@@ -22,7 +22,7 @@
 .navul li a{
     color:white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
 }
 .navul li a:hover{
     color:white;
@@ -78,12 +78,12 @@
     text-align: right;
     display: none;
     transition: 0.5s;
-    
+
 }
 .exitProfile p{
    cursor: pointer;
    font-size: 16px;
-  
+
 }
 .exitProfile a{
     color: #FBFBFB;
@@ -123,7 +123,7 @@
    display: block;
 }
 .navulli{
-    padding: 29px 0;
+    padding: 30px 0;
     border-bottom: 5px solid transparent;
 }
 .navulli:hover{

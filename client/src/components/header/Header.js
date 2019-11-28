@@ -247,7 +247,7 @@ export default class Header extends Component{
                                 return(
                                     <li  key={i} onClick={this.signin.bind(this,i)}>
                                         <i className={e.i}/>
-                                        <a href="">{e.txt}</a>
+                                        <a href="1">{e.txt}</a>
                                     </li>
                                 )
                             })}

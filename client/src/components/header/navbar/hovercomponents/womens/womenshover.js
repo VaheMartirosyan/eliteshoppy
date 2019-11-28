@@ -14,7 +14,7 @@ export default ()=>{
                         {mens.one.map((e,i)=>{
                             return(
                                 <li key={i}>
-                                    <a href="">{e}</a>
+                                    <a href="1">{e}</a>
                                 </li>
                             )
                         })}
@@ -25,7 +25,7 @@ export default ()=>{
                         {mens.two.map((e,i)=>{
                             return(
                                 <li key={i}>
-                                    <a href="">{e}</a>
+                                    <a href="1">{e}</a>
                                 </li>
                             )
                         })}
@@ -33,7 +33,7 @@ export default ()=>{
                 </div>
             </div>
             <div className={'womensimg'}>
-                <img src={women} alt=""/>
+                <img src={women} alt="#"/>
             </div>
         </div>
     )

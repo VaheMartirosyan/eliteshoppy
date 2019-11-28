@@ -28,7 +28,7 @@ export default ()=>{
                         {mens.two.map((e,i)=>{
                             return(
                                 <li key={i}>
-                                    <a href="">{e}</a>
+                                    <a href="1">{e}</a>
                                 </li>
                             )
                         })}

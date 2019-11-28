@@ -42,7 +42,7 @@ export default class Mens extends Component {
                         {this.state.products.map((elem, index) => {
 
                             return(
-                                <div key={index}>
+                                <div key={index} className={'imgwear'}>
                                     <WearCards itemimg={elem.img} item={elem.goods_name} price={elem.price}/>
                                 </div>
                             )
