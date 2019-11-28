@@ -21,7 +21,6 @@ change = (e) => {
         <div className='shopwindow'>
             <div className={'shopItems'}>
                 <div className={'imgShop'} style={{backgroundImage:`url(./img/${this.state.items.img})`}}></div>
-
                 <h3>{this.state.items.goods_name}</h3>
                 <p>{this.state.price}</p>
                 <input defaultValue={1} max = {this.props.item.stok} min={1} type='number' onChange={this.change}/>

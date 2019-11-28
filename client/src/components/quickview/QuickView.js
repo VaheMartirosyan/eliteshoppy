@@ -24,6 +24,7 @@ export default class QuickView extends Component{
                     <img src={`/img/${this.state.a.img}`} alt=""/> 
                 </div>
                 <div>
+                    <div>{this.props.match.params.name}</div>
                     <div>
                         <h2>{this.state.a.goods_name}</h2>
                         <p>${this.state.a.price}</p>

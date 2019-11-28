@@ -22,9 +22,9 @@ class Shopcart extends React.Component {
             .catch(err => console.log(err))
     }
     quickvew = (e)=>{
-        e.preventDefault();
-        const id = e.target.name;
-        this.props.history.push(`/quickview/${id}`)
+        var a = this.state.products.find(i => i._id === e._id)
+        console.log(a)
+        this.props.history.push(`${a._id}`)
     }
 
     onSubmit= (e)=>{
@@ -55,7 +55,6 @@ class Shopcart extends React.Component {
 
 
     render(){
-
         if(this.state.loading){
             return <Spiner />
         }
@@ -85,9 +84,7 @@ class Shopcart extends React.Component {
                                     <div className={'imgquick'}>
                                         <img src={`./img/${item.img}`} alt="shoose"/>
                                         <div className={'quickdiv'}>
-                                            <button className={'quickbtn'} name={item._id} onClick={this.quickvew}>
-                                                <Link to='/quickview'>Quick View</Link>
-                                            </button>
+                                            <button className={'quickbtn'} name={item._id} onClick={this.quickvew.bind(this, item)} >Quick View</button>
                                         </div>
                                     </div>
 

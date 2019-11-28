@@ -53,13 +53,14 @@ function App(){
                     <Header shopProduct={shopProduct.itemsArray } deletItem={deletItem}/>
                 </header>
                 <Route exact path='/' render = {()=><Home setitem={setitem} />} />
+                <Route exact path='/:name' component={QuickView} />
                 <Route exact path="/admin" component={Admin} />
                 <Route path='/about' component={About} />
                 <Route path='/mens' component={Mens} />
                 <Route path='/womens' component={Womens} />
                 <Route path='/contact' component={Contact} />
                 <Route path='/shop' render={()=><Shop  key={shopProduct.key + 1} deletItem={deletItem}/>}/>
-                <Route exact path='/quickview' component={QuickView}/>
+                {/*<Route exact path='/quickview' component={QuickView}/>*/}
 
                 <footer>
                     <FooterTop/>
