@@ -4,7 +4,6 @@ import './shopCarts.scss'
 import {setProduct,GetShopBascket} from '../UserFunctions'
 import Spiner from '../Spiner/Spiner'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom';
 
 class Shopcart extends React.Component {
     state={
@@ -21,11 +20,7 @@ class Shopcart extends React.Component {
             })
             .catch(err => console.log(err))
     }
-    quickvew = (e)=>{
-        var a = this.state.products.find(i => i._id === e._id)
-        console.log(a)
-        this.props.history.push(`${a._id}`)
-    }
+
 
     onSubmit= (e)=>{
         e.preventDefault();
@@ -84,7 +79,7 @@ class Shopcart extends React.Component {
                                     <div className={'imgquick'}>
                                         <img src={`./img/${item.img}`} alt="shoose"/>
                                         <div className={'quickdiv'}>
-                                            <button className={'quickbtn'} name={item._id} onClick={this.quickvew.bind(this, item)} >Quick View</button>
+                                            <button className={'quickbtn'} name={item._id} >Quick View</button>
                                         </div>
                                     </div>
 

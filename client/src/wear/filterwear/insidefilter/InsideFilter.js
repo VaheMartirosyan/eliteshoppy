@@ -1,10 +1,14 @@
 import React from 'react'
 import './InsideFilter.scss'
+import {withRouter} from 'react-router-dom'
 
-export default ({weartype}) => {
+
+const InsideFilter = (props) => {
     return(
-        <p className={'weartypes'}>
-            {weartype}
+        <p className={'weartypes'} onClick={() => props.history.push(`/mens/${props.weartype}`)}>
+            {props.weartype}
         </p>
     )
 }
+
+export default withRouter(InsideFilter)

@@ -13,13 +13,12 @@ import Womens from './womens/Womens'
 import Contact from './contact/Contact'
 import FooterTop from './components/footer/footertop/FooterTop'
 import Shop from './shop/Shop'
+import Newfilter from "./newfilter/Newfilter";
 
 
 function App(){
-
     let itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : [];
-    let [shopProduct, setStates] = useState({itemsArray:itemsArray,key:1});
-
+    let [shopProduct, setStates] = useState({itemsArray:itemsArray,key:1})
 
     const setitem = (item)=>{
 
@@ -53,10 +52,10 @@ function App(){
                     <Header shopProduct={shopProduct.itemsArray } deletItem={deletItem}/>
                 </header>
                 <Route exact path='/' render = {()=><Home setitem={setitem} />} />
-                <Route exact path='/:name' component={QuickView} />
                 <Route exact path="/admin" component={Admin} />
                 <Route path='/about' component={About} />
-                <Route path='/mens' component={Mens} />
+                <Route exact path='/mens' component={Mens} />
+                <Route exact path={'/mens/:esiminj'} component={Newfilter}/>
                 <Route path='/womens' component={Womens} />
                 <Route path='/contact' component={Contact} />
                 <Route path='/shop' render={()=><Shop  key={shopProduct.key + 1} deletItem={deletItem}/>}/>

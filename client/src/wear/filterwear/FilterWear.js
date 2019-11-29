@@ -22,6 +22,11 @@ export default class FilterWear extends Component {
         checkthree: false,
         checkfour: false,
         checkfive: false,
+        value: 5,
+        value1: {
+            min: 5,
+            max: 10,
+        }
     }
 
 
@@ -49,8 +54,7 @@ export default class FilterWear extends Component {
                                     </div>
                                     {this.state.isVisible ? <div className={'ethnic'}>
                                         <div onClick={()=> this.setState({ethnicIsVisible: !this.state.ethnicIsVisible })}>
-      
-          
+
                                             <i className="fa fa-long-arrow-right"></i> <span>Ethnic Wear</span>
                                         </div>
                                         {this.state.ethnicIsVisible ? this.state.weartypeone.map((e, i) => {
