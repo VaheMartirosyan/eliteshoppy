@@ -3,10 +3,9 @@ const route = express.Router()
 const multer = require('multer');
 const Goods = require('../models/Goods')
 const path = require('path')
-const url =require('url')
 const uuidv4 = require ( 'uuid/v4' ) 
-const verifi = require('../middlwere/verification')
-// const mkdirp = require('mkdirp');
+const verifi = require('../middlwere/outorisation')
+
 
 const rs = () =>
   Math.random()
@@ -16,7 +15,6 @@ const storage = multer.diskStorage({
   destination:(req,file,clbck)=>{
     const dir = '/' + rs();
     req.dir = dir;
-    //  mkdirp('./client/public/img' + dir, err => clbck(err, './client/public/img' + dir));
     clbck(null,'./client/public/img')
   },
   filename:(req,file,clbck)=>{
@@ -57,10 +55,9 @@ route.post ('/imgDownload',upload.single('file'), (req, res,err) => {
   });
 });
 route.post('/good', (req, res) => {
-    
+ 
     const userData = {
       goods_name,
-     
       new_arrivals,
       description,
       img,
@@ -72,21 +69,22 @@ route.post('/good', (req, res) => {
       discont,
       stok,
     } = req.body;
-    console.log(userData);
-      
+   
+  
    if(goods_name && description && price && img && cotegory){
+  
     Goods.create(userData)
     .then(data => {
-      console.log(data);
+      
       res.json({goods:data})
     })
     .catch(err => {
-      res.send({
+      res.status(401).json({
         error:err
       })
     })
    }else{
-    res.send({
+    res.status(401).json({
       error: "fill in all fields please"
     })
    }
@@ -261,10 +259,32 @@ route.get ('/Mens', (req, res) => {
 route.post('/cartVew',(req,res)=>{
   const id = req.body.id
   Goods.findById(id, function (err, item) { 
+    
      res.json(item)
    
   } );
   
+})
+route.post('/deletProduct',verifi,(req,res)=>{
+ 
+  Goods.findOneAndDelete({_id:req.body.id},function(err,data){
+    
+    if(err) {
+      res.status(401).json({
+     arror:'product note deleted'
+   })
+  
+    }else{
+     
+      Goods.find({})
+    .exec(function(err, goods) {
+      if (err) throw err;
+       
+      res.status(200).json(goods)
+  });
+    }
+   
+  })
 })
 
 module.exports = route;

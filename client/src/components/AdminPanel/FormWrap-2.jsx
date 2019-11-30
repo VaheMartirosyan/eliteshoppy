@@ -2,14 +2,12 @@ import React from 'react';
 
 const FormWrap2 = (props) => {
    let description = '';
-   let discont = false;
-   let NewArrivals = false;
+
   if(props.state.apdateProduct.description){
     description = props.state.apdateProduct.description
-    discont = props.state.apdateProduct.discont
-    NewArrivals = props.state.apdateProduct.NewArrivals
+   
   }
-  console.log(props.state.newAraivle)
+ 
   return (
     <div>
       <fieldset>
@@ -19,14 +17,14 @@ const FormWrap2 = (props) => {
               <div className="form-group">
                 <div className="custom-control custom-switch">
                   <input type="checkbox" className="custom-control-input"
-                         id="customSwitch4" onChange={props.state.newAraivle} checked={NewArrivals}/>
+                         id="customSwitch4" onChange={props.state.newAraivle} />
                   <label className="custom-control-label" htmlFor="customSwitch4">New arrivals</label>
                 </div>
               </div>
               <div className="form-group">
                 <div className="custom-control custom-switch">
                   <input type="checkbox" className="custom-control-input"
-                         id="customSwitchs" onChange={props.state.newAraivle} checked={discont} />
+                         id="customSwitchs" onChange={props.state.discont} />
                   <label className="custom-control-label" htmlFor="customSwitchs">Diconts</label>
                 </div>
               </div>

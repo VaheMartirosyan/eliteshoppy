@@ -1,8 +1,8 @@
 import React from 'react';
 
 const FormWrap = ({ onChange,apdeitProduct }) => {
-  const products = ['onChangeimg', 'Wallets', 'Footwear', 'Watches', 'Accessories', 'Bags', 'Swimwear',
-    ' Caps & Hats', 'Jewellery', 'One', 'Sunglasses', 'Perfumes', 'Beauty', 'Shirts', 'Sunglasses']
+  const products = [ 'Wallets', 'Footwear', 'Watches', 'Accessories', 'Bags', 'Swimwear',
+    ' Caps', 'Jewellery', 'SunGlasses', 'Perfumes', 'Beauty', 'Shirts','Shoes','Trousers','Pants']
   const productCotegory = ['womensProduct','meanProduct','chaiildrenProduct'] ;
   let productForApdate =  '';
   let cotegory = '';
@@ -39,7 +39,7 @@ const FormWrap = ({ onChange,apdeitProduct }) => {
           })}
           </select>
 
-          <select className=" SelTwo" name="productCotegory" defaultValue={productCotegorys} onChange={onChange}>
+          <select className=" SelTwo" name="productCotegory" defaultValue={apdeitProduct.goods_name?productCotegorys:"DEFAULT"} onChange={onChange}>
 
           <option value="DEFAULT" disabled>Choose productCotegory </option>
           {productCotegory.map((item, i) => {

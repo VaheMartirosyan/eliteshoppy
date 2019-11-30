@@ -46,14 +46,14 @@ const LoginAdmin = (props) => {
            
         <div className="errorDiv">
                {seterror && <div className="alert alert-dismissible alert-warning">
-                <h4 class="alert-heading">{seterror}!</h4></div>}  
+                <h4 className="alert-heading">{seterror}!</h4></div>}  
         </div>
         <div className="logform">
         <form onSubmit={loginsender}>
   <input type="text" name="login" className="question" onChange={onChange} required autoComplete="off" />
-  <label htmlFor="nme"><span class="sp">login</span></label>
+  <label htmlFor="nme"><span className="sp">login</span></label>
   <input type="password" name="password" className="question" onChange={getpassword} required autoComplete="off" />
-  <label htmlFor="msg"><span class="sp">password</span></label>
+  <label htmlFor="msg"><span className="sp">password</span></label>
   <input type="submit" value="Submit!" className="sub"/>
 </form> 
      </div>

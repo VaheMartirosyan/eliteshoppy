@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from 'axios'
 import Spiner from '../Spiner/Spiner'
-import ProductChaigPage from './ProductChaigPage'
+
 import Prductitems from './Prductitems'
 
 
@@ -30,22 +30,27 @@ const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
 // Change page
 
- const getItem = (text)=>{
-  
-  chaingState({item:text,visibl:true})
-  
-   }
+const deletItem = async id=>{
+  setLoading(true);
+  const url = 'stok/deletProduct'
+    const res = await axios.post(url,{token:`Bearer ${localStorage.itemtId}`,id:id});
+    if(res.status === 200){
+           setPosts(res.data);
+    }else{
+      alert('can not delet this.product')
+    }
+    setLoading(false);
+}
    if(loading){
      return <Spiner />
-   }else if(productforApdate.visibl){
-   return <ProductChaigPage prodct={productforApdate.item}/>
    }
-   return(
-     <>
-     <Prductitems products={currentPosts} getItem={getItem} apdateProduct={props.apdateProduct}/>
+    return(
+      
+     <Prductitems products={currentPosts} apdateProduct={props.apdateProduct} deletItem={deletItem}/>
    
-     </>
-   )  
+   
+    )
+  
 }
  
  

@@ -41,11 +41,12 @@ export default class Goods extends Component {
             stok:this.state.productCountInSok,
             discont:this.state.discont,
             productCotegory:this.state.productCotegory
-                  }
+                  };
         sendData('stok/good',newGood)
         .then(respons=>{
+          console.log(respons);
           respons.data.goods.cartId && alert('product registered')
-                               
+                         
         }).catch(err=>console.log(err))
           }
           onImgSubmit = (e)=>{
@@ -54,19 +55,28 @@ export default class Goods extends Component {
              formData.append('file', this.state.fileSelected)
              sendData('stok/imgDownload',formData,{})
              .then(respons=>{
-               this.setings.apdateProduct = respons;
-              this.setState({img:respons.data.fileName})
-              console.log(this.state.img +  this.setings.apdateProduct);
+              if(!respons.data.error){
+                this.setings.apdateProduct = respons;
+                this.setState({img:respons.data.fileName})
+                  }else{
+                    this.setings.apdateProduct = 'null;'
+                    this.setState({img:null})
+                   
+                  };
           }).catch(err=>{
-            this.setings.apdateProduct = err 
+            this.setings.apdateProduct = {err:err} 
+            this.setState({img:null})
             console.log(err)})
           
           }
-          reset = ()=>{this.setings.apdateProduct  = ''; console.log(this.setings.apdateProduct)}
+          reset = ()=>{this.setings.apdateProduct  = ''; }
           swith= (state)=> this.setState({men_products:!this.state.men_products})
           discont=state=>  this.setState({discont:!this.state.discont})
           womenSwith=()=>  this.setState({women_products:!this.state.women_products})
-          newAraivle=()=>  this.setState({new_arrivals:!this.state.new_arrivals})
+          newAraivle=()=> {
+            this.setState({new_arrivals:!this.state.new_arrivals});
+           
+          } 
           onChangeimg = e=> this.setState({fileSelected:e.target.files[0]})
           navigate =(item) => {
                      this.setState({navigate: item.item.text,selectedId:item.item.id})
@@ -88,13 +98,14 @@ export default class Goods extends Component {
             womenSwith:this.womenSwith,
             newAraivle:this.newAraivle,
             apdateProduct:'',
-            reset:this.reset
+            reset:this.reset,
+            discont:this.discont
           }
     
     render() {
      
       let admin = this.state.adminISLogined.islogined;
-           if(admin){
+           if(!admin){
         return <LoginAdmin admin={this.admin}/>
       }
      return(

@@ -3,9 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
 
 function getModalStyle() {
   const top = 50
@@ -29,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SimpleModal() {
+export default function SimpleModal({deletItem}) {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
@@ -42,7 +39,8 @@ export default function SimpleModal() {
   const handleClose = () => {
     setOpen(false);
   };
-
+  const id = deletItem.id;
+  
   return (
     <div>
       <button type="button" onClick={handleOpen}>
@@ -58,9 +56,10 @@ export default function SimpleModal() {
         onClose={handleClose}
       >
         <div style={modalStyle} className={classes.paper}>
-          <h2 id="simple-modal-title">you really want to delete this item</h2>
+          <h2 id="simple-modal-title">you really want to delete this item </h2>
 
-          <button onClick={handleClose} >delete</button>
+          <button onClick={handleClose} >close</button>
+          <button onClick={()=>deletItem.del(id)} >delete</button>
         </div>
       </Modal>
     </div>
