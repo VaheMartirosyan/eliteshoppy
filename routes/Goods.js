@@ -79,13 +79,14 @@ route.post('/good', (req, res) => {
       res.json({goods:data})
     })
     .catch(err => {
-      res.status(401).json({
-        error:err
+      res.status(402).json({
+        message: "fill in all fields please"
       })
     })
    }else{
-    res.status(401).json({
-      error: "fill in all fields please"
+     
+    res.status(403).json({
+      message: "fill in all fields please"
     })
    }
 })    

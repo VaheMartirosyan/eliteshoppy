@@ -44,13 +44,27 @@ export default class Goods extends Component {
                   };
         sendData('stok/good',newGood)
         .then(respons=>{
-          console.log(respons);
-          respons.data.goods.cartId && alert('product registered')
-                         
-        }).catch(err=>console.log(err))
+          console.log(respons.status);
+          if(respons.status === 200){
+            this.setings.apdateProduct = 'null;'
+            this.setState({new_arrivals:false,discont:false})
+            respons.data.goods.cartId && alert('product registered')
+          }else if(respons.status === 403){
+            alert('fil oll the filds please' )
+          }
+          
+        }).catch(err=>{
+          console.log(err)
+         
+            alert('fil oll the filds please' )
+         
+        })
           }
           onImgSubmit = (e)=>{
              e.preventDefault();
+             if(this.state.fileSelected === null){
+               return  this.setings.apdateProduct = 'null;'
+             }
              const formData = new FormData()
              formData.append('file', this.state.fileSelected)
              sendData('stok/imgDownload',formData,{})
@@ -59,7 +73,7 @@ export default class Goods extends Component {
                 this.setings.apdateProduct = respons;
                 this.setState({img:respons.data.fileName})
                   }else{
-                    this.setings.apdateProduct = 'null;'
+                    this.setings.apdateProduct ='null;'
                     this.setState({img:null})
                    
                   };

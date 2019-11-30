@@ -12,10 +12,11 @@ change = (e) => {
     this.setState({
         price:items
     })
+    this.props.decriment(items)
 }
 
    render(){
-
+   
     return (
 
         <div className='shopcartwindow'>

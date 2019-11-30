@@ -27,7 +27,7 @@ export default class Mens extends Component {
         if(this.state.loading) {
             return <Spiner />
         }
-        console.log(this.state.products);
+      
         const {wearTitle} = this.state
         return(
             <div>
