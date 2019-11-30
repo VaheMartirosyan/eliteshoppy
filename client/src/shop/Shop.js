@@ -19,7 +19,11 @@ export default class Shop extends Component{
         const a = JSON.parse(shop)
         let sum = 0;
         a.map(num=> sum = sum + parseInt(num.price) )
+<<<<<<< HEAD
         this.setState({
+=======
+             this.setState({
+>>>>>>> b0e20aaed5b4e5a01ce88fe529a44b756ad4a184
             shops:a,totprice:sum
 
         })
@@ -31,7 +35,7 @@ export default class Shop extends Component{
     }
     render() {
 
-
+       
         return(
             <div className={'shopwindowall'}>
                 <Wear wear={'OUR SHOP'}/>
@@ -46,8 +50,13 @@ export default class Shop extends Component{
                         })}
                     </div>
                     <div className={'totalprice'} onClick={this.jhandler}>
+<<<<<<< HEAD
                         <p className={'totprice'}>total price</p>
                         <h1 style={{textAlign:"center",color:"red"}}>{this.state.totprice}</h1>
+=======
+                       <p className={'totprice'}>total price</p>
+                       <h1 style={{textAlign:"center",color:"red"}}>{this.state.totprice}</h1>
+>>>>>>> b0e20aaed5b4e5a01ce88fe529a44b756ad4a184
                         <p>
                             {}
                         </p>
