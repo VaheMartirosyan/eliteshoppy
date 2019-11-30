@@ -1,6 +1,4 @@
 
-
-
 export default (state = {
     initmagazine: [],
     shop: false

@@ -1,8 +1,9 @@
 import React from 'react'
 import women from "../../navimages/top1.jpg";
 import './womenshover.scss'
+import {withRouter, Link} from 'react-router-dom'
 
-export default ()=>{
+const WomensHover = (props)=>{
     const mens = {one:['Clothing','Wallets','Footwear','Watches','Accessories','Bags','Caps & Hats'],
         two:['Jewellery','Sunglasses','Parfumes','Beauty','Shirts','Sunglasses','Swimwear']};
     return(
@@ -13,8 +14,8 @@ export default ()=>{
                     <ul>
                         {mens.one.map((e,i)=>{
                             return(
-                                <li key={i}>
-                                    <a href="1">{e}</a>
+                                <li key={i} onClick={() => props.history.push(e)}>
+                                    <Link to={`/womens/${e}`} className={'links'}> {e} </Link>
                                 </li>
                             )
                         })}
@@ -24,8 +25,8 @@ export default ()=>{
                     <ul>
                         {mens.two.map((e,i)=>{
                             return(
-                                <li key={i}>
-                                    <a href="1">{e}</a>
+                                <li key={i} onClick={() => props.history.push(e)}>
+                                    <Link to={`/womens/${e}`} className={'links'}> {e} </Link>
                                 </li>
                             )
                         })}
@@ -38,3 +39,5 @@ export default ()=>{
         </div>
     )
 }
+
+export default withRouter(WomensHover)

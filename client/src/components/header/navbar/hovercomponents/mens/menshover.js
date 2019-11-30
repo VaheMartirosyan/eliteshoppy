@@ -1,10 +1,10 @@
 import React from 'react'
-import men from "../../navimages/top2.jpg";
-import {Link} from 'react-router-dom'
+import men from "../../navimages/top2.jpg"
+import {Link, withRouter} from 'react-router-dom'
 import './menshover.scss'
 
-export default ()=>{
-    const mens = {one:['Clothing','Wallets','Footwear','Watches','Accessories','Bags','Caps & Hats'],
+const MensHover =  (props)=>{
+    const mens = {one:['Caps','Wallets','Footwear','Watches','Accessories','Bags','Caps & Hats'],
         two:['Jewellery','Sunglasses','Parfumes','Beauty','Shirts','Sunglasses','Swimwear']};
     return(
         <div  className={'mens'}>
@@ -16,8 +16,8 @@ export default ()=>{
                     <ul className={'mentxtul1'}>
                         {mens.one.map((e,i)=>{
                             return(
-                                <li key={i}>
-                                   <Link to={`mens/${e}`}>{e}</Link>
+                                <li key={i} onClick={() => props.history.push(e)}>
+                                    <Link to={`/mens/${e}`} className={'links'}> {e} </Link>
                                 </li>
                             )
                         })}
@@ -27,8 +27,8 @@ export default ()=>{
                     <ul>
                         {mens.two.map((e,i)=>{
                             return(
-                                <li key={i}>
-                                    <a href="1">{e}</a>
+                                <li key={i} onClick={() => props.history.push(e)}>
+                                    <Link to={`/mens/${e}`} className={'links'}> {e} </Link>
                                 </li>
                             )
                         })}
@@ -38,3 +38,5 @@ export default ()=>{
         </div>
     )
 }
+
+export default withRouter(MensHover)

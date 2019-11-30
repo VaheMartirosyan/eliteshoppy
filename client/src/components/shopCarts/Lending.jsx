@@ -24,6 +24,7 @@ class Shopcart extends React.Component {
 
     onSubmit= (e)=>{
         e.preventDefault();
+
         const getShopBascket = new GetShopBascket();
         getShopBascket.cart({id:e.target.name})
             .then(body =>{
@@ -31,6 +32,7 @@ class Shopcart extends React.Component {
                 setitem(body)
             })
             .catch(err => console.log(err))
+
     };
 
     getProduct = body => this.setState({products:body,loading:false});
@@ -47,7 +49,6 @@ class Shopcart extends React.Component {
             })
             .catch(err => console.log(err))
     }
-
 
     render(){
         if(this.state.loading){
@@ -89,8 +90,9 @@ class Shopcart extends React.Component {
                                     <div className={'cartprice'}>
                                         <span>${item.price}</span>
                                     </div>
-                                    <span className={'new'}>New</span>
-                                    <div className={'cartbutton'} onClick = {this.props.shopOpen} >
+                                    <span className={'new'} >New</span>
+                                 <div >
+                                     <div className={'cartbutton'} onClick = {this.props.shopOpen} >
                                    <span className={'cartaddhover'}>
                                        <form  >
                                        <fieldset>
@@ -99,12 +101,11 @@ class Shopcart extends React.Component {
                                            <input type="hidden" name="return" value=" "/>
                                            <input type="hidden" name="cancel_return" value=" "/>
                                            <input type="submit" name={item._id} value="Add to cart" className="button" onClick={this.onSubmit}/>
-                                           
-         
                                        </fieldset>
                                    </form>
                                    </span>
-                                    </div>
+                                     </div>
+                                 </div>
                                 </div>
 
                             )
@@ -120,9 +121,8 @@ class Shopcart extends React.Component {
 }
 
 const mapStateToProps = state => {
-
     return {
-        magazine: state.magazine.initmagazine
+        magazine: state.magazine.initmagazine,
     }
 }
 

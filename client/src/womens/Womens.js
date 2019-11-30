@@ -35,6 +35,7 @@ export default class Womens extends Component {
         if(this.state.loading) {
             return  <Spiner />
         }
+
         return(
             <div>
                 <Wear wear={'Womens Wear'} />

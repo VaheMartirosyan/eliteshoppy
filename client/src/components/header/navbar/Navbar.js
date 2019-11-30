@@ -49,12 +49,7 @@ componentWillReceiveProps(nextProps) {
         const product = JSON.parse(localStorage.cartId);
         this.setState({bascket:product})
      }
-    openCartHandler = () =>{
 
-    };
-    closeshopwindow = () =>{
-
-    }
 
     render() {
 

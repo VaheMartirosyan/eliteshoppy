@@ -22,10 +22,12 @@ export default class Newfilter extends Component {
           })
       }
     render() {
-        console.log(this.state.products);
+        console.log(this.state.products + 'app');
         return(
             <div>
-                {this.props.match.params.esiminj}
+                {this.props.match.frommens}
+                {this.props.match.fromhome}
+                {this.props.match.fromwomens}
                 <h2>sdlvs</h2>
             </div>
         )

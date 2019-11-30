@@ -41,14 +41,14 @@
 .womenstxt2{
   margin-left: 30px;
 }
-.womenstxt ul li a{
+.womenstxt ul li .links{
   text-decoration: none;
   color: black;
   font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
   font-size: 14px;
 }
-.womenstxt ul li a:hover{
+.womenstxt ul li .links:hover{
   text-decoration: none;
   color: #2BDABA;
   transition: .5s;

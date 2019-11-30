@@ -1,4 +1,5 @@
 import React from 'react'
+import Radio from '@material-ui/core/Radio';
 import './Checkboxes.css'
 
 export default () => {
@@ -7,13 +8,8 @@ export default () => {
             <div className={'control'}>
                 <div className="control-group">
                     <label className="control control-radio">
-                        More convenient for shipping and delivery
-                        <input type="radio" name="radio"/>
-                        <div className="control_indicator"></div>
-                    </label>
-                    <label className="control control-radio">
                         Lower Price
-                        <input type="radio" name="radio"/>
+                        <input type="radio" name="radio" onClick={() => console.log('dlskvl')}/>
                         <div className="control_indicator"></div>
                     </label>
                     <label className="control control-radio">
@@ -41,3 +37,57 @@ export default () => {
         </form>
     )
 }
+
+
+
+
+
+
+
+// import React from 'react';
+// import { withStyles } from '@material-ui/core/styles';
+// import { green } from '@material-ui/core/colors';
+// import Radio from '@material-ui/core/Radio';
+// import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+// import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
+//
+// const GreenRadio = withStyles({
+//     root: {
+//         color: green[400],
+//         '&$checked': {
+//             color: green[600],
+//         },
+//     },
+//     checked: {},
+// })(props => <Radio color="default" {...props} />);
+//
+// export default function Checkboxes() {
+//     const [selectedValue, setSelectedValue] = React.useState('a')
+//
+//     const handleChange = event => {
+//         setSelectedValue(event.target.value)
+//         if(event.target.value === 'c') {
+//             console.log('c')
+//         }
+//     };
+//
+//     return (
+//         <div>
+//             <GreenRadio
+//                 checked={selectedValue === 'c'}
+//                 onChange={handleChange}
+//                 value="c"
+//                 name="radio-button-demo"
+//                 inputProps={{ 'aria-label': 'C' }}
+//             />
+//             <GreenRadio
+//                 checked={selectedValue === 'd'}
+//                 onChange={handleChange}
+//                 value="d"
+//                 name="radio-button-demo"
+//                 inputProps={{ 'aria-label': 'D' }}
+//             />
+//
+//         </div>
+//     );
+// }

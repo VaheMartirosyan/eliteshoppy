@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import QuickView from "./components/quickview/QuickView";
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
+// import QuickView from "./components/quickview/QuickView"
+import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
 import Admin from './components/AdminPanel/Admin'
-import './App.css';
+import './App.css'
 import Home from './home/Home'
 import About from './about/About'
 import Mens from './mens/Mens'
@@ -13,7 +13,7 @@ import Womens from './womens/Womens'
 import Contact from './contact/Contact'
 import FooterTop from './components/footer/footertop/FooterTop'
 import Shop from './shop/Shop'
-import Newfilter from "./newfilter/Newfilter";
+import Newfilter from "./newfilter/Newfilter"
 
 
 function App(){
@@ -22,13 +22,13 @@ function App(){
 
     const setitem = (item)=>{
 
-        const arr = itemsArray.find( arr=>arr._id === item._id);
+        const arr = itemsArray.find( arr=>arr._id === item._id)
         if(arr){
 
         }else{
-            itemsArray.push(item);
+            itemsArray.push(item)
             localStorage.setItem('cartId', JSON.stringify(itemsArray));
-            setStates({itemsArray:itemsArray,key:1});
+            setStates({itemsArray:itemsArray,key:1})
         }
     }
 
@@ -43,9 +43,7 @@ function App(){
 
 
 
-
     return (
-
         <Router>
             <div>
                 <header key={shopProduct.key}>
@@ -55,8 +53,9 @@ function App(){
                 <Route exact path="/admin" component={Admin} />
                 <Route path='/about' component={About} />
                 <Route exact path='/mens' component={Mens} />
-                <Route exact path={'/mens/:esiminj'} component={Newfilter}/>
-                <Route path='/womens' component={Womens} />
+                <Route exact path={'/mens/:frommens'} component={Newfilter}/>
+                <Route exact path='/womens' component={Womens} />
+                <Route exact path='/womens/:fromwomens' component={Newfilter} />
                 <Route path='/contact' component={Contact} />
                 <Route path='/shop' render={()=><Shop  key={shopProduct.key + 1} deletItem={deletItem}/>}/>
                 {/*<Route exact path='/quickview' component={QuickView}/>*/}
@@ -71,4 +70,4 @@ function App(){
     );
 }
 
-export default App;
+export default App
