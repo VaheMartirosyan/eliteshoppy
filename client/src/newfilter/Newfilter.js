@@ -25,9 +25,14 @@ export default class Newfilter extends Component {
         console.log(this.state.products + 'app');
         return(
             <div>
+<<<<<<< Updated upstream
                 {this.props.match.frommens}
                 {this.props.match.fromhome}
                 {this.props.match.fromwomens}
+=======
+                {this.props.match.params.frommens}
+                {this.props.match.params.fromhome}
+>>>>>>> Stashed changes
                 <h2>sdlvs</h2>
             </div>
         )
