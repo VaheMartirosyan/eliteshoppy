@@ -1,10 +1,8 @@
 import React from 'react'
 import men from "../../navimages/top2.jpg"
-<<<<<<< Updated upstream
+
 import {Link, withRouter} from 'react-router-dom'
-=======
-import {withRouter} from 'react-router-dom'
->>>>>>> Stashed changes
+
 import './menshover.scss'
 
 const MensHover =  (props)=>{
@@ -21,11 +19,8 @@ const MensHover =  (props)=>{
                         {mens.one.map((e,i)=>{
                             return(
                                 <li key={i} onClick={() => props.history.push(e)}>
-<<<<<<< Updated upstream
                                     <Link to={`/mens/${e}`} className={'links'}> {e} </Link>
-=======
-                                   <span>{e}</span>
->>>>>>> Stashed changes
+
                                 </li>
                             )
                         })}
@@ -36,11 +31,9 @@ const MensHover =  (props)=>{
                         {mens.two.map((e,i)=>{
                             return(
                                 <li key={i} onClick={() => props.history.push(e)}>
-<<<<<<< Updated upstream
+
                                     <Link to={`/mens/${e}`} className={'links'}> {e} </Link>
-=======
-                                    <span>{e}</span>
->>>>>>> Stashed changes
+
                                 </li>
                             )
                         })}

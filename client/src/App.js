@@ -1,11 +1,7 @@
 import React, { useState } from "react"
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-<<<<<<< Updated upstream
-// import QuickView from "./components/quickview/QuickView"
-=======
-import QuickView from "./components/quickview/QuickView"
->>>>>>> Stashed changes
+
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Admin from './components/AdminPanel/Admin'
@@ -57,15 +53,9 @@ function App(){
                 <Route exact path="/admin" component={Admin} />
                 <Route path='/about' component={About} />
                 <Route exact path='/mens' component={Mens} />
-<<<<<<< Updated upstream
                 <Route exact path={'/mens/:frommens'} component={Newfilter}/>
                 <Route exact path='/womens' component={Womens} />
                 <Route exact path='/womens/:fromwomens' component={Newfilter} />
-=======
-                <Route exact path={'/:frommens'} component={Newfilter}/>
-                <Route exact path={'/:fromhome'} component={Newfilter}/>
-                <Route path='/womens' component={Womens} />
->>>>>>> Stashed changes
                 <Route path='/contact' component={Contact} />
                 <Route path='/shop' render={()=><Shop  key={shopProduct.key + 1} deletItem={deletItem}/>}/>
                 {/*<Route exact path='/quickview' component={QuickView}/>*/}
