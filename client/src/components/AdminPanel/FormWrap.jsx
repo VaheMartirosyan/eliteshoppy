@@ -2,7 +2,7 @@ import React from 'react';
 
 const FormWrap = ({ onChange,apdeitProduct }) => {
   const products = [ 'Wallets', 'Footwear', 'Watches', 'Accessories', 'Bags', 'Swimwear',
-    ' Caps', 'Jewellery', 'SunGlasses', 'Perfumes', 'Beauty', 'Shirts','Shoes','Trousers','Pants']
+  'Caps & Hats', 'Jewellery', 'SunGlasses', 'Perfumes', 'Beauty', 'Shirts','Shoes','Trousers','Pants','Clothing','Swimwear']
   const productCotegory = ['womensProduct','meanProduct','chaiildrenProduct'] ;
   let productForApdate =  '';
   let cotegory = '';
