@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import './shopCarts.scss'
 import {setProduct,GetShopBascket} from '../UserFunctions'
 import Spiner from '../Spiner/Spiner'
+import QuickView from './../quickview/QuickView'
 import {connect} from 'react-redux'
 
 class Shopcart extends React.Component {
@@ -11,7 +12,9 @@ class Shopcart extends React.Component {
         loading:true,
         active:null,
         query:'default',
-        b:true
+        b:true,
+        btnQuick:false,
+        QuickCards:'',
     }
     componentDidMount(){
         setProduct(`http://localhost:5000/stok/${this.state.query}`,"GET")
@@ -40,7 +43,7 @@ class Shopcart extends React.Component {
     activeclass(e,el){
         this.setState({
             active:e,
-            query:el
+            query:el,
 
         });
         setProduct(`http://localhost:5000/stok/${el}`,"GET")
@@ -49,6 +52,14 @@ class Shopcart extends React.Component {
             })
             .catch(err => console.log(err))
     }
+
+
+    BtnQuickView=(i)=>{
+        this.state.QuickCards = i
+        this.setState({})
+        console.log(this.state.QuickCards)
+    }
+
 
     render(){
         if(this.state.loading){
@@ -71,19 +82,18 @@ class Shopcart extends React.Component {
                     </ul>
 
                 </div>
+                    <QuickView BtnQuickView={this.BtnQuickView} QuickCards={this.state.QuickCards}/>
                 <div className={'shopCartscontainer'}>
                     <div className={'carts'}>
                         {this.state.products.map((item,index)=>{
                             return (
-
                                 <div key={index} className={'shopCarts'}>
                                     <div className={'imgquick'}>
                                         <img src={`./img/${item.img}`} alt="shoose"/>
                                         <div className={'quickdiv'}>
-                                            <button className={'quickbtn'} name={item._id} >Quick View</button>
+                                            <button className={'quickbtn'} name={item._id} onClick={this.BtnQuickView.bind(this,item)} data-toggle="modal" data-target="#exampleModal">Quick View</button>
                                         </div>
                                     </div>
-
                                     <div className={'cartitemname'}>
                                         <h4 className="title">{item.goods_name}</h4>
                                     </div>

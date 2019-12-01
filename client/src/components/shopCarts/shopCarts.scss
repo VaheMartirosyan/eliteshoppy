@@ -115,6 +115,10 @@
   opacity: 1;
   transition: 1s;
 }
+.imgquick:hover  img{
+  transform: rotateY(360deg);
+  transition: 1s;
+}
 .quickdiv {
   position: absolute;
   left: 15%;
