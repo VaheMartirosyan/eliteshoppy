@@ -50,7 +50,7 @@ export default class Womens extends Component {
 
                             return(
                                 <div key={index}>
-                                    <WearCards itemimg={elem.img} item={elem.goods_name} price={elem.price}  all = {elem}/>
+                                    <WearCards setitem = {this.props.setitem} itemimg={elem.img} item={elem.goods_name} price={elem.price}  all = {elem}/>
                                 </div>
                             )
                         }) }

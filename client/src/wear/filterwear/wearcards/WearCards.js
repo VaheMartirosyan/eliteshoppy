@@ -1,14 +1,34 @@
 import React , {Component}from 'react'
 import QuickViewCat from "./Quickviewforcategories/QuickViewCat";
-export default class WearCards extends Component{
+import {connect} from 'react-redux'
+import {GetShopBascket, setProduct} from "../../../components/UserFunctions"
+
+
+class WearCards extends Component{
+
     state={
-        quick:''
+        quick:'',
+        query:'default'
     }
 
     openQuickview=()=>{
         this.state.quick = this.props.all
         this.setState({})
     }
+
+    onSubmit= (e)=>{
+        e.preventDefault();
+
+        const getShopBascket = new GetShopBascket();
+        getShopBascket.cart({id:e.target.name})
+            .then(body =>{
+                const setitem = this.props.setitem;
+                setitem(body)
+            })
+            .catch(err => console.log(err))
+        console.log(getShopBascket)
+
+    };
     render() {
         return(
             <div>
@@ -28,7 +48,7 @@ export default class WearCards extends Component{
                         <span>${this.props.price}</span>
                     </div>
                     <span className={'new'}>New</span>
-                    <div className={'cartbutton'}>
+                    <div className={'cartbutton'} onClick = {this.props.shopOpen}>
                                    <span className={'cartaddhover'}>
                                        <form  >
                                        <fieldset>
@@ -36,19 +56,28 @@ export default class WearCards extends Component{
                                            <input type="hidden" name="add" value="1"/>
                                            <input type="hidden" name="return" value=" "/>
                                            <input type="hidden" name="cancel_return" value=" "/>
-                                           <input type="submit" name={this.props.item} value="Add to cart" className="button"/>
+                                           <input type="submit" name={this.props.all._id} value="Add to cart" className="button" onClick={this.onSubmit}/>
                                        </fieldset>
                                    </form>
                                    </span>
-                        <span></span>
                     </div>
                 </div>
             </div>
         )
     }
 }
-// export default ({item,itemimg,price}) => {
-//     return(
+const mapStateToProps = state => {
+    return {
+        magazine: state.magazine.initmagazine,
+    }
+}
 
-//     )
-// }
+const mapDispatchToProps = dispatch => {
+    return {
+        shopOpen: () => {
+            dispatch({type: 'shopChange'})
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(WearCards)

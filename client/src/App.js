@@ -52,9 +52,9 @@ function App(){
                 <Route exact path='/' render = {()=><Home setitem={setitem} />} />
                 <Route exact path="/admin" component={Admin} />
                 <Route path='/about' component={About} />
-                <Route exact path='/mens' component={Mens} />
+                <Route exact path='/mens' render = {()=><Mens setitem={setitem} />} />
                 <Route exact path={'/mens/:frommens'} component={Newfilter}/>
-                <Route exact path='/womens' component={Womens} />
+                <Route exact path='/womens' render = {()=><Womens setitem={setitem} />}  />
                 <Route exact path='/womens/:fromwomens' component={Newfilter} />
                 <Route path='/contact' component={Contact} />
                 <Route path='/shop' render={()=><Shop  key={shopProduct.key + 1} deletItem={deletItem}/>}/>

@@ -39,11 +39,12 @@ export default class Mens extends Component {
                 />
                 <div className="container">
                     <div className={'cardwears'}>
+
                         {this.state.products.map((elem, index) => {
 
                             return(
                                 <div key={index} className={'imgwear'}>
-                                    <WearCards itemimg={elem.img} item={elem.goods_name} price={elem.price} all = {elem}/>
+                                    <WearCards setitem = {this.props.setitem} itemimg={elem.img} item={elem.goods_name} price={elem.price} all = {elem}/>
                                 </div>
                             )
                         }) }
