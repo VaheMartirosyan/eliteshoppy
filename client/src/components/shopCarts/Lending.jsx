@@ -82,7 +82,7 @@ class Shopcart extends React.Component {
                     </ul>
 
                 </div>
-                    <QuickView BtnQuickView={this.BtnQuickView} QuickCards={this.state.QuickCards}/>
+                    <QuickView setitem = {this.props.setitem} BtnQuickView={this.BtnQuickView} QuickCards={this.state.QuickCards}/>
                 <div className={'shopCartscontainer'}>
                     <div className={'carts'}>
                         {this.state.products.map((item,index)=>{

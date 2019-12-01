@@ -139,4 +139,22 @@
    transition: 0.5s;
     color: rgb(39, 38, 38);
     transform: scale(1.1);
-   }
+}
+.shopnav{
+    text-decoration: none;
+    font-weight: bolder;
+    color: white;
+    background: black;
+
+    font-size: 20px;
+    float: right;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.shopnav:hover{
+    background: #0FC3A4;
+    color: white;
+    text-decoration: none;
+    transition: .7s;
+
+}

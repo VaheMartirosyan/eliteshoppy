@@ -3,6 +3,7 @@ import Wear from "../wear/Wear"
 import ShopItems from './shopitems/Shopitem'
 import {Link} from 'react-router-dom'
 import './Shop.scss'
+import Fixed from "../components/fixed/Fixed";
 
 
 
@@ -63,6 +64,7 @@ export default class Shop extends Component{
                         </div>
                     </div>
                 }
+                <Fixed/>
             </div>
         )
     }

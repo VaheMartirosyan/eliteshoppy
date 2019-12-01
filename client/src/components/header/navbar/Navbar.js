@@ -39,17 +39,6 @@ componentWillReceiveProps(nextProps) {
             this.setState({userProfile:nextProps.user})
             }
           }
-       
-    onItemDelete = e =>{
-       const getShopBascket = new GetShopBascket();
-       getShopBascket.deletItem(e)
-       this.refreshState()
-     }
-     refreshState(){
-        const product = JSON.parse(localStorage.cartId);
-        this.setState({bascket:product})
-     }
-
 
     render() {
 
@@ -108,10 +97,8 @@ componentWillReceiveProps(nextProps) {
                                         </li>
                                     )
                                 })}
-                               
-
                             </ul>
-                            <h3>Subtotal</h3>
+                            <NavLink className={'shopnav'} onClick={this.props.shopClose} to={'/shop'}>Go To Shop</NavLink>
                         </div> }
 
                         <button type="button" className="close" data-dismiss="modal" onClick={this.props.shopClose}>×</button>
