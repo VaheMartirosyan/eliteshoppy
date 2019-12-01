@@ -43,7 +43,7 @@ export default class Mens extends Component {
 
                             return(
                                 <div key={index} className={'imgwear'}>
-                                    <WearCards itemimg={elem.img} item={elem.goods_name} price={elem.price}/>
+                                    <WearCards itemimg={elem.img} item={elem.goods_name} price={elem.price} all = {elem}/>
                                 </div>
                             )
                         }) }

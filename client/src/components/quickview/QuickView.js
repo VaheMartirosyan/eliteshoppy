@@ -3,9 +3,9 @@ import './QuickView.scss'
 
 export default props=>{
     return(
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
+            <div className="modal fade" id="exampleModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog" role="document">
+                    <div className="modal-content">
                         <div className={'quickall'}>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span className={'Xclose'} aria-hidden="true">&times;</span>

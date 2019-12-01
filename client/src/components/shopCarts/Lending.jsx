@@ -57,7 +57,7 @@ class Shopcart extends React.Component {
     BtnQuickView=(i)=>{
         this.state.QuickCards = i
         this.setState({})
-        console.log(this.state.QuickCards)
+
     }
 
 
