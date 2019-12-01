@@ -1,5 +1,10 @@
 *{
   margin: 0;
   padding: 0;
-
+}
+button{
+  outline: none !important;
+}
+input{
+  outline: none !important;
 }

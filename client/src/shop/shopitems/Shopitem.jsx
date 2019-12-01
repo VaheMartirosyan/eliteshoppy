@@ -8,16 +8,6 @@ class ShopItems extends React.Component {
         cont:1
     }
 
-    change = (e) => {
-        var items = parseInt(this.state.items.price)*e.target.value
-        this.setState({
-            price:items
-        })
-
-
-
-
-    }
     plus = ()=>{
         if(this.state.cont <= this.state.items.stok){
 
@@ -46,10 +36,16 @@ class ShopItems extends React.Component {
                 <div className={'imgShop'} style={{backgroundImage:`url(./img/${this.state.items.img})`}}></div>
                 <h3>{this.state.items.goods_name}</h3>
                 <p>${this.state.items.price*this.state.cont}</p>
-                <div className={'d-flex'}>
-                    <button onClick={this.plus}>+</button>
-                    <div>{this.state.cont}</div>
-                    <button onClick={this.minus}>-</button>
+                <div className={'buttons'}>
+                    <div>
+                        <button onClick={this.plus}>+</button>
+                    </div>
+                    <div>
+                        <p className={'pik'}>{this.state.cont}</p>
+                    </div>
+                    <div>
+                        <button onClick={this.minus}>-</button>
+                    </div>
                 </div>
                 <button className={'itemsdelete'} onClick={this.props.deletehandler.bind(this, this.state.items._id)}>x</button>
             </div>

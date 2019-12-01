@@ -25,3 +25,49 @@
   flex: 1.2;
   margin-right: 30px;
 }
+.totsum{
+  text-align: center;
+  font-size: 35px;
+  color: #2BDABA;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.nothing{
+  width: 80%;
+  padding: 100px;
+  box-shadow: 0 0 7px 0 rgba(128,128,128,0.5);
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 80px;
+  border-radius: 10px;
+  p{
+    font-weight: bolder;
+    font-size: 35px;
+    color: #2BDABA;
+  }
+
+}
+.shoplinks{
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 30px;
+  .linkfromshop{
+    margin: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: black;
+    border: 2px solid transparent;
+    &:hover{
+      background: white;
+      color: black;
+      border: 2px solid black;
+      transition: .7s;
+    }
+  }
+
+}
