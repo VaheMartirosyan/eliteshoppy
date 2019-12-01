@@ -9,9 +9,11 @@ export default class Newfilter extends Component {
         this.cart()
     }
     cart = async user => {
+        const prod = JSON.stringify(this.props.match.params.frommens);
         return await axios
-          .get(`filterProduct/${this.props.match.params.esiminj}`)
+          .get(`filterProduct/${JSON.parse(prod)}`)
           .then(response => {
+          
            if(response.status === 200){
                this.setState({products:response.data})
            }
@@ -22,7 +24,7 @@ export default class Newfilter extends Component {
           })
       }
     render() {
-        console.log(this.state.products + 'app');
+      console.log(this.state.products);
         return(
             <div>
 
