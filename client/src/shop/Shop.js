@@ -20,13 +20,14 @@ export default class Shop extends Component{
         let sum = 0;
         a.map(num=> sum = sum + parseInt(num.price) )
              this.setState({
-            shops:a,totprice:sum
+                    shops:a,
+                    totprice:sum
 
         })
 
     }
     totalpriceCompiler =  sum => this.setState({totprice:sum + this.state.totprice})
-
+    totalincrement = sum => this.setState({totprice:this.state.totprice - sum})
     render() {
 
        
@@ -38,7 +39,7 @@ export default class Shop extends Component{
                         {this.state.shops.map((item,i)=>{
                             return(
                                 <div key={i}>
-                                    <ShopItems item ={item} deletehandler={this.props.deletItem} decriment={this.totalpriceCompiler}/>
+                                    <ShopItems item ={item} deletehandler={this.props.deletItem} increment = {this.totalincrement} decriment={this.totalpriceCompiler}/>
                                 </div>
                             )
                         })}
