@@ -7,6 +7,7 @@ export default class Newfilter extends Component {
     }
     componentDidMount(){
         this.cart()
+
     }
     cart = async user => {
         const prod = JSON.stringify(this.props.match.params.frommens);
@@ -23,13 +24,14 @@ export default class Newfilter extends Component {
             console.log(err)
           })
       }
+
     render() {
-      console.log(this.state.products);
+      console.log(this.props.match);
         return(
             <div>
 
                 {this.props.match.params.frommens}
-                {this.props.match.params.fromhome}
+                {this.props.match.params.fromwomens}
 
                 <h2>sdlvs</h2>
             </div>

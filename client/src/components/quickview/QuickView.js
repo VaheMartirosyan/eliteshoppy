@@ -1,14 +1,10 @@
 import React,{Component} from 'react';
 import './QuickView.scss'
 import {GetShopBascket} from "../UserFunctions";
-import {Link} from 'react-router-dom'
+
 
 
 export default class QuickView extends Component{
-    state = {
-        true:false
-    }
-
     onSubmit= (e)=>{
         e.preventDefault();
 
