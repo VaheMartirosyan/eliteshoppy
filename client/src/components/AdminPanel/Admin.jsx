@@ -115,7 +115,11 @@ export default class Goods extends Component {
             reset:this.reset,
             discont:this.discont
           }
-    
+    hendlClick = ()=>{
+      localStorage.removeItem('itemtId')
+      this.setState({})
+      console.log('olla')
+    }
     render() {
      
       let admin = this.state.adminISLogined.islogined;
@@ -133,7 +137,7 @@ export default class Goods extends Component {
         return  <li key={i} className={classes.join(' ')}
                      onClick={()=>this.navigate({item},{i})}>{item.text}</li>
           })} 
-        <li className={'navPanel'} onClick={()=>localStorage.removeItem('itemtId')}>exit</li>
+        <li className={'navPanel'} onClick={()=>this.hendlClick()}>exit</li>
           
         </ul>
       </div>

@@ -1,21 +1,21 @@
-import React, {Component} from 'react'
+import React, { useState, useEffect } from "react"
 import axios from 'axios'
 import QuickView from "../components/quickview/QuickView";
 import {GetShopBascket} from "../components/UserFunctions";
 import Wear from "../wear/Wear";
 
-export default class Newfilter extends Component {
-    state = {
-        products:[],
-        QuickCards:''
-    }
-    componentDidMount(){
-        this.cart()
 
-    }
-    cart = async user => {
-        let query = this.props.match.params.frommens;
-        if(query == undefined) query = this.props.match.params.fromwomens;
+export default function Newfilter(props){
+
+
+    const [productforApdate, chaingState] = useState([])
+    useEffect(()=>{
+        cart()
+    },[props.match.params])
+    
+  const cart = async user => {
+        let query = props.match.params.frommens;
+        if(query == undefined) query = props.match.params.fromwomens;
         
         const prod = JSON.stringify(query);
         return await axios
@@ -23,7 +23,7 @@ export default class Newfilter extends Component {
           .then(response => {
           
            if(response.status === 200){
-               this.setState({products:response.data})
+            chaingState(response.data)
            }
             return response.data
           })
@@ -31,7 +31,7 @@ export default class Newfilter extends Component {
             console.log(err)
           })
       }
-    onSubmit= (e)=>{
+  const onSubmit= (e)=>{
         e.preventDefault();
 
         const getShopBascket = new GetShopBascket();
@@ -44,14 +44,13 @@ export default class Newfilter extends Component {
 
     };
 
-    BtnQuickView=(i)=>{
+  const  BtnQuickView=(i)=>{
         this.state.QuickCards = i
         this.setState({})
 
     }
 
-    render() {
-        console.log(this.props.match)
+
         return(
             <div>
                 <Wear wear = {`${this.props.match.params.frommens ? 'MENS' : 'WOMENS'}`}/>
@@ -95,7 +94,8 @@ export default class Newfilter extends Component {
                         })}
                     </div>
                 </div>
+
             </div>
         )
-    }
+    
 }

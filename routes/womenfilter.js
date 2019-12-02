@@ -4,7 +4,7 @@ const Goods = require('../models/Goods')
 
 
 filter.get('/filterProduct/:id',(req,res)=>{
-    console.log(req.params.id)
+    console.log('womensssaaaaaaaaaaa')
     Goods.find({cotegory:req.params.id})
     .exec(function(err, goods) {
       if (err) throw err;

@@ -8,6 +8,7 @@ const Goods = require('./routes/Goods')
 const Admin = require('./routes/Admin')
 const Products = require ('./routes/Products')
 const Filters = require('./routes/Filters')
+const womenFlter =  require('./routes/womenfilter')
 const port = process.env.PORT || 5000
 const cors = require('cors')
 const morgan = require('morgan')
@@ -37,7 +38,7 @@ mongoose
 app.use(cors())
 app.use(morgan('dev'));
 app.use('/mens',Filters)
-app.use('/womens',Filters)
+app.use('/womens',womenFlter)
 app.use('/users', Users)
 app.use('/stok', Goods)
 app.use('/s',Admin)
