@@ -9,26 +9,26 @@ export default () => {
                 <div className="control-group">
                     <label className="control control-radio">
                         Lower Price
-                        <input type="radio" name="radio" onClick={() => console.log('dlskvl')}/>
+                        <input type="radio" name="radio" value={'lowerprice'} onClick={(e) => console.log(e.target.value)}/>
                         <div className="control_indicator"></div>
                     </label>
                     <label className="control control-radio">
                         Track your item
-                        <input type="radio" name="radio" />
+                        <input type="radio" name="radio" value={'trackitem'} onClick={(e) => console.log(e.target.value)}/>
                         <div className="control_indicator"></div>
                     </label>
                     <label className="control control-radio">
                         Bigger Choice
-                        <input type="radio" name="radio" />
+                        <input type="radio" name="radio" value={'biggerchoice'} onClick={(e) => console.log(e.target.value)}/>
                         <div className="control_indicator"></div>
                     </label>
                     <label className="control control-radio">
                         More colors to choose
-                        <input type="radio" name="radio" />
+                        <input type="radio" name="radio" value={'morecolors'} onClick={(e) => console.log(e.target.value)}/>
                         <div className="control_indicator"></div>
                     </label>
                     <label className="control control-radio">
-                        Money back guaranteed                    <input type="radio" name="radio" />
+                        Money back guaranteed                    <input type="radio" name="radio" value={'moneyback'} onClick={(e) => console.log(e.target.value)}/>
                         <div className="control_indicator"></div>
                     </label>
                 </div>
