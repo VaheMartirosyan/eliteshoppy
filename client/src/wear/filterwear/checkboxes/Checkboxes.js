@@ -1,41 +1,47 @@
-import React from 'react'
-import Radio from '@material-ui/core/Radio';
+import React,{Component} from 'react'
 import './Checkboxes.css'
 
-export default () => {
-    return(
-        <form>
-            <div className={'control'}>
-                <div className="control-group">
-                    <label className="control control-radio">
-                        Lower Price
-                        <input type="radio" name="radio" value={'lowerprice'} onClick={(e) => console.log(e.target.value)}/>
-                        <div className="control_indicator"></div>
-                    </label>
-                    <label className="control control-radio">
-                        Track your item
-                        <input type="radio" name="radio" value={'trackitem'} onClick={(e) => console.log(e.target.value)}/>
-                        <div className="control_indicator"></div>
-                    </label>
-                    <label className="control control-radio">
-                        Bigger Choice
-                        <input type="radio" name="radio" value={'biggerchoice'} onClick={(e) => console.log(e.target.value)}/>
-                        <div className="control_indicator"></div>
-                    </label>
-                    <label className="control control-radio">
-                        More colors to choose
-                        <input type="radio" name="radio" value={'morecolors'} onClick={(e) => console.log(e.target.value)}/>
-                        <div className="control_indicator"></div>
-                    </label>
-                    <label className="control control-radio">
-                        Money back guaranteed                    <input type="radio" name="radio" value={'moneyback'} onClick={(e) => console.log(e.target.value)}/>
-                        <div className="control_indicator"></div>
-                    </label>
+export default class  Checkboxes extends Component{
+    CheckHandler = (e) =>{
+        console.log(e.target.value)
+    }
+    render() {
+        return(
+            <form>
+                <div className={'control'}>
+                    <div className="control-group">
+                        <label className="control control-radio">
+                            Lower Price
+                            <input type="radio" name="radio" value={'lowerprice'} onClick={this.CheckHandler}/>
+                            <div className="control_indicator"></div>
+                        </label>
+                        <label className="control control-radio">
+                            Track your item
+                            <input type="radio" name="radio" value={'trackitem'} onClick={this.CheckHandler}/>
+                            <div className="control_indicator"></div>
+                        </label>
+                        <label className="control control-radio">
+                            Bigger Choice
+                            <input type="radio" name="radio" value={'biggerchoice'} onClick={this.CheckHandler}/>
+                            <div className="control_indicator"></div>
+                        </label>
+                        <label className="control control-radio">
+                            More colors to choose
+                            <input type="radio" name="radio" value={'morecolors'} onClick={this.CheckHandler}/>
+                            <div className="control_indicator"></div>
+                        </label>
+                        <label className="control control-radio">
+                            Money back guaranteed
+                            <input type="radio" name="radio" value={'moneyback'}onClick={this.CheckHandler}/>
+                            <div className="control_indicator"></div>
+                        </label>
+                    </div>
                 </div>
-                <button className={'btn btn-success'}>Send</button>
-            </div>
-        </form>
-    )
+            </form>
+        )
+    }
+
+
 }
 
 

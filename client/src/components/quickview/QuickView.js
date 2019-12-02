@@ -19,6 +19,8 @@ export default class QuickView extends Component{
 
     };
 
+
+
     render(){
         return(
 
