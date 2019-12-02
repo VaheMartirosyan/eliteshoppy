@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-dom'
 
 const InsideFilter = (props) => {
     return(
-        <p className={'weartypes'} onClick={() => props.history.push(`/mens/${props.weartype}`)}>
+        <p className={'weartypes'} onClick={() => props.history.push(`/${props.gender}/${props.weartype}`)}>
             {props.weartype}
         </p>
     )

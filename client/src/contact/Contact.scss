@@ -77,6 +77,10 @@ iframe{
 .InpDv{
   background-color: black;
   padding:40px;
+  textarea {
+    width: 100%;
+    outline: none;
+  }
   input{
     width: 100%;
     margin-top: 20px;

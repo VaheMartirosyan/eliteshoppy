@@ -22,7 +22,7 @@ function App(){
 
     const setitem = (item)=>{
 
-        const arr = itemsArray.find( arr=>arr._id === item._id)
+        const arr = itemsArray.find( arr=> arr._id === item._id)
         if(arr){
 
         }else{

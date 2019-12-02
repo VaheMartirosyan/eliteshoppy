@@ -12,7 +12,9 @@ import {connect} from "react-redux";
         wearTitle: 'MEN\'S WEAR',
         products: [],
         loading: true,
-        QuickCards: ''
+        QuickCards: '',
+        menswear: 'Mens',
+        gender: 'mens'
     }
     componentDidMount(){
         setProduct(`stok/menproduct`,"GET")
@@ -56,6 +58,9 @@ import {connect} from "react-redux";
                             imgthree={'https://demo.w3layouts.com/demos_new/template_demo/20-06-2017/elite_shoppy-demo_Free/143933984/web/images/banner2.jpg'}
                             imgfour={'https://demo.w3layouts.com/demos_new/template_demo/20-06-2017/elite_shoppy-demo_Free/143933984/web/images/bb2.jpg'}
                             getProduct={this.getProduct}
+                            mensorw={this.state.menswear}
+                            gender={this.state.gender}
+
                 />
                 <div className="container">
                     <div className={'cardwears'}>

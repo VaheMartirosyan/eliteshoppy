@@ -22,14 +22,21 @@ export default class FilterWear extends Component {
         checkthree: false,
         checkfour: false,
         checkfive: false,
+        genderone: 'mens',
+        gendertwo: 'womens',
         value: 5,
         value1: {
             min: 5,
             max: 10,
-        }
+        },
+        inpVal: 50
     }
 
-
+    changerange = (e) => {
+        this.setState({
+            inpVal: e.target.value
+        })
+    }
   
     render() {
         return(
@@ -41,8 +48,8 @@ export default class FilterWear extends Component {
                                 <h2> FILTER BY <span>PRICE</span> </h2>
                             </div>
                             <div className={'range'}>
-                                <input type="range"/>
-                                <input type="text" placeholder={'$ 100 - $ 700'} className={'between'}/>
+                                <input type="range" onChange={this.changerange} />
+                                <input type="text" value={`$ ${this.state.inpVal}`} className={'between'}/>
                             </div>
                             <div className="categories">
                                 <div className={'categorieswear'}>
@@ -50,7 +57,7 @@ export default class FilterWear extends Component {
                                 </div>
                                 <div className={'contain'}>
                                     <div onClick={()=> this.setState({isVisible: !this.state.isVisible})}>
-                                        <i className="fa fa-long-arrow-right"></i> <span>Men's Wear</span>
+                                        <i className="fa fa-long-arrow-right"></i> <span>{this.props.mensorw} Wear</span>
                                     </div>
                                     {this.state.isVisible ? <div className={'ethnic'}>
                                         <div onClick={()=> this.setState({ethnicIsVisible: !this.state.ethnicIsVisible })}>
@@ -60,7 +67,7 @@ export default class FilterWear extends Component {
                                         {this.state.ethnicIsVisible ? this.state.weartypeone.map((e, i) => {
                                             return(
                                                 <div className={'ethnicwear'} key={i}>
-                                                    <InsideFilter weartype={e} />
+                                                    <InsideFilter weartype={e} gender={this.props.gender} />
                                                 </div>
                                             )
                                         }) : null}
@@ -70,7 +77,7 @@ export default class FilterWear extends Component {
                                         {this.state.capIsVisible ? this.state.weartypeone.map((e, i) => {
                                             return(
                                                 <div className={'ethnicwear'} key={i}>
-                                                    <InsideFilter weartype={e} />
+                                                    <InsideFilter weartype={e}  gender={this.props.gender} />
                                                 </div>
                                             )
                                         }) : null}
@@ -80,7 +87,7 @@ export default class FilterWear extends Component {
                                         {this.state.shoesIsVisible ? this.state.weartypeone.map((e, i) => {
                                             return(
                                                 <div className={'ethnicwear'} key={i}>
-                                                    <InsideFilter weartype={e} />
+                                                    <InsideFilter weartype={e} gender={this.props.gender}  />
                                                 </div>
                                             )
                                         }) : null}
@@ -95,7 +102,7 @@ export default class FilterWear extends Component {
                                         {this.state.summer ? this.state.weartypefour.map((e, i) => {
                                             return(
                                                 <div className={'ethnicwear'} key={i}>
-                                                    <InsideFilter weartype={e} />
+                                                    <InsideFilter weartype={e} gender={this.props.gender}  />
                                                 </div>
                                             )
                                         }) : null}
@@ -105,7 +112,7 @@ export default class FilterWear extends Component {
                                         {this.state.flatIsVisible ? this.state.weartypethree.map((e, i) => {
                                             return(
                                                 <div className={'ethnicwear'} key={i}>
-                                                    <InsideFilter weartype={e} />
+                                                    <InsideFilter weartype={e} gender={this.props.gender}  />
                                                 </div>
                                             )
                                         }) : null}

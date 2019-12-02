@@ -100,6 +100,7 @@ section{
 .hoverIcons1{
   width: 40px;
   height: 40px;
+  text-align: center;
   margin-left: 5px;
 
   &:hover .hoverIcons11{
@@ -115,11 +116,10 @@ section{
     color: white;
     font-size: 20px;
     margin-top: 10px;
-    margin-left: 11px;
   }
 }
 .DisHov1{
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

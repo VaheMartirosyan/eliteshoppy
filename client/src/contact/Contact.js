@@ -89,7 +89,7 @@ export default ()=>{
                         <input type="text" placeholder={'Name'}/><br/>
                         <input type="email" placeholder={'Email'}/><br/>
                         <input type="text" placeholder={'Subject'}/><br/>
-                        <textarea placeholder={'Message'} name="Message" id="" cols="80" rows="5"></textarea>
+                        <textarea placeholder={'Message'} name="Message" id=""></textarea>
                         <button className={'BtnSend'}>SEND</button>
                     </form>
                 </div>
