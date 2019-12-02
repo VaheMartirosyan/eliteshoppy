@@ -9,6 +9,7 @@ export default function Newfilter(props){
 
 
     const [productforApdate, chaingState] = useState([])
+    const [QuickCards, quickState] = useState('')
     useEffect(()=>{
         cart()
     },[props.match.params])
@@ -45,25 +46,25 @@ export default function Newfilter(props){
     };
 
   const  BtnQuickView=(i)=>{
-        this.state.QuickCards = i
-        this.setState({})
+    quickState(i)
+        
 
     }
 
 
         return(
             <div>
-                <Wear wear = {`${this.props.match.params.frommens ? 'MENS' : 'WOMENS'}`}/>
-                <QuickView setitem = {this.props.setitem} BtnQuickView={this.BtnQuickView} QuickCards={this.state.QuickCards}/>
+                <Wear wear = {`${props.match.params.frommens ? 'MENS' : 'WOMENS'}`}/>
+                <QuickView setitem = {props.setitem} BtnQuickView={BtnQuickView} QuickCards={QuickCards}/>
                 <div className={'shopCartscontainer'}>
                     <div className={'carts'}>
-                        {this.state.products.map((item,index)=>{
+                        {productforApdate.map((item,index)=>{
                             return (
                                 <div key={index} className={'shopCarts'}>
                                     <div className={'imgquick'}>
                                         <img src={`../img/${item.img}`} alt="shoose"/>
                                         <div className={'quickdiv'}>
-                                            <button className={'quickbtn'} name={item._id} onClick={this.BtnQuickView.bind(this,item)} data-toggle="modal" data-target="#exampleModal">Quick View</button>
+                                            <button className={'quickbtn'} name={item._id} onClick={BtnQuickView.bind(this,item)} data-toggle="modal" data-target="#exampleModal">Quick View</button>
                                         </div>
                                     </div>
                                     <div className={'cartitemname'}>
@@ -74,7 +75,7 @@ export default function Newfilter(props){
                                     </div>
                                     <span className={'new'} >New</span>
                                     <div >
-                                        <div className={'cartbutton'} onClick = {this.props.shopOpen} >
+                                        <div className={'cartbutton'} onClick = {props.shopOpen} >
                                    <span className={'cartaddhover'}>
                                        <form  >
                                        <fieldset>
@@ -82,7 +83,7 @@ export default function Newfilter(props){
                                            <input type="hidden" name="add" value="1"/>
                                            <input type="hidden" name="return" value=" "/>
                                            <input type="hidden" name="cancel_return" value=" "/>
-                                           <input type="submit" name={item._id} value="Add to cart" className="button" onClick={this.onSubmit}/>
+                                           <input type="submit" name={item._id} value="Add to cart" className="button" onClick={onSubmit}/>
                                        </fieldset>
                                    </form>
                                    </span>
