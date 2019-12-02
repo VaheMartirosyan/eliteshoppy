@@ -5,6 +5,11 @@ import FilterWear from "../wear/filterwear/FilterWear";
 import Spiner from "../components/Spiner/Spiner";
 import QuickView from "../components/quickview/QuickView";
 import {connect} from "react-redux";
+import pic1 from '../components/slider/slideimg/banner1.jpg'
+import pic2 from '../components/slider/slideimg/banner2.jpg'
+import pic3 from '../components/slider/slideimg/banner4.jpg'
+import pic4 from '../components/slider/slideimg/banner5.jpg'
+
 
 
 
@@ -55,10 +60,10 @@ class Womens extends Component {
         return(
             <div>
                 <Wear wear={'Womens Wear'} />
-                <FilterWear imgone={'https://demo.w3layouts.com/demos_new/template_demo/20-06-2017/elite_shoppy-demo_Free/143933984/web/images/banner4.jpg'}
-                            imgtwo={'https://demo.w3layouts.com/demos_new/template_demo/20-06-2017/elite_shoppy-demo_Free/143933984/web/images/banner3.jpg'}
-                            imgthree={'https://demo.w3layouts.com/demos_new/template_demo/20-06-2017/elite_shoppy-demo_Free/143933984/web/images/banner1.jpg'}
-                            imgfour={'https://demo.w3layouts.com/demos_new/template_demo/20-06-2017/elite_shoppy-demo_Free/143933984/web/images/bb1.jpg'}
+                <FilterWear imgone={pic1}
+                            imgtwo={pic2}
+                            imgthree={pic3}
+                            imgfour={pic4}
                             mensorw={this.state.womenswear}
                             gender={this.state.gender}
                 />

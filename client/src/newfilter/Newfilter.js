@@ -3,6 +3,7 @@ import axios from 'axios'
 import QuickView from "../components/quickview/QuickView";
 import {GetShopBascket} from "../components/UserFunctions";
 import Wear from "../wear/Wear";
+import './Newfilter.scss'
 
 
 export default function Newfilter(props){
@@ -70,26 +71,28 @@ export default function Newfilter(props){
             <div>
                 <Wear wear = {`${props.match.params.frommens ? 'MENS' : 'WOMENS'}`}/>
                 <QuickView setitem = {props.setitem} BtnQuickView={BtnQuickView} QuickCards={QuickCards}/>
-                <div className={'shopCartscontainer'}>
-                    <div className={'carts'}>
-                        {productforApdate.map((item,index)=>{
-                            return (
-                                <div key={index} className={'shopCarts'}>
-                                    <div className={'imgquick'}>
-                                        <img src={`../img/${item.img}`} alt="shoose"/>
-                                        <div className={'quickdiv'}>
-                                            <button className={'quickbtn'} name={item._id} onClick={BtnQuickView.bind(this,item)} data-toggle="modal" data-target="#exampleModal">Quick View</button>
+                <h2 className={'newfilth'}>F<span>ind</span> Y<span>our</span>  P<span>roduct</span> H<span>ere</span></h2>
+                <div className={'newfilt'}>
+                    <div className={'shopCartscontainer'}>
+                        <div className={'carts'}>
+                            {productforApdate.map((item,index)=>{
+                                return (
+                                    <div key={index} className={'shopCarts'}>
+                                        <div className={'imgquick'}>
+                                            <img src={`../img/${item.img}`} alt="shoose"/>
+                                            <div className={'quickdiv'}>
+                                                <button className={'quickbtn'} name={item._id} onClick={BtnQuickView.bind(this,item)} data-toggle="modal" data-target="#exampleModal">Quick View</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className={'cartitemname'}>
-                                        <h4 className="title">{item.goods_name}</h4>
-                                    </div>
-                                    <div className={'cartprice'}>
-                                        <span>${item.price}</span>
-                                    </div>
-                                    <span className={'new'} >New</span>
-                                    <div >
-                                        <div className={'cartbutton'} onClick = {props.shopOpen} >
+                                        <div className={'cartitemname'}>
+                                            <h4 className="title">{item.goods_name}</h4>
+                                        </div>
+                                        <div className={'cartprice'}>
+                                            <span>${item.price}</span>
+                                        </div>
+                                        <span className={'new'} >New</span>
+                                        <div >
+                                            <div className={'cartbutton'} onClick = {props.shopOpen} >
                                    <span className={'cartaddhover'}>
                                        <form  >
                                        <fieldset>
@@ -101,15 +104,15 @@ export default function Newfilter(props){
                                        </fieldset>
                                    </form>
                                    </span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                            )
-                        })}
+                                )
+                            })}
+                        </div>
                     </div>
                 </div>
-
             </div>
         )
     

@@ -18,6 +18,7 @@
     "cors": "^2.8.5",
     "express": "^4.16.3",
     "jsonwebtoken": "^7.4.2",
+    "media-queries": "^1.0.5",
     "mkdirp": "^0.5.1",
     "mongodb": "^3.1.6",
     "mongoose": "^5.2.15",
