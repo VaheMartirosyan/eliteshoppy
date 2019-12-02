@@ -40,7 +40,9 @@ export default function SimpleModal({deletItem}) {
     setOpen(false);
   };
   const id = deletItem.id;
-  
+  const style = {
+    marginLeft:'9px'
+  } 
   return (
     <div>
       <button type="button" onClick={handleOpen}>
@@ -59,7 +61,7 @@ export default function SimpleModal({deletItem}) {
           <h2 id="simple-modal-title">you really want to delete this item </h2>
 
           <button onClick={handleClose} >close</button>
-          <button onClick={()=>deletItem.del(id)} >delete</button>
+          <button style={style} onClick={()=>deletItem.del(id)} >delete</button>
         </div>
       </Modal>
     </div>

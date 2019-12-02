@@ -18,7 +18,7 @@ export default class Goods extends Component {
         productCountInSok:'',
       fileSelected:null,
       navigate:'home',
-      navigation:[{id:1,text:'home'},{id:2,text:'add product'},{id:3,text:'static'},{id:4,text:'exit'}],
+      navigation:[{id:1,text:'home'},{id:2,text:'add product'},{id:3,text:'static'}],
       adminISLogined:'',
       selectedId:null,
       } 
@@ -132,8 +132,8 @@ export default class Goods extends Component {
           }
         return  <li key={i} className={classes.join(' ')}
                      onClick={()=>this.navigate({item},{i})}>{item.text}</li>
-          })}
-         
+          })} 
+        <li className={'navPanel'} onClick={()=>localStorage.removeItem('itemtId')}>exit</li>
           
         </ul>
       </div>

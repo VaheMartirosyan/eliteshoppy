@@ -33,10 +33,11 @@ mongoose
   )
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err))
-
+  
 app.use(cors())
 app.use(morgan('dev'));
 app.use('/mens',Filters)
+app.use('/womens',Filters)
 app.use('/users', Users)
 app.use('/stok', Goods)
 app.use('/s',Admin)

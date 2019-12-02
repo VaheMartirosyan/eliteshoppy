@@ -10,7 +10,10 @@ export default class Newfilter extends Component {
 
     }
     cart = async user => {
-        const prod = JSON.stringify(this.props.match.params.frommens);
+        let query = this.props.match.params.frommens;
+        if(query == undefined) query = this.props.match.params.fromwomens;
+        
+        const prod = JSON.stringify(query);
         return await axios
           .get(`filterProduct/${JSON.parse(prod)}`)
           .then(response => {
@@ -26,7 +29,7 @@ export default class Newfilter extends Component {
       }
 
     render() {
-      console.log(this.props.match);
+        console.log(this.state.products)
         return(
             <div>
 

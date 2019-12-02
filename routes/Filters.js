@@ -11,9 +11,16 @@ filter.get('/filterProduct/:id',(req,res)=>{
      
       res.status(200).json(goods)
   });
+})
 
-
-    
+filter.get('/filterProduct/:id',(req,res)=>{
+ 
+  Goods.find({cotegory:req.params.id})
+  .exec(function(err, goods) {
+    if (err) throw err;
+   
+    res.status(200).json(goods)
+});
 })
 
 module.exports = filter

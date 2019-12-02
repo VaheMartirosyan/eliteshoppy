@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from 'axios'
 import Spiner from '../Spiner/Spiner'
-
+import Pagination from './Pagination'
 import Prductitems from './Prductitems'
 
 
@@ -11,7 +11,7 @@ export default function Home(props) {
     const [productforApdate, chaingState] = useState({item:'',visibl:false})
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [currentPage] = useState(1);
+    const [currentPage,setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
   
     useEffect(() => {
@@ -29,7 +29,7 @@ const indexOfFirstPost = indexOfLastPost - postsPerPage;
 const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
 // Change page
-
+const paginate = pageNumber => setCurrentPage(pageNumber);
 const deletItem = async id=>{
   setLoading(true);
   const url = 'stok/deletProduct'
@@ -41,12 +41,25 @@ const deletItem = async id=>{
     }
     setLoading(false);
 }
+
    if(loading){
      return <Spiner />
    }
     return(
-      
-     <Prductitems products={currentPosts} apdateProduct={props.apdateProduct} deletItem={deletItem}/>
+    <div>
+    <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={posts.length}
+        paginate={paginate}
+      />
+      <Prductitems products={currentPosts} apdateProduct={props.apdateProduct} deletItem={deletItem}/>
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={posts.length}
+        paginate={paginate}
+      />
+    </div>
+    
    
    
     )

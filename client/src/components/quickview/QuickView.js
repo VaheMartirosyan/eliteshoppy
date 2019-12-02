@@ -4,6 +4,7 @@ import {GetShopBascket} from "../UserFunctions";
 
 
 
+
 export default class QuickView extends Component{
     onSubmit= (e)=>{
         e.preventDefault();
@@ -20,6 +21,9 @@ export default class QuickView extends Component{
 
     render(){
         return(
+
+   
+
             <div className="modal fade" id="exampleModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">

@@ -116,7 +116,7 @@ legend{
     color:#0FC3A4 !important;
 }
 .navPanel{
-    width: 100%;
+   
     height: 60px;
     background: floralwhite;
     box-shadow: 0 0 3px;
@@ -125,6 +125,7 @@ legend{
 }
 .navPanel>ul{
     margin: 0 auto;
+    display: flex;
 }
 .navPanel ul li{
     list-style: none;

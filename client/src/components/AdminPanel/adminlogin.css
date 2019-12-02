@@ -122,6 +122,11 @@
     line-height: inherit;
     text-decoration: overline;
   }
+  .s nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   input.question:valid ~ input[type="submit"], textarea.question:valid ~ input[type="submit"] {
     -webkit-animation: appear 1s forwards;
     animation: appear 1s forwards;
