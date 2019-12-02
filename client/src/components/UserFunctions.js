@@ -49,15 +49,14 @@ export const register = async newUser => {
   }
 export class GetShopBascket {
    itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : []
-   cart = async user => {
+   cart = async (user,path) => {
    
     
     
     return await axios
-      .post('stok/cartVew', user)
+      .post(path, user)
       .then(response => {
-        this.itemsArray.push(response.data)
-        // localStorage.setItem('cartId', JSON.stringify(this.itemsArray))   
+      
         return response.data
       })
       .catch(err => {

@@ -5,7 +5,7 @@ import Womenshover from './hovercomponents/womens/womenshover'
 import jwt_decode from 'jwt-decode'
 import {connect} from 'react-redux'
 import {NavLink} from "react-router-dom"
-import {GetShopBascket} from '../../UserFunctions'
+
 
 
 class Navbar extends Component{

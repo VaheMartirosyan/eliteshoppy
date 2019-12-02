@@ -33,7 +33,7 @@ import {connect} from "react-redux";
          e.preventDefault();
 
          const getShopBascket = new GetShopBascket();
-         getShopBascket.cart({id:e.target.name})
+         getShopBascket.cart({id:e.target.name},'stok/cartVew')
              .then(body =>{
                  const setitem = this.props.setitem;
                  setitem(body)
@@ -55,6 +55,7 @@ import {connect} from "react-redux";
                             imgtwo={'https://demo.w3layouts.com/demos_new/template_demo/20-06-2017/elite_shoppy-demo_Free/143933984/web/images/banner5.jpg'}
                             imgthree={'https://demo.w3layouts.com/demos_new/template_demo/20-06-2017/elite_shoppy-demo_Free/143933984/web/images/banner2.jpg'}
                             imgfour={'https://demo.w3layouts.com/demos_new/template_demo/20-06-2017/elite_shoppy-demo_Free/143933984/web/images/bb2.jpg'}
+                            getProduct={this.getProduct}
                 />
                 <div className="container">
                     <div className={'cardwears'}>

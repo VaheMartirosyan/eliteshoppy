@@ -29,7 +29,7 @@ class Shopcart extends React.Component {
         e.preventDefault();
 
         const getShopBascket = new GetShopBascket();
-        getShopBascket.cart({id:e.target.name})
+        getShopBascket.cart({id:e.target.name},'stok/cartVew')
             .then(body =>{
                 const setitem = this.props.setitem;
                 setitem(body)

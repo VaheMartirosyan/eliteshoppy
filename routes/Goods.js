@@ -111,6 +111,19 @@ route.post('/getSinglProduct', (req, res) => {
   
 })
 
+route.post ('/cheqckBoxFilter', (req, res) => {
+  Goods.aggregate(   [
+    { $sort : {
+      price: 1
+          } }
+  ])
+  .exec(function(err, goods) {
+    if (err) throw err;
+     
+    res.status(200).json(goods)
+});
+
+})
 route.get ('/menproduct', (req, res) => {
   Goods.aggregate(  [
     {

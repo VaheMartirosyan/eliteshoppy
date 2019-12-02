@@ -10,6 +10,7 @@ export default function Newfilter(props){
 
     const [productforApdate, chaingState] = useState([])
     const [QuickCards, quickState] = useState('')
+    let itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : [];
     useEffect(()=>{
         cart()
     },[props.match.params])
@@ -32,18 +33,31 @@ export default function Newfilter(props){
             console.log(err)
           })
       }
+      const setitem = (item)=>{
+
+        const arr = itemsArray.find( arr=>arr._id === item._id)
+        if(arr){
+           console.log('catch');
+        }else{
+          
+            itemsArray.push(item)
+            localStorage.setItem('cartId', JSON.stringify(itemsArray));
+           
+        }
+    }
   const onSubmit= (e)=>{
         e.preventDefault();
 
         const getShopBascket = new GetShopBascket();
-        getShopBascket.cart({id:e.target.name})
+        getShopBascket.cart({id:e.target.name},'cartVew')
             .then(body =>{
-                const setitem = this.props.setitem;
+              
                 setitem(body)
             })
             .catch(err => console.log(err))
 
     };
+    
 
   const  BtnQuickView=(i)=>{
     quickState(i)

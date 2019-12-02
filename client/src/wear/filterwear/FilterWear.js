@@ -127,6 +127,7 @@ export default class FilterWear extends Component {
                                                 clickcheckthree={()=> this.setState({checkthree: !this.state.checkthree})}
                                                 clickcheckfour={()=>this.setState({ checkfour: !this.state.checkfour })}
                                                 clickcheckfive={()=> this.setState({  checkfive: !this.state.checkfive })}
+                                                getProduct={this.props.getProduct}
                                     />
                                 </div>
                             </div>

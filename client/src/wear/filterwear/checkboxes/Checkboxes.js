@@ -1,9 +1,20 @@
 import React,{Component} from 'react'
 import './Checkboxes.css'
+const axios = require('axios')
 
 export default class  Checkboxes extends Component{
     CheckHandler = (e) =>{
-        console.log(e.target.value)
+      
+       if(e.target.value === 'lowerprice'){
+        axios.post('stok/cheqckBoxFilter')
+        .then(respnce=>{
+            if(respnce.status === 200){
+              
+              this.props.getProduct(respnce.data)
+            }
+        })
+       }
+       
     }
     render() {
         return(

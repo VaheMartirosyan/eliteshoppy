@@ -21,7 +21,7 @@ class WearCards extends Component{
         e.preventDefault();
 console.log(e)
         const getShopBascket = new GetShopBascket();
-        getShopBascket.cart({id:e.target.name})
+        getShopBascket.cart({id:e.target.name},'stok/cartVew')
             .then(body =>{
                 const setitem = this.props.setitem;
                 setitem(body)
