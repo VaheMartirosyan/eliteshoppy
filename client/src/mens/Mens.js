@@ -64,6 +64,7 @@ import pic4 from '../components/slider/slideimg/banner5.jpg'
                             getProduct={this.getProduct}
                             mensorw={this.state.menswear}
                             gender={this.state.gender}
+                            colect={'MEN\'S'}
 
                 />
                 <div className="container">

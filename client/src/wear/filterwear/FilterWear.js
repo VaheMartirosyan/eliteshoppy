@@ -149,7 +149,7 @@ export default class FilterWear extends Component {
                             <div className="slidefilter">
                                 <Compare />
                                 <Sliderfitler />
-                                <Colections />
+                                <Colections colect={this.props.colect} />
 
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 
 
 import Header from './components/header/Header'
@@ -49,15 +49,18 @@ function App(){
                 <header key={shopProduct.key}>
                     <Header shopProduct={shopProduct.itemsArray } deletItem={deletItem}/>
                 </header>
-                <Route exact path='/' render = {()=><Home setitem={setitem} />} />
-                <Route exact path="/admin" component={Admin} />
-                <Route path='/about' component={About} />
-                <Route exact path='/mens' render = {()=><Mens setitem={setitem} />} />
-                <Route exact path={'/mens/:frommens'}  component={Newfilter}/>
-                <Route exact path='/womens' render = {()=><Womens setitem={setitem} />}  />
-                <Route exact path='/womens/:fromwomens'  component={Newfilter} />
-                <Route path='/contact' component={Contact} />
-                <Route path='/shop' render={()=><Shop  key={shopProduct.key + 1} deletItem={deletItem}/>}/>
+                <Switch>
+                    <Route exact path='/' render = {()=><Home setitem={setitem} />} />
+                    <Route exact path="/admin" component={Admin} />
+                    <Route path='/about' component={About} />
+                    <Route exact path='/mens' render = {()=><Mens setitem={setitem} />} />
+                    <Route exact path={'/mens/:frommens'}  component={Newfilter}/>
+                    <Route exact path='/womens' render = {()=><Womens setitem={setitem} />}  />
+                    <Route exact path='/womens/:fromwomens'  component={Newfilter} />
+                    <Route path='/contact' component={Contact} />
+                    <Route path='/shop' render={()=><Shop  key={shopProduct.key + 1} deletItem={deletItem}/>}/>
+                    <Redirect to={'/'} />
+                </Switch>
 
 
                 <footer>

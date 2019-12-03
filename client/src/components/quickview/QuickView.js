@@ -49,7 +49,7 @@ export default class QuickView extends Component{
                                         <input className={'InpSub'} type="submit" value={'Send'}/>
                                     </div>
                                     <div className={'SelectOp'}>
-                                        <p>Select Your Esiminch : </p>
+                                        <p>Select Your Size : </p>
                                         <select name="" id="">
                                             <option>40</option>
                                             <option>41</option>

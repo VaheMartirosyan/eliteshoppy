@@ -66,6 +66,7 @@ class Womens extends Component {
                             imgfour={pic4}
                             mensorw={this.state.womenswear}
                             gender={this.state.gender}
+                            colect={'WOMEN\'S'}
                 />
                 <div className="container">
                     <div className={'cardwears'}>

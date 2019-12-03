@@ -1,7 +1,7 @@
 import React from 'react'
 import './Colections.scss'
 
-export default () => {
+export default (props) => {
     return(
         <div className={'colections'}>
             <div className={'imgcolect'}>
@@ -9,7 +9,7 @@ export default () => {
             </div>
             <div className={'textcolect'}>
                 <div className={'sedalign'}>
-                    <h3>EXCLUSIVE WOMEN'S <span>COLLECTIONS</span></h3>
+                    <h3>EXCLUSIVE {props.colect} <span>COLLECTIONS</span></h3>
                     <p>Sed ut perspiciatis unde omnis iste natus
                         error sit voluptatem accusantium doloremque laudantium,
                         totam rem aperiam, eaque ipsa quae ab illo
