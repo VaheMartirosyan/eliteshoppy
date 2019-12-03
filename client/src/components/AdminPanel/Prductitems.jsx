@@ -1,6 +1,8 @@
 import React from 'react';
 import CreateIcon from '@material-ui/icons/Create';
-import SimpleModal from './Modal'
+import SimpleModal from './material UI/Modal'
+
+
 
 
 
@@ -13,6 +15,7 @@ return (
 
 
     <table className="table table-hover">
+
         <thead>
             <tr>
                 <th scope="col">Img</th>
@@ -26,7 +29,7 @@ return (
 
             <tbody>
                 {products.map((item,i)=>{
-                  
+
                 return <tr key={i} className="table-active" >
                     <th scope="row"><img src={`./img/${item.img}`} width="50px" height="50px" alt={item.category} />
                     </th>
@@ -35,9 +38,11 @@ return (
                     <td>{item.stok}</td>
                     <td>{item.cotegory}</td>
                     <td>{item.price}$</td>
+
                     <td>{item.NewArrivals}</td>
                     <td>{item.discont}</td>
                     <td><CreateIcon onClick ={()=>apdateProduct(item)}
+
                      style={{color:"green",
                      cursor:'pointer',fontSize:'x-large'}}
                       /></td>

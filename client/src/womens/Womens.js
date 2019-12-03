@@ -67,6 +67,12 @@ class Womens extends Component {
                             mensorw={this.state.womenswear}
                             gender={this.state.gender}
                             colect={'WOMEN\'S'}
+                            getProduct = {this.getProduct}
+                            lower={'Modern'}
+                            track={'Favorite'}
+                            bigger={'Bigger Choice'}
+                            colors={'More Colors to Choose'}
+                            backmoney={'Money Back Guaranteed'}
                 />
                 <div className="container">
                     <div className={'cardwears'}>

@@ -1,7 +1,5 @@
 import React, { useState } from "react"
-import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
-
-
+import { BrowserRouter as Router, Route,Redirect, Switch } from 'react-router-dom'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
 import Admin from './components/AdminPanel/Admin'
@@ -40,7 +38,11 @@ function App(){
           
     }
 
-
+ const  adminExit = ()=>{
+        
+        localStorage.removeItem('itemtId')
+       
+      }
 
 
     return (
@@ -51,7 +53,7 @@ function App(){
                 </header>
                 <Switch>
                     <Route exact path='/' render = {()=><Home setitem={setitem} />} />
-                    <Route exact path="/admin" component={Admin} />
+                    <Route exact path="/admin"  render = {()=><Admin  adminExit={adminExit} />} />
                     <Route path='/about' component={About} />
                     <Route exact path='/mens' render = {()=><Mens setitem={setitem} />} />
                     <Route exact path={'/mens/:frommens'}  component={Newfilter}/>
@@ -60,9 +62,7 @@ function App(){
                     <Route path='/contact' component={Contact} />
                     <Route path='/shop' render={()=><Shop  key={shopProduct.key + 1} deletItem={deletItem}/>}/>
                     <Redirect to={'/'} />
-                </Switch>
-
-
+                </Switch>                
                 <footer>
                     <FooterTop/>
                     <Footer/>

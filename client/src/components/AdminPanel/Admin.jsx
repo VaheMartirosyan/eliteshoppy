@@ -5,6 +5,7 @@ import uuid from 'uuidv4';
 import Home from './Home'
 import AddProduct from './AddProduct'
 import LoginAdmin from './LoginAdmin'
+import {NavLink} from 'react-router-dom'
 export default class Goods extends Component {
     state = {
       new_arrivals:false, 
@@ -44,7 +45,7 @@ export default class Goods extends Component {
                   };
         sendData('stok/good',newGood)
         .then(respons=>{
-          console.log(respons.status);
+         
           if(respons.status === 200){
             this.setings.apdateProduct = 'null;'
             this.setState({new_arrivals:false,discont:false})
@@ -137,7 +138,7 @@ export default class Goods extends Component {
         return  <li key={i} className={classes.join(' ')}
                      onClick={()=>this.navigate({item},{i})}>{item.text}</li>
           })} 
-        <li className={'navPanel'} onClick={()=>this.hendlClick()}>exit</li>
+        <li className={'navPanel'} onClick={this.props.adminExit}><NavLink to={'/'}>exit</NavLink></li>
           
         </ul>
       </div>

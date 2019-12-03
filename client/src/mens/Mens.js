@@ -3,6 +3,7 @@ import Wear from "../wear/Wear";
 import './Mens.scss'
 import {GetShopBascket, setProduct} from '../components/UserFunctions'
 import FilterWear from "../wear/filterwear/FilterWear";
+
 import Spiner from '../components/Spiner/Spiner'
 import QuickView from "../components/quickview/QuickView";
 import {connect} from "react-redux";
@@ -11,15 +12,19 @@ import pic2 from '../components/slider/slideimg/banner2.jpg'
 import pic3 from '../components/slider/slideimg/banner4.jpg'
 import pic4 from '../components/slider/slideimg/banner5.jpg'
 
+
  class Mens extends Component {
     state = {
         wearTitle: 'MEN\'S WEAR',
+
         products: [],
         loading: true,
         QuickCards: '',
         menswear: 'Mens',
         gender: 'mens'
+
     }
+    
     componentDidMount(){
         setProduct(`stok/menproduct`,"GET")
             .then(body =>{
@@ -29,6 +34,7 @@ import pic4 from '../components/slider/slideimg/banner5.jpg'
             })
             .catch(err => console.log(err))
     }
+
     getProduct = body => this.setState({products:body, loading:false})
      BtnQuickView=(i)=>{
          this.state.QuickCards = i
@@ -65,6 +71,11 @@ import pic4 from '../components/slider/slideimg/banner5.jpg'
                             mensorw={this.state.menswear}
                             gender={this.state.gender}
                             colect={'MEN\'S'}
+                            lower={'Lower Price'}
+                            track={'Track Your Item'}
+                            bigger={'Bigger Choice'}
+                            colors={'More Colors to Choose'}
+                            backmoney={'Money Back Guaranteed'}
 
                 />
                 <div className="container">
@@ -112,10 +123,11 @@ import pic4 from '../components/slider/slideimg/banner5.jpg'
                     </div>
                 </div>
             </div>
-        )
-    }
+
+        )}
 
 }
+
 const mapStateToProps = state => {
     return {
         magazine: state.magazine.initmagazine,

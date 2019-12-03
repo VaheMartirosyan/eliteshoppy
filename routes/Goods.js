@@ -112,16 +112,109 @@ route.post('/getSinglProduct', (req, res) => {
 })
 
 route.post ('/cheqckBoxFilter', (req, res) => {
-  Goods.aggregate(   [
-    { $sort : {
-      price: 1
-          } }
-  ])
-  .exec(function(err, goods) {
-    if (err) throw err;
-     
-    res.status(200).json(goods)
-});
+  
+  if(req.body.data === 'lowerprice'){
+    Goods.aggregate(   [
+      { $sort : {
+        price: 1
+            } }
+    ])
+    .exec(function(err, goods) {
+      if (err) throw err;
+       
+      res.status(200).json(goods).end()
+  });
+  }else if(req.body.data === 'trackitem'){
+    Goods.aggregate(  [
+      {
+        '$match': {productCotegory: "chaiildrenProduct"}
+      }, {
+        '$sort': {
+          'date': -1
+        }
+      }, {
+        '$limit': 11
+      }
+    ])
+    .exec(function(err, goods) {
+      if (err) throw err;
+       
+      res.status(200).json(goods)
+  });
+  }
+  else if(req.body.data === 'biggerchoice'){
+    Goods.aggregate(  [
+      {
+        '$match': {goods_name: "Puma"}
+      }, {
+        '$sort': {
+          'date': -1
+        }
+      }, {
+        '$limit': 11
+      }
+    ])
+    .exec(function(err, goods) {
+      if (err) throw err;
+       
+      res.status(200).json(goods)
+  });
+  }
+  else if(req.body.data === 'morecolors'){
+    Goods.aggregate(  [
+      {
+        '$match': {goods_name: "Lentex"}
+      }, {
+        '$sort': {
+          'date': -1
+        }
+      }, {
+        '$limit': 11
+      }
+    ])
+    .exec(function(err, goods) {
+      if (err) throw err;
+       
+      res.status(200).json(goods)
+  });
+  }
+  else if(req.body.data === 'Modern'){
+    Goods.aggregate(  [
+      {
+        '$match': {cotegory: "Shirts"}
+      }, {
+        '$sort': {
+          'date': -1
+        }
+      }, {
+        '$limit': 11
+      }
+    ])
+    .exec(function(err, goods) {
+      if (err) throw err;
+       
+      res.status(200).json(goods)
+  });
+  }
+  else if(req.body.data === 'Favorite'){
+    Goods.aggregate(  [
+      {
+        '$match': {discont: false}
+      }, {
+        '$sort': {
+          'date': -1
+        }
+      }, {
+        '$limit': 11
+      }
+    ])
+    .exec(function(err, goods) {
+      if (err) throw err;
+       
+      res.status(200).json(goods)
+  });
+  }
+ 
 
 })
 route.get ('/menproduct', (req, res) => {
