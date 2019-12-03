@@ -62,6 +62,48 @@ export default class Shop extends Component{
                                 ${this.state.totprice}
                             </p>
                         </div>
+                        <button type="button" className="btn btn-primary" data-toggle="modal"
+                                data-target=".bd-example-modal-lg">
+                            Make Purchases
+                        </button>
+
+                        <div className="modal fade bd-example-modal-lg" tabIndex="-1" role="dialog"
+                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div className="modal-dialog modal-lg">
+                                <div className="modal-content">
+                                    <div className={'c'}>
+                                        <form>
+                                            <div className="form-row">
+                                                <div className="form-group col-md-6">
+                                                    <label htmlFor="inputEmail4">Email</label>
+                                                    <input type="email" className="form-control" id="inputEmail4"
+                                                           placeholder="Email"/>
+                                                </div>
+                                                <div className="form-group col-md-6">
+                                                    <label htmlFor="inputPassword4">Password</label>
+                                                    <input type="password" className="form-control" id="inputPassword4"
+                                                           placeholder="Password"/>
+                                                </div>
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="inputAddress">Address</label>
+                                                <input type="text" className="form-control" id="inputAddress"
+                                                       placeholder="1234 Main St"/>
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="inputAddress2">Address 2</label>
+                                                <input type="text" className="form-control" id="inputAddress2"
+                                                       placeholder="Apartment, studio, or floor"/>
+                                            </div>
+
+
+                                            <button type="submit" className="btn btn-primary">Sign in</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 }
                 <Fixed/>

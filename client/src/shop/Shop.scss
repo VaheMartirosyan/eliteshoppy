@@ -71,3 +71,24 @@
   }
 
 }
+.buyform{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0px;
+  input{
+    width: 50%;
+    margin: 0 0 20px 0;
+  }
+}
+.buyp{
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+.c{
+  padding: 30px;
+}
