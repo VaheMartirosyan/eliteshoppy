@@ -113,7 +113,7 @@ route.post('/getSinglProduct', (req, res) => {
 
 route.post ('/cheqckBoxFilter', (req, res) => {
   
-  if(req.body.data === 'lowerprice'){
+  if(req.body.data === 'Lower Price'){
     Goods.aggregate(   [
       { $sort : {
         price: 1
@@ -124,7 +124,7 @@ route.post ('/cheqckBoxFilter', (req, res) => {
        
       res.status(200).json(goods).end()
   });
-  }else if(req.body.data === 'trackitem'){
+  }else if(req.body.data === 'Track Your Item'){
     Goods.aggregate(  [
       {
         '$match': {productCotegory: "chaiildrenProduct"}
@@ -142,7 +142,7 @@ route.post ('/cheqckBoxFilter', (req, res) => {
       res.status(200).json(goods)
   });
   }
-  else if(req.body.data === 'biggerchoice'){
+  else if(req.body.data === 'Bigger Choice'){
     Goods.aggregate(  [
       {
         '$match': {goods_name: "Puma"}
@@ -160,7 +160,7 @@ route.post ('/cheqckBoxFilter', (req, res) => {
       res.status(200).json(goods)
   });
   }
-  else if(req.body.data === 'morecolors'){
+  else if(req.body.data === 'More Colors to Choose'){
     Goods.aggregate(  [
       {
         '$match': {goods_name: "Lentex"}
