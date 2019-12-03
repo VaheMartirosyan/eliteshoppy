@@ -2,8 +2,10 @@
 
 .iconsManu{
     display: block;
+    margin-right: 50px;
 }
     .noneLi{
         display: none;
     }
+
 }

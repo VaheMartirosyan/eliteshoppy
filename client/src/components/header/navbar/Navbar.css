@@ -167,13 +167,18 @@
     color: white;
 }
 .hoverNav{
-    display: none;
+    margin-top: 23px;
+    z-index: 5;
     position: absolute;
     background-color: black;
     padding: 0 100px;
     left: -100px;
 }
-
-.iconsManu:hover .hoverNav{
-    display: block;
+.limens1{
+    position: relative;
+}
+.menshover1{
+    position: absolute;
+    top: 0;
+    right: -140%;
 }
