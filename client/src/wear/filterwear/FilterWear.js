@@ -37,6 +37,9 @@ export default class FilterWear extends Component {
             inpVal: e.target.value
         })
     }
+    klor=()=>{
+
+    }
   
     render() {
         return(
@@ -49,7 +52,7 @@ export default class FilterWear extends Component {
                             </div>
                             <div className={'range'}>
                                 <input type="range" onChange={this.changerange} />
-                                <input type="text" value={`$ ${this.state.inpVal}`} className={'between'}/>
+                                <input type="text" value={`$ ${this.state.inpVal}`} onChange={this.klor} className={'between'}/>
                             </div>
                             <div className="categories">
                                 <div className={'categorieswear'}>

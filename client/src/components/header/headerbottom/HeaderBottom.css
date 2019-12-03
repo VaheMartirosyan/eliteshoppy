@@ -26,7 +26,13 @@
 }
 .headlogos{
     flex: 1;
+    align-self: center;
+    margin-top: 20px;
 
+}
+.korz{
+    animation: animik 2s;
+    opacity: 1;
 }
 .logo{
     text-align: center;
@@ -54,29 +60,38 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: lighter;
 }
-.searchform input{
-    padding: 8px 110px 8px 5px;
-    border: 1px solid lightgray;
-    margin-top: -100px;
-
-    font-size: 15px;
+.searchform h2{
+   font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: lighter;
+}
+.searchform h2 span{
+    background: #0FC3A4;
+    color: white;
+    font-weight: bolder;
+    padding: 5px 10px;
+}
+@keyframes animik {
+    0%{
+        opacity: 0;
+      }
+    100%{
+        opacity: 1;
+    }
 }
 .searchform input::placeholder{
     font-size: 15px;
     color: lightgray;
 
 }
-.searchform button{
-    padding: 5px;
-    margin-left: 4px;
-
-    background: #2BDABA;
-    border: none;
-    color: white;
-    font-size: 20px;
+.searchform{
+    animation: animik 2s;
+    opacity: 1;
 }
 .shareon{
     font-size: 19px;
     font-weight: bold;
     letter-spacing: 3px;
+    align-self: center;
 }
