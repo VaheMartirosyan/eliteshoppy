@@ -8,7 +8,7 @@ import Prductitems from './Prductitems'
 export default function Home(props) {
     
     // const [products, setState] = useState({item:[],loading:true})
-    const [productforApdate, chaingState] = useState({item:'',visibl:false})
+  
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage,setCurrentPage] = useState(1);

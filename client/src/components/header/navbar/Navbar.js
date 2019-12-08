@@ -61,7 +61,7 @@ class Navbar extends Component{
                                 {this.state.btnIcons?
                                     <div className="hoverNav">
                                         <li className={'navulli'}>
-                                            <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/'} >Home</NavLink>
+                                            <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}}exact to={'/'} >Home</NavLink>
                                         </li>
                                         <li className={'navulli'}>
                                             <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/about'} >About</NavLink>

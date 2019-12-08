@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import axios from 'axios'
 import QuickView from "../components/quickview/QuickView";
 import {GetShopBascket} from "../components/UserFunctions";
+import Spiner from '../components/Spiner/Spiner'
 import Wear from "../wear/Wear";
 import './Newfilter.scss'
 
@@ -9,7 +10,7 @@ import './Newfilter.scss'
 export default function Newfilter(props){
 
 
-    const [productforApdate, chaingState] = useState([])
+    const [productforApdate, chaingState] = useState({data:[],loaded:false})
     const [QuickCards, quickState] = useState('')
     let itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : [];
     useEffect(()=>{
@@ -18,7 +19,7 @@ export default function Newfilter(props){
     
   const cart = async user => {
         let query = props.match.params.frommens;
-        if(query == undefined) query = props.match.params.fromwomens;
+        if(query === undefined) query = props.match.params.fromwomens;
         
         const prod = JSON.stringify(query);
         return await axios
@@ -26,7 +27,7 @@ export default function Newfilter(props){
           .then(response => {
           
            if(response.status === 200){
-            chaingState(response.data)
+            chaingState({data:response.data,loaded:true})
            }
             return response.data
           })
@@ -65,7 +66,9 @@ export default function Newfilter(props){
         
 
     }
-
+    if(!productforApdate.loaded){
+        return <Spiner />
+    }
 
         return(
             <div>
@@ -75,7 +78,7 @@ export default function Newfilter(props){
                 <div className={'newfilt'}>
                     <div className={'shopCartscontainer'}>
                         <div className={'carts'}>
-                            {productforApdate.map((item,index)=>{
+                            {productforApdate.data.map((item,index)=>{
                                 return (
                                     <div key={index} className={'shopCarts'}>
                                         <div className={'imgquick'}>
