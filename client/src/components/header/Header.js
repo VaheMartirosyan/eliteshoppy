@@ -25,8 +25,8 @@ export default class Header extends Component{
         errors: '',
         first_name: '',
         confirmPassword: '',
-        myemail: '',
-        mypassword: '',
+        regemail: '',
+        regpassword: '',
         user:'',
         props:this.props.shopProduct,
 
@@ -153,7 +153,7 @@ export default class Header extends Component{
             default:break;
 
         }
-        console.log(this.state.namevalid, 'mail', this.state.regmailvalid, 'pass', this.state.regpassvalid, 'conf', this.state.regpassconfirm)
+      
         this.setState({
             formError: formerror,
             namevalid:namevalid,
@@ -213,16 +213,16 @@ export default class Header extends Component{
     }
     onSubmits=(e)=> {
         e.preventDefault()
-        // this.setState({errors:''})
+       
         const newUser = {
             first_name:this.state.first_name,
-            last_name:"zat",
-            email:this.state.myemail,
-            password:this.state.confirmPassword,
-            created: Date.now
+            email:this.state.regemail,
+            password:this.state.regpassword,
+           
         }
+        console.log(newUser);
         register(newUser).then(res => {
-
+console.log(res.data);
             if (!res.data.error) {
                 // this.props.history.push(`/login`)
                 alert('you successfully registred')

@@ -12,7 +12,6 @@ users.post('/register', (req, res) => {
  
   const userData = {
     first_name,
-    last_name,
     email,
     password,
     
@@ -22,7 +21,7 @@ users.post('/register', (req, res) => {
     email: req.body.email
   })
     .then(user => {
-      console.log(user)
+   
       if (!user) {
         bcrypt.hash(req.body.password, 10, (err, hash) => {
           userData.password = hash
@@ -37,7 +36,7 @@ users.post('/register', (req, res) => {
             })
         })
       } else {
-        res.json({ error: 'User already exists' })
+        res.status(402).json({ message: 'User already exists' })
       }
     })
     .catch(err => {
