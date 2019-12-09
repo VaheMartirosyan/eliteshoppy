@@ -31,7 +31,7 @@ export default class Header extends Component{
         props:this.props.shopProduct,
 
         //Login Form Check
-        disabled:true,
+
         logpassword:'',
         logemail:'',
         formError:{email:'',password:'',regname:'',regemail:'',regpass:'',regpassconf:''},
@@ -49,7 +49,7 @@ export default class Header extends Component{
         regpassvalid:false,
         regpassconfirm:false,
         regFormvalid:false,
-        disabledreg:true,
+
 
 
 
@@ -195,8 +195,7 @@ export default class Header extends Component{
                 this.getuser()
                 this.setState({
                     openSign:false,
-                    signpasscheck:false,
-                    signmailcheck:false,
+
                 })
             }else{
                 console.log(res)
@@ -227,6 +226,7 @@ export default class Header extends Component{
             if (!res.data.error) {
                 // this.props.history.push(`/login`)
                 alert('you successfully registred')
+                console.log(this.state.openUp)
                 this.setState({
                     openUp:false
                 })
@@ -261,13 +261,14 @@ export default class Header extends Component{
                         <div className={"inpabsone"}>
                             <p className={'signp'}><b>Sign In</b> Now</p>
                             <form onSubmit={this.onSubmit}>
-                                <div className={'signinform'}>
-                                    <input   type="password"  className={`signname ${this.errorClass(this.state.formError.password)}`} onChange={this.onChange} name="logpassword" placeholder={'Enter Your Password'}/>
-                                </div>
+
                                 <div className={'signinform'}>
                                     <input type="email" className={`signname ${this.errorClass(this.state.formError.email)}`} name="logemail" onChange={this.onChange}  placeholder={'Enter Your Email'} />
                                 </div>
-                                <input type="submit" value={'Sign In'} style={this.state.disabled ? {background:'grey'}:null} className={'signbutton'} disabled={this.state.disabled}/>
+                                <div className={'signinform'}>
+                                    <input   type="password"  className={`signname ${this.errorClass(this.state.formError.password)}`} onChange={this.onChange} name="logpassword" placeholder={'Enter Your Password'}/>
+                                </div>
+                                <input type="submit" value={'Sign In'} style={!this.state.formValid ? {background:'grey'}:null} className={'signbutton'} disabled={!this.state.formValid}/>
                             </form>
                             <div className={'signcontacts'}>
                                 <ul>
@@ -317,7 +318,7 @@ export default class Header extends Component{
                                 <div className={'signinform'}>
                                     <input type="password" className={`signname ${this.errorClass(this.state.formError.regpassconf)}`}  onChange={this.onChange}  name="regconfirmPassword" placeholder={'Confirm Your Password'}/>
                                 </div>
-                                <input type="submit" value={'Sign In'} style={this.state.disabledreg ? {background:'grey'}:null} disabled={this.state.disabledreg} className={'signbutton'}/>
+                                <input type="submit" value={'Sign In'} style={!this.state.regFormvalid ? {background:'grey'}:null} disabled={!this.state.regFormvalid} className={'signbutton'}/>
                                 <div className={'signcontacts'}>
                                     <ul>
                                         <li>
