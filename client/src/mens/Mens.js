@@ -37,9 +37,7 @@ import pic4 from '../components/slider/slideimg/banner5.jpg'
 
     getProduct = body => this.setState({products:body, loading:false})
      BtnQuickView=(i)=>{
-         this.state.QuickCards = i
-         this.setState({})
-
+               this.setState({QuickCards:i})
      }
      onSubmit= (e)=>{
          e.preventDefault();

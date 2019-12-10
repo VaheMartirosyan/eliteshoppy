@@ -12,7 +12,7 @@ import Contact from './contact/Contact'
 import FooterTop from './components/footer/footertop/FooterTop'
 import Shop from './shop/Shop'
 import Newfilter from "./newfilter/Newfilter"
-
+import Context from './components/contextProvider'
 
 function App(){
     let itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : [];
@@ -22,8 +22,10 @@ function App(){
 
         const arr = itemsArray.find( arr=> arr._id === item._id)
         if(arr){
-
-        }else{
+console.log(arr);
+        }
+      
+        else{
             itemsArray.push(item)
             localStorage.setItem('cartId', JSON.stringify(itemsArray));
             setStates({itemsArray:itemsArray,key:1})
@@ -46,6 +48,7 @@ function App(){
 
 
     return (
+          <Context.Provider value = {setitem}>   
         <Router>
             <div>
                 <header key={shopProduct.key}>
@@ -70,6 +73,7 @@ function App(){
 
             </div>
         </Router>
+        </Context.Provider>    
     );
 }
 

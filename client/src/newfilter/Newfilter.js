@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect,useContext } from "react"
 import axios from 'axios'
 import QuickView from "../components/quickview/QuickView";
 import {GetShopBascket} from "../components/UserFunctions";
 import Spiner from '../components/Spiner/Spiner'
 import Wear from "../wear/Wear";
 import './Newfilter.scss'
-
+import Context from '../components/contextProvider'
 
 export default function Newfilter(props){
 
 
     const [productforApdate, chaingState] = useState({data:[],loaded:false})
     const [QuickCards, quickState] = useState('')
-    let itemsArray = localStorage.getItem('cartId') ? JSON.parse(localStorage.getItem('cartId')) : [];
+  
     useEffect(()=>{
         cart()
     },[props.match.params])
-    
+  const value = useContext(Context)
+  
   const cart = async user => {
         let query = props.match.params.frommens;
         if(query === undefined) query = props.match.params.fromwomens;
@@ -35,26 +36,18 @@ export default function Newfilter(props){
             console.log(err)
           })
       }
-      const setitem = (item)=>{
-
-        const arr = itemsArray.find( arr=>arr._id === item._id)
-        if(arr){
-           console.log('catch');
-        }else{
-          
-            itemsArray.push(item)
-            localStorage.setItem('cartId', JSON.stringify(itemsArray));
-           
-        }
-    }
+    
   const onSubmit= (e)=>{
         e.preventDefault();
 
         const getShopBascket = new GetShopBascket();
         getShopBascket.cart({id:e.target.name},'cartVew')
             .then(body =>{
-              
-                setitem(body)
+             if(body === undefined){
+                 return
+             }
+             value(body)
+               
             })
             .catch(err => console.log(err))
 
@@ -73,7 +66,7 @@ export default function Newfilter(props){
         return(
             <div>
                 <Wear wear = {`${props.match.params.frommens ? 'MENS' : 'WOMENS'}`}/>
-                <QuickView setitem = {props.setitem} BtnQuickView={BtnQuickView} QuickCards={QuickCards}/>
+                <QuickView QuickView setitem = {value} BtnQuickView={BtnQuickView} QuickCards={QuickCards}/>
                 <h2 className={'newfilth'}>F<span>ind</span> Y<span>our</span>  P<span>roduct</span> H<span>ere</span></h2>
                 <div className={'newfilt'}>
                     <div className={'shopCartscontainer'}>

@@ -12,8 +12,12 @@ export default class QuickView extends Component{
         const getShopBascket = new GetShopBascket();
         getShopBascket.cart({id:e.target.name},'stok/cartVew')
             .then(body =>{
-                const setitem = this.props.setitem;
-                setitem(body)
+               if(!body){
+                return console.log('somthing bead hepends');
+               }
+               const setitem = this.props.setitem;
+               setitem(body)
+              
             })
             .catch(err => console.log(err))
 

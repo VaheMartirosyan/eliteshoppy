@@ -26,7 +26,6 @@ export default class Header extends Component{
         first_name: '',
         confirmPassword: '',
         regemail: '',
-        regpassword: '',
         user:'',
         props:this.props.shopProduct,
 

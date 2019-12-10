@@ -48,9 +48,8 @@ class Womens extends Component {
     };
 
     BtnQuickView=(i)=>{
-        this.state.QuickCards = i
-        this.setState({})
-
+       
+        this.setState({QuickCards:i})
     }
     render() {
         if(this.state.loading) {

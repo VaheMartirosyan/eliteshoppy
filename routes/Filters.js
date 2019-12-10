@@ -28,5 +28,17 @@ filter.post('/cartVew',(req,res)=>{
    
   } );
 })
+filter.post('/stok/cartVew',(req,res)=>{
+  console.log('ollllllaaaaaaa Filters');
+  const id = req.body.id
+  Goods.findById(id, function (err, item) { 
+    if(err){
+      res.status(401).json({message:'bead request, file dont finde'})
+    }
+    
+     res.json(item)
+   
+  } );
+})
 
 module.exports = filter
