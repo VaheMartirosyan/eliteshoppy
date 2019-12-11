@@ -92,3 +92,24 @@
 .c{
   padding: 30px;
 }
+.stickybtn{
+  background: #2BDABA;
+  border: none;
+  align-self: start;
+  position: sticky;
+  top: 15%;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-left: 10px;
+  padding: 20px 40px;
+  margin-top: 40px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  &:hover{
+    background: black;
+    border: 2px solid #2BDABA;
+    transition: .7s;
+  }
+
+}

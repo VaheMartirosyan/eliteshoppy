@@ -6,8 +6,9 @@ import Spiner from '../components/Spiner/Spiner'
 import Wear from "../wear/Wear";
 import './Newfilter.scss'
 import Context from '../components/contextProvider'
+import {connect} from "react-redux";
 
-export default function Newfilter(props){
+function Newfilter(props){
 
 
     const [productforApdate, chaingState] = useState({data:[],loaded:false})
@@ -113,3 +114,18 @@ export default function Newfilter(props){
         )
     
 }
+const mapStateToProps = state => {
+    return {
+        magazine: state.magazine.initmagazine,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        shopOpen: () => {
+            dispatch({type: 'shopChange'})
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Newfilter)

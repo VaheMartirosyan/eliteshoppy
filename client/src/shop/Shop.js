@@ -62,7 +62,7 @@ export default class Shop extends Component{
                                 ${this.state.totprice}
                             </p>
                         </div>
-                        <button type="button" className="btn btn-primary" data-toggle="modal"
+                        <button type="button" className=" stickybtn" data-toggle="modal"
                                 data-target=".bd-example-modal-lg">
                             Make Purchases
                         </button>

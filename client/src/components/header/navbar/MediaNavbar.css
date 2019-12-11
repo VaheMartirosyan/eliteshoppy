@@ -1,11 +1,13 @@
 @media only screen and  (max-width:900px) {
 
-.iconsManu{
-    display: block;
-    margin-right: 50px;
-}
+    .iconsManu{
+        display: block;
+        margin-right: 50px;
+    }
     .noneLi{
         display: none;
     }
-
+    .navulli{
+        padding: 10px 41px;
+    }
 }

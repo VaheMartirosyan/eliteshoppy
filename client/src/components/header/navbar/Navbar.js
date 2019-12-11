@@ -61,28 +61,28 @@ class Navbar extends Component{
                                 {this.state.btnIcons?
                                     <div className="hoverNav">
                                         <li className={'navulli'}>
-                                            <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}}exact to={'/'} >Home</NavLink>
+                                            <NavLink exact to={'/'} >Home</NavLink>
                                         </li>
                                         <li className={'navulli'}>
-                                            <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/about'} >About</NavLink>
+                                            <NavLink  to={'/about'} >About</NavLink>
                                         </li>
                                         <li  className={'limens1 navulli'}>
-                                            <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/mens'} >Men`s wear</NavLink>
+                                            <NavLink to={'/mens'} >Men`s wear</NavLink>
                                             <div className={'menshover1'}>
                                                 <Menshover />
                                             </div>
                                         </li>
                                         <li className={'liwomens1 navulli'}>
-                                            <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/womens'} >Women`s wear</NavLink>
+                                            <NavLink  to={'/womens'} >Women`s wear</NavLink>
                                             <div className={'womenshover1'}>
                                                 <Womenshover/>
                                             </div>
                                         </li>
                                         <li className={'navulli'}>
-                                            <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/contact'} >Contact</NavLink>
+                                            <NavLink  to={'/contact'} >Contact</NavLink>
                                         </li>
                                         <li className={'navulli'}>
-                                            <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/shop'} >Our shop</NavLink>
+                                            <NavLink   to={'/shop'} >Our shop</NavLink>
                                         </li>
                                     </div>
                                     :null}
@@ -91,37 +91,40 @@ class Navbar extends Component{
 
                             </div>
                             <li className={'navulli noneLi'}>
-                                <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/'} >Home</NavLink>
+                                <NavLink exact to={'/'} >Home</NavLink>
                             </li>
                             <li className={'navulli noneLi'}>
-                                <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/about'} >About</NavLink>
+                                <NavLink  to={'/about'} >About</NavLink>
                             </li>
                             <li  className={'limens navulli noneLi'}>
-                                <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/mens'} >Men`s wear</NavLink>
+                                <NavLink   to={'/mens'} >Men`s wear</NavLink>
                                 <div className={'menshover'}>
                                     <Menshover />
                                 </div>
                             </li>
                             <li className={'liwomens navulli noneLi'}>
-                                <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/womens'} >Women`s wear</NavLink>
+                                <NavLink   to={'/womens'} >Women`s wear</NavLink>
                                 <div className={'womenshover'}>
                                     <Womenshover/>
                                 </div>
                             </li>
                             <li className={'navulli noneLi'}>
-                                <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/contact'} >Contact</NavLink>
+                                <NavLink   to={'/contact'} >Contact</NavLink>
                             </li>
                             <li className={'navulli noneLi'}>
-                                <NavLink  activeStyle={{textDecoration:'none',color:'#0FC3A4'}} to={'/shop'} >Our shop</NavLink>
+                                <NavLink   to={'/shop'} >Our shop</NavLink>
                             </li>
                             <div className={'shop shopCss'} onClick={this.props.shopOpen}>
                                 <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
                             </div>
-                            <div className="user">{this.state.userProfile && <span>Profile: {this.state.userProfile.email}</span>}
+
+                            <div className="user">{this.state.userProfile && <span>{this.state.userProfile.email}</span>}
                                 <div className="exitProfile"><p onClick={()=> localStorage.removeItem('myusertoken')}><a href='/'>exit</a></p></div>
                             </div>
                         </ul>
                     </nav>
+
+
                 </div>
 
                 {this.props.shop ?
@@ -173,4 +176,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
-

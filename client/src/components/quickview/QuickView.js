@@ -47,19 +47,8 @@ export default class QuickView extends Component{
                                     <p className={'priCe'}>${this.props.QuickCards.price}</p>
                                 </div>
                                 <div>
-                                    <span>Check delivery, payment options and charges to your location</span>
-                                    <div className={'inpChek'}>
-                                        <input className={'InpTxt'} type="text"/>
-                                        <input className={'InpSub'} type="submit" value={'Send'}/>
-                                    </div>
-                                    <div className={'SelectOp'}>
-                                        <p>Select Your Size : </p>
-                                        <select name="" id="">
-                                            <option>40</option>
-                                            <option>41</option>
-                                            <option>42</option>
-                                        </select>
-                                    </div>
+
+
                                     <div className={'footericons'}>
                                         <ul>
                                             <li>
