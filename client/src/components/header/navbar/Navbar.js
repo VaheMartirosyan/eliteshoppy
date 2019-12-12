@@ -25,7 +25,8 @@ class Navbar extends Component{
         userProfile:'',
         bascket:this.props.shopProduct,
         shopProduct:'',
-        btnIcons:false
+        btnIcons:false,
+        btnC:false,
     };
     componentDidMount(){
         const token = localStorage.myusertoken
@@ -48,9 +49,12 @@ class Navbar extends Component{
             btnIcons:!this.state.btnIcons
         })
     }
+    btnCartUs=()=>{
+        this.setState({
+            btnC:!this.state.btnC
+        })
+    }
     render() {
-
-
         return (
             <div className={'navall'}  onClick={this.closewindow}>
                 <div className='navbars'>
@@ -117,10 +121,24 @@ class Navbar extends Component{
                             <div className={'shop shopCss'} onClick={this.props.shopOpen}>
                                 <i className="fa fa-cart-arrow-down" aria-hidden="true"></i>
                             </div>
+                                {this.state.userProfile !== ''?
+                                    <div className="userIcons">
+                                    <i className="fa fa-user" onClick={this.btnCartUs}></i>
+                                        {
+                                            this.state.btnC?
+                                            <div className="cartUserr">
+                                                <div className="imgUser">
 
-                            <div className="user">{this.state.userProfile && <span>{this.state.userProfile.email}</span>}
-                                <div className="exitProfile"><p onClick={()=> localStorage.removeItem('myusertoken')}><a href='/'>exit</a></p></div>
-                            </div>
+                                                </div>
+                                                <h3>{this.state.userProfile.first_name}</h3>
+                                                <p>{this.state.userProfile.email}</p>
+                                                <div className="exitdiv">
+                                                    <p onClick={()=> localStorage.removeItem('myusertoken')}><a href='/'>Exit</a></p>
+                                                </div>
+                                            </div>:null
+                                    }
+                                    </div>:null}
+
                         </ul>
                     </nav>
 
