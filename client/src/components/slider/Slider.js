@@ -6,6 +6,7 @@ import pic3 from '../../wear/wearImg/banner3.jpg';
 import pic4 from './slideimg/banner4.jpg';
 import pic5 from './slideimg/banner5.jpg';
 import './Slider.css'
+import './MediaSlider.scss'
 import {NavLink} from "react-router-dom";
 
 
@@ -40,9 +41,8 @@ export default class GSlider extends Component{
                                                 <h3 >{e.txtwhite} <span>{e.txtblue}</span></h3>
                                                 <p>{e.txtgold}</p>
                                                 <span className={"shopnow"}>
-                                                                 <NavLink to={e.link}className='ah'>Shop Now </NavLink>
-                                                            </span>
-
+                                                    <NavLink to={e.link}className='ah'>Shop Now </NavLink>
+                                                </span>
                                             </div>
                                         </Carousel.Caption>
                                     </div>

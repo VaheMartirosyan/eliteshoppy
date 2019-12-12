@@ -1,0 +1,25 @@
+@media only screen and  (max-width:900px) {
+
+  .headB{
+    display: flex;
+    flex-direction: column;
+    .searchform{
+      h2{
+        font-size: 50px;
+      }
+    }
+    .logo{
+
+    }
+    div{
+      margin-top: 30px;
+    }
+    .headlogos{
+      margin-right: -200px;
+      margin-top: 50px;
+      li{
+        margin-left: 5px;
+      }
+    }
+  }
+}

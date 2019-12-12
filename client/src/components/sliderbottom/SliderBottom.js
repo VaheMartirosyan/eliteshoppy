@@ -2,6 +2,7 @@ import React from 'react';
 import pic1 from './sliderbottomimg/bottom1.jpg';
 import pic2 from './sliderbottomimg/bottom2.jpg';
 import './SliderBottom.css';
+import './MediaSliderBottom.scss'
 
 
 export default ()=>{

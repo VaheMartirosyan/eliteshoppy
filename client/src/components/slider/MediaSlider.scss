@@ -1,0 +1,36 @@
+@media only screen and  (max-width:900px) {
+
+
+  .opacitydiv{
+    height: 50vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+.carouseltxt{
+  h3{
+    font-size: 30px;
+    margin-top: 100px;
+    span{
+      display: block;
+      font-size: 22px !important;
+    }
+  }
+  p{
+    font-size: 17px;
+
+  }
+
+    .ah{
+      padding: 7px;
+      font-size: 15px !important;
+      letter-spacing:0;
+  }
+  .shopnow:hover {
+    border: 2px solid #2BDABA;
+    transition: .4s;
+    padding: 15px 5px;
+  }
+}
+
+}

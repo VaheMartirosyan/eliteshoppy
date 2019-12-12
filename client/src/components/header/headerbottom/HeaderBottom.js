@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom'
+import './MediaHeaderBottom.scss'
 import './HeaderBottom.css'
 
 export default ()=>{

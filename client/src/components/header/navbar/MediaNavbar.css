@@ -10,4 +10,7 @@
     .navulli{
         padding: 10px 41px;
     }
+    .shopCss{
+        flex: 0.3;
+    }
 }

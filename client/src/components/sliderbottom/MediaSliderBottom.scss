@@ -1,0 +1,52 @@
+@media only screen and  (max-width:1500px) {
+
+  .botall{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    div{
+      margin-top: 10px;
+      height: 280px;
+    }
+  }
+}
+@media only screen and  (max-width:1200px) {
+
+  .botall{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    div{
+      height: 250px;
+      margin-top: 10px;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }
+}
+@media only screen and  (max-width:900px) {
+
+  .botall{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    div{
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 10px;
+      height: 220px;
+    }
+  }
+}
+@media only screen and  (max-width:500px) {
+
+  .botall{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    div{
+      height: 200px;
+      margin-top: 10px;
+    }
+  }
+}
