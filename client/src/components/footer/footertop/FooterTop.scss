@@ -13,7 +13,14 @@
 }
 .ictxtdiv{
   display: flex;
-
+  justify-content: space-between;
+}
+.ictxtdiv>div{
+  justify-content: space-between;
+}
+.foottop>div{
+  margin: 0 auto;
+  display: flex;
 }
 .foottop{
   display: flex;

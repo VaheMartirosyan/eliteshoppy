@@ -1,5 +1,5 @@
 import React from 'react';
-import './Fixed.css'
+import './Fixed.scss'
 export default ()=>{
     return(
         <div className={'fixed'}>

@@ -1,0 +1,24 @@
+@media only screen and (max-width: 1500px) {
+  .footertop{
+    flex-direction: column;
+    .aaaa{
+      margin:30px auto;
+      width: 70%;
+      justify-content: space-between;
+    }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .footertop{
+    flex-direction: column;
+    .aaaa{
+      margin:0 auto;
+      width: 70%;
+      flex-direction: column;
+    }
+    .aa{
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+}

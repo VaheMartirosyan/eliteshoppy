@@ -71,3 +71,27 @@ flex: .6;
     width:100%;
     display: flex;
 }
+
+@media only screen and (max-width: 900px) {
+    .newscontain{
+        h2{
+            font-size:15px ;
+        }
+        .footermail{
+           width: 180px;
+        }
+        .mailsubmit{
+            font-size: 10px;
+        }
+    }
+    .rights{
+        p{
+            font-size: 14px;
+            b{
+                display: block;
+                text-align: center;
+            }
+        }
+
+    }
+}

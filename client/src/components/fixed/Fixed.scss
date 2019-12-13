@@ -1,0 +1,68 @@
+.fixed{
+    background: url("../../wear/wearImg/banner3.jpg") no-repeat;
+    background-size: cover;
+    margin-top: 80px;
+    background-attachment: fixed;
+    height: 25em;
+    padding: 5em 0em;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    margin-top: 80px;
+}
+.fixed h3{
+    font-weight: bolder;
+    font-size: 50px;
+    letter-spacing: 6px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+.fixed h3 span{
+    color: #1F1F1F;
+}
+@media only screen and  (max-width: 1500px){
+    .fixed {
+        h3{
+            font-size: 40px;
+            letter-spacing: 4px;
+        }
+    }
+}
+@media only screen and  (max-width: 1000px){
+    .fixed {
+        h3{
+            font-size: 30px;
+            letter-spacing: 3px;
+        }
+    }
+}
+@media only screen and  (max-width: 700px){
+    .fixed {
+        h3{
+            font-size: 25px;
+            letter-spacing: 2px;
+        }
+        a{
+            font-size: 15px;
+        }
+    }
+}
+@media only screen and  (max-width: 500px){
+    .fixed {
+        h3{
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+        .shopnow{
+            border:2px solid #2BDABA;
+        }
+        a{
+            font-size: 15px;
+            &:hover{
+                .shopnow{
+                    padding: 25px;
+                }
+            }
+        }
+    }
+}

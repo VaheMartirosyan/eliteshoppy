@@ -10,7 +10,13 @@
     justify-content: space-between;
     width: 80%;
     margin: 0 auto;
-    margin-bottom: 70px;
+
+    .aaaa{
+        margin: 0 auto;
+        width: 45%;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 .footerone{
     display: flex;

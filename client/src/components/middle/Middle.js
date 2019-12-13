@@ -1,5 +1,6 @@
 import React from 'react';
 import './Middle.css'
+import './MediaMiddle.scss'
 import img from './middleimg/mid.jpg'
 
 export default ()=>{

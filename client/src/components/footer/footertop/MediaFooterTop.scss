@@ -1,0 +1,18 @@
+@media only screen and (max-width: 1300px){
+  .foottop{
+    flex-direction: column;
+    div{
+      margin-top: 20px;
+    }
+  }
+}
+@media only screen and (max-width: 800px){
+  .foottop{
+   h3{
+     font-size: 13px;
+   }
+    p{
+      font-size: 10px;
+    }
+  }
+}
